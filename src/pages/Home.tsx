@@ -1,6 +1,45 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import Masonry from 'masonry-layout';
+import imagesLoaded from 'imagesloaded';
 
 function Home() {
+  useEffect(() => {
+    const grid = document.querySelector('.masonry-grid');
+    const gridItems = document.querySelectorAll('.grid-item');
+
+    if (!grid) return;
+
+    // Lazy-load observer for fade-in effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    gridItems.forEach(item => observer.observe(item));
+
+    // Wait until images are loaded, then initialize Masonry
+    imagesLoaded(grid, () => {
+      new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-item',
+        gutter: 16,
+        percentPosition: true,
+        transitionDuration: '0.3s'
+      });
+    });
+
+    return () => {
+      gridItems.forEach(item => observer.unobserve(item));
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Fixed Background */}
@@ -46,7 +85,7 @@ function Home() {
               src="https://via.placeholder.com/530x586/b8a892/5a4a3a?text=Intelligence" 
               alt="Intelligence Hub"
             />
-            <div className="hover-text">Data analytics and intelligence work</div>
+            <Link to="/intelligence-hub" className="hover-button">Intelligence Hub</Link>
           </div>
         </div>
 
@@ -91,7 +130,7 @@ function Home() {
               src="https://via.placeholder.com/575x610/d4c5aa/8b7355?text=Movies" 
               alt="Movies"
             />
-            <div className="hover-text">Film projects and cinematic work</div>
+            <Link to="/movies" className="hover-button">View Movies</Link>
           </div>
         </div>
 
@@ -117,6 +156,17 @@ function Home() {
           </div>
         </div>
 
+        {/* Social Media */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/450x782/d4c5aa/8b7355?text=Social" 
+              alt="Social Media"
+            />
+            <Link to="/social-media" className="hover-button">Social Media</Link>
+          </div>
+        </div>
+
         {/* Info Card 2 */}
         <div className="grid-item">
           <img 
@@ -129,17 +179,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Social Media */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src="https://via.placeholder.com/450x782/d4c5aa/8b7355?text=Social" 
-              alt="Social Media"
-            />
-            <div className="hover-text">Social media campaigns and content strategy</div>
-          </div>
-        </div>
-
         {/* Platforms */}
         <div className="grid-item">
           <div className="image-wrapper">
@@ -148,6 +187,17 @@ function Home() {
               alt="Platforms"
             />
             <div className="hover-text">Platform development and management</div>
+          </div>
+        </div>
+
+        {/* Video Editing page link */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/499x665/c4b5a2/7a6a5a?text=More" 
+              alt="Video Editing"
+            />
+            <Link to="/video-editing" className="hover-button">Video Editing</Link>
           </div>
         </div>
 
@@ -225,19 +275,21 @@ function Home() {
         }
 
         .masonry-grid {
-          column-count: 4;
-          column-gap: 1rem;
           max-width: 100%;
           margin: 0 auto;
           padding: 0 1rem;
         }
 
         .grid-item {
-          break-inside: avoid;
+          width: calc(25% - 12px);
           margin-bottom: 1rem;
           position: relative;
-          opacity: 1;
+          opacity: 0;
           transition: opacity 0.6s ease-out;
+        }
+
+        .grid-item.visible {
+          opacity: 1;
         }
 
         .grid-item img {
@@ -375,16 +427,18 @@ function Home() {
         }
 
         @media (max-width: 1024px) {
-          .masonry-grid {
-            column-count: 3;
+          .grid-item {
+            width: calc(33.333% - 11px);
           }
         }
 
         @media (max-width: 768px) {
           .masonry-grid {
-            column-count: 2;
-            column-gap: 0.5rem;
-            padding: 0 1rem;
+            padding: 0 0.5rem;
+          }
+
+          .grid-item {
+            width: calc(50% - 8px);
           }
 
           .title-image-frame h1 {
@@ -416,8 +470,8 @@ function Home() {
         }
 
         @media (max-width: 480px) {
-          .masonry-grid {
-            column-count: 1;
+          .grid-item {
+            width: 100%;
           }
 
           .title-image-frame {
