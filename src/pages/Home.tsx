@@ -362,14 +362,11 @@ function Home() {
         }
 
         .masonry-container {
-          display: flex;
-          justify-content: center;
           width: 100%;
           padding: 0 1rem;
         }
 
         .masonry-grid {
-          max-width: 1200px;
           width: 100%;
           column-count: 4;
           column-gap: 1rem;
