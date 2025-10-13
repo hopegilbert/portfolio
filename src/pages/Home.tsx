@@ -324,15 +324,16 @@ function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
+          background: transparent;
         }
 
         .portrait-frame img {
           max-width: 100%;
           height: auto;
-          border-radius: 8px;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
           background: transparent;
           display: block;
+          border: none;
+          outline: none;
         }
 
         .subtitle-frame {
@@ -363,8 +364,8 @@ function Home() {
           max-width: 100%;
           margin: 0 auto;
           padding: 0 1rem;
-          display: flex;
-          justify-content: center;
+          column-count: 4;
+          column-gap: 1rem;
         }
 
         .grid-item {
