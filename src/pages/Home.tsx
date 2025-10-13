@@ -126,12 +126,11 @@ function Home() {
 
         {/* Apps */}
         <div className="grid-item">
-          <div className="image-wrapper">
-            <div className="app-icon-container">
+          <div className="minimal-app-container">
+            <div className="minimal-app-icon">
               <img 
                 src={appIcon} 
                 alt="Apps"
-                className="app-icon"
               />
             </div>
             <Link to="/apps" className="hover-button">View Apps</Link>
@@ -472,22 +471,46 @@ function Home() {
           line-height: 1.5;
         }
 
-        .app-icon-container {
-          width: 100%;
-          border-radius: 35px;
+        .minimal-app-container {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          background: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+          transition: all 0.3s ease;
+          min-height: 280px;
+          border: 1px solid rgba(168, 107, 122, 0.1);
+        }
+
+        .minimal-app-container:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .minimal-app-icon {
+          width: 80px;
+          height: 80px;
+          border-radius: 18px;
           overflow: hidden;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+          margin-bottom: 1rem;
           transition: all 0.3s ease;
         }
 
-        .app-icon {
+        .minimal-app-icon img {
           width: 100%;
-          height: auto;
-          display: block;
+          height: 100%;
+          object-fit: cover;
           border-radius: 0;
-          box-shadow: none;
-          margin: 0;
-          padding: 0;
+        }
+
+        .minimal-app-container:hover .minimal-app-icon {
+          transform: scale(1.05);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .image-wrapper:hover .app-icon {
