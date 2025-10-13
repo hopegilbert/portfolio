@@ -1,86 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 function Home() {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-
-  const portfolioSections = [
-    { 
-      id: 'play-dress-up',
-      name: 'Play Dress Up', 
-      path: '/play-dress-up', 
-      description: 'Fashion and styling projects',
-      height: 'tall' // varying heights for masonry
-    },
-    { 
-      id: 'intelligence-hub',
-      name: 'Intelligence Hub', 
-      path: '/intelligence-hub', 
-      description: 'Data and analytics work',
-      height: 'medium'
-    },
-    { 
-      id: 'art-work',
-      name: 'Art Work', 
-      path: '/art-work', 
-      description: 'Creative artwork portfolio',
-      height: 'short'
-    },
-    { 
-      id: 'video-editing',
-      name: 'Video Editing', 
-      path: '/video-editing', 
-      description: 'Video production and editing',
-      height: 'medium'
-    },
-    { 
-      id: 'movies',
-      name: 'Movies', 
-      path: '/movies', 
-      description: 'Film and movie projects',
-      height: 'tall'
-    },
-    { 
-      id: 'apps',
-      name: 'Apps', 
-      path: '/apps', 
-      description: 'Application development',
-      height: 'short'
-    },
-    { 
-      id: 'document-design',
-      name: 'Document Design', 
-      path: '/document-design', 
-      description: 'Document and layout design',
-      height: 'medium'
-    },
-    { 
-      id: 'social-media',
-      name: 'Social Media', 
-      path: '/social-media', 
-      description: 'Social media content and campaigns',
-      height: 'tall'
-    },
-    { 
-      id: 'platforms',
-      name: 'Platforms', 
-      path: '/platforms', 
-      description: 'Platform development and management',
-      height: 'short'
-    },
-  ];
-
-  const getHeightClass = (height: string) => {
-    switch(height) {
-      case 'short': return 'h-48';
-      case 'medium': return 'h-64';
-      case 'tall': return 'h-80';
-      default: return 'h-64';
-    }
-  };
-
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen">
       {/* Fixed Background */}
       <div 
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
@@ -89,177 +11,421 @@ function Home() {
         }}
       />
 
-      {/* Profile Section */}
-      <div className="flex flex-col items-center pt-12 pb-8 px-4">
-        {/* Title Frame */}
-        <div className="w-full max-w-5xl flex justify-center mb-6">
-          <div 
-            className="backdrop-blur-sm bg-[#f5e8c7]/30 px-12 py-8 rounded-lg border-4 border-[#821818]/20 shadow-2xl"
-            style={{
-              fontFamily: "'Playfair Display', serif"
-            }}
-          >
-            <h1 className="text-6xl font-bold text-[#821818] text-center tracking-wide">
-              HOPE GILBERT
-            </h1>
-          </div>
+      {/* Title Frame */}
+      <div className="title-frame">
+        <div className="title-image-frame">
+          <h1>HOPE GILBERT</h1>
         </div>
+      </div>
 
-        {/* Subtitle/Bio Section */}
-        <div className="w-full max-w-4xl backdrop-blur-md bg-[#f5e8c7]/20 px-8 py-6 rounded-lg mb-8">
-          <p 
-            className="text-2xl font-bold text-[#821818] text-center leading-relaxed"
-            style={{ fontFamily: "'Lora', serif" }}
-          >
-            A curated collection of creative works, ideas, and projects across multiple disciplines.
-          </p>
-        </div>
+      {/* Subtitle */}
+      <div className="subtitle-frame">
+        <p className="subtitle">
+          A curated collection of creative works, ideas, and projects across multiple disciplines.
+        </p>
       </div>
 
       {/* Masonry Grid */}
-      <div className="px-4 pb-16">
-        <div 
-          className="masonry-container mx-auto"
-          style={{
-            columnCount: 4,
-            columnGap: '1rem',
-            maxWidth: '100%'
-          }}
-        >
-          {portfolioSections.map((section) => (
-            <Link
-              key={section.id}
-              to={section.path}
-              className="masonry-item block mb-4 break-inside-avoid"
-              onMouseEnter={() => setHoveredItem(section.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-            >
-              <div className="relative overflow-hidden rounded-lg group">
-                {/* Placeholder Frame/Image */}
-                <div 
-                  className={`w-full ${getHeightClass(section.height)} bg-gradient-to-br from-[#d4c5aa] to-[#b8a892] border-8 border-[#8b7355] rounded-lg shadow-xl transition-all duration-300 group-hover:brightness-50`}
-                  style={{
-                    boxShadow: 'inset 0 0 20px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.2)'
-                  }}
-                >
-                  {/* Inner frame detail */}
-                  <div className="w-full h-full border-4 border-[#a89277] rounded-sm m-1 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <div className="text-4xl mb-2">🖼️</div>
-                      <p className="text-[#5a4a3a] font-semibold text-sm" style={{ fontFamily: "'Lora', serif" }}>
-                        {section.name}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Hover Overlay */}
-                <div 
-                  className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${
-                    hoveredItem === section.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                >
-                  <div 
-                    className="bg-[#f5e8c7] text-[#821818] px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 hover:bg-[#dbc692] hover:-translate-y-1"
-                    style={{ fontFamily: "'Lora', serif" }}
-                  >
-                    <span className="font-semibold text-lg">Explore {section.name}</span>
-                  </div>
-                  <p 
-                    className="text-[#f5e8c7] mt-4 text-center px-4 text-sm"
-                    style={{ fontFamily: "'Lora', serif" }}
-                  >
-                    {section.description}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-
-          {/* Decorative Info Cards (like the flower frames) */}
-          <div className="masonry-item block mb-4 break-inside-avoid">
-            <div 
-              className="relative w-full h-64 bg-gradient-to-br from-[#d4c5aa] to-[#b8a892] border-8 border-[#8b7355] rounded-lg shadow-xl"
-              style={{
-                boxShadow: 'inset 0 0 20px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.2)'
-              }}
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                <h2 
-                  className="text-2xl font-bold text-[#821818] mb-3 text-center"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  About This Portfolio
-                </h2>
-                <p 
-                  className="text-[#821818] text-center text-sm leading-relaxed"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  A digital museum showcasing my journey across fashion, technology, art, and everything in between.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Another decorative card */}
-          <div className="masonry-item block mb-4 break-inside-avoid">
-            <div 
-              className="relative w-full h-56 bg-gradient-to-br from-[#d4c5aa] to-[#b8a892] border-8 border-[#8b7355] rounded-lg shadow-xl"
-              style={{
-                boxShadow: 'inset 0 0 20px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.2)'
-              }}
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                <h2 
-                  className="text-xl font-bold text-[#821818] mb-2 text-center"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  ✨ Welcome ✨
-                </h2>
-                <p 
-                  className="text-[#821818] text-center text-xs leading-relaxed"
-                  style={{ fontFamily: "'Lora', serif" }}
-                >
-                  Click on any frame to explore that section of my work.
-                </p>
-              </div>
-            </div>
+      <div className="masonry-grid">
+        
+        {/* Play Dress Up - Large */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/567x758/d4c5aa/8b7355?text=Fashion" 
+              alt="Play Dress Up"
+            />
+            <Link to="/play-dress-up" className="hover-button">Play Dress Up!</Link>
           </div>
         </div>
+
+        {/* Intelligence Hub */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/530x586/b8a892/5a4a3a?text=Intelligence" 
+              alt="Intelligence Hub"
+            />
+            <div className="hover-text">Data analytics and intelligence work</div>
+          </div>
+        </div>
+
+        {/* Art Work */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/408x739/d4c5aa/8b7355?text=Art" 
+              alt="Art Work"
+            />
+            <div className="hover-text">Creative artwork and visual design</div>
+          </div>
+        </div>
+
+        {/* Video Editing */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/536x714/c4b5a2/7a6a5a?text=Video" 
+              alt="Video Editing"
+            />
+            <div className="hover-text">Video production and editing projects</div>
+          </div>
+        </div>
+
+        {/* Info Card 1 */}
+        <div className="grid-item">
+          <img 
+            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
+            alt="frame"
+          />
+          <div className="overlay-content">
+            <h2>Welcome</h2>
+            <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
+          </div>
+        </div>
+
+        {/* Movies */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/575x610/d4c5aa/8b7355?text=Movies" 
+              alt="Movies"
+            />
+            <div className="hover-text">Film projects and cinematic work</div>
+          </div>
+        </div>
+
+        {/* Apps */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/633x542/b8a892/5a4a3a?text=Apps" 
+              alt="Apps"
+            />
+            <Link to="/apps" className="hover-button">View Apps</Link>
+          </div>
+        </div>
+
+        {/* Document Design */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/504x584/c4b5a2/7a6a5a?text=Documents" 
+              alt="Document Design"
+            />
+            <div className="hover-text">Professional document and layout design</div>
+          </div>
+        </div>
+
+        {/* Info Card 2 */}
+        <div className="grid-item">
+          <img 
+            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
+            alt="frame"
+          />
+          <div className="overlay-content">
+            <h2>About This Portfolio</h2>
+            <p>A digital museum of my work, ever-evolving and always growing.</p>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/450x782/d4c5aa/8b7355?text=Social" 
+              alt="Social Media"
+            />
+            <div className="hover-text">Social media campaigns and content strategy</div>
+          </div>
+        </div>
+
+        {/* Platforms */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/615x703/b8a892/5a4a3a?text=Platforms" 
+              alt="Platforms"
+            />
+            <div className="hover-text">Platform development and management</div>
+          </div>
+        </div>
+
       </div>
 
       {/* Footer */}
-      <div className="w-full backdrop-blur-md bg-[#f5e8c7]/20 px-8 py-6 rounded-lg mt-8">
-        <footer className="text-center">
-          <p 
-            className="text-[#821818] font-bold text-lg"
-            style={{ fontFamily: "'Lora', serif" }}
-          >
-            More to come... this museum is ever-evolving.
-          </p>
+      <div className="footer-frame">
+        <footer>
+          <p>More to come... this museum is ever-evolving.</p>
         </footer>
       </div>
 
-      {/* Responsive Styles */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600;700&display=swap');
-        
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .title-frame {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+          position: relative;
+          z-index: 1;
+          padding-top: 3rem;
+        }
+
+        .title-image-frame {
+          background: linear-gradient(135deg, rgba(245, 232, 199, 0.3) 0%, rgba(212, 197, 170, 0.3) 100%);
+          backdrop-filter: blur(9px);
+          border: 4px solid rgba(130, 24, 24, 0.2);
+          border-radius: 8px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 1200px;
+          padding: 4rem 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .title-image-frame h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: 4rem;
+          color: #821818;
+          margin: 0;
+          padding: 0 2rem;
+          text-align: center;
+          font-weight: 700;
+        }
+
+        .subtitle-frame {
+          backdrop-filter: blur(9px);
+          background-color: rgba(245, 232, 199, 0.2);
+          padding: 1.5rem 2rem;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 1200px;
+          margin: 2rem auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .subtitle {
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #821818;
+          margin: 0;
+          font-family: 'Lora', serif;
+          text-align: center;
+        }
+
+        .masonry-grid {
+          column-count: 4;
+          column-gap: 1rem;
+          max-width: 100%;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .grid-item {
+          break-inside: avoid;
+          margin-bottom: 1rem;
+          position: relative;
+          opacity: 1;
+          transition: opacity 0.6s ease-out;
+        }
+
+        .grid-item img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 8px;
+        }
+
+        .image-wrapper {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          cursor: pointer;
+          overflow: hidden;
+          border-radius: 8px;
+        }
+
+        .image-wrapper img {
+          display: block;
+          width: 100%;
+          height: auto;
+          transition: all 0.3s ease;
+        }
+
+        .image-wrapper:hover img {
+          filter: brightness(0.3);
+        }
+
+        .hover-text {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: transparent;
+          color: #f5e8c7;
+          padding: 1rem;
+          text-align: center;
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          z-index: 2;
+          pointer-events: none;
+          width: 70%;
+        }
+
+        .image-wrapper:hover .hover-text {
+          opacity: 1;
+        }
+
+        .hover-button {
+          opacity: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #f5e8c7;
+          color: #821818;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 25px;
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          text-decoration: none;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          z-index: 3;
+          cursor: pointer;
+        }
+
+        .image-wrapper:hover .hover-button {
+          opacity: 1;
+          transform: translate(-50%, -52%);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .hover-button:hover {
+          background-color: #dbc692;
+        }
+
+        .overlay-content {
+          position: absolute;
+          top: 0;
+          left: 15%;
+          right: 15%;
+          bottom: 0;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-family: 'Lora', serif;
+          color: #831416;
+          z-index: 2;
+        }
+
+        .overlay-content h2 {
+          font-family: 'Lora', serif;
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          color: #831416;
+          font-weight: 600;
+        }
+
+        .overlay-content p {
+          color: #831416;
+          font-size: 1rem;
+          line-height: 1.5;
+        }
+
+        .footer-frame {
+          backdrop-filter: blur(9px);
+          background-color: rgba(245, 232, 199, 0.2);
+          padding: 1.5rem 2rem;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          max-width: 1200px;
+          margin: 4rem auto 2rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        footer p {
+          margin: 0;
+          color: #821818;
+          font-weight: bold;
+          font-family: 'Lora', serif;
+          font-size: 1.1rem;
+          line-height: 1;
+        }
+
         @media (max-width: 1024px) {
-          .masonry-container {
-            column-count: 3 !important;
+          .masonry-grid {
+            column-count: 3;
           }
         }
-        
+
         @media (max-width: 768px) {
-          .masonry-container {
-            column-count: 2 !important;
-            column-gap: 0.5rem !important;
+          .masonry-grid {
+            column-count: 2;
+            column-gap: 0.5rem;
+            padding: 0 1rem;
+          }
+
+          .title-image-frame h1 {
+            font-size: 2rem;
+            padding: 0 1rem;
+          }
+
+          .subtitle {
+            font-size: 1rem;
+          }
+
+          .hover-text {
+            font-size: 0.8rem;
+            width: 80%;
+          }
+
+          .hover-button {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+          }
+
+          .overlay-content h2 {
+            font-size: 1rem;
+          }
+
+          .overlay-content p {
+            font-size: 0.75rem;
           }
         }
-        
+
         @media (max-width: 480px) {
-          .masonry-container {
-            column-count: 1 !important;
+          .masonry-grid {
+            column-count: 1;
+          }
+
+          .title-image-frame {
+            padding: 2rem 1rem;
+          }
+
+          .title-image-frame h1 {
+            font-size: 1.5rem;
           }
         }
       `}</style>
