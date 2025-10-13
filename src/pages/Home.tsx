@@ -121,15 +121,14 @@ function Home() {
           </div>
         </div>
 
-        {/* Info Card 1 */}
+        {/* Document Design */}
         <div className="grid-item">
-          <img 
-            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
-            alt="frame"
-          />
-          <div className="overlay-content">
-            <h2>Welcome</h2>
-            <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
+          <div className="image-wrapper">
+            <img 
+              src="https://via.placeholder.com/504x584/c4b5a2/7a6a5a?text=Documents" 
+              alt="Document Design"
+            />
+            <div className="hover-text">Professional document and layout design</div>
           </div>
         </div>
 
@@ -166,14 +165,15 @@ function Home() {
           </div>
         </div>
 
-        {/* Document Design */}
+        {/* Info Card 1 */}
         <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src="https://via.placeholder.com/504x584/c4b5a2/7a6a5a?text=Documents" 
-              alt="Document Design"
-            />
-            <div className="hover-text">Professional document and layout design</div>
+          <img 
+            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
+            alt="frame"
+          />
+          <div className="overlay-content">
+            <h2>Welcome</h2>
+            <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
           </div>
         </div>
 
