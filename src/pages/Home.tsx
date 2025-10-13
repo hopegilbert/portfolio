@@ -127,11 +127,13 @@ function Home() {
         {/* Apps */}
         <div className="grid-item">
           <div className="image-wrapper">
-            <img 
-              src={appIcon} 
-              alt="Apps"
-              className="app-icon"
-            />
+            <div className="app-icon-container">
+              <img 
+                src={appIcon} 
+                alt="Apps"
+                className="app-icon"
+              />
+            </div>
             <Link to="/apps" className="hover-button">View Apps</Link>
           </div>
         </div>
@@ -470,16 +472,22 @@ function Home() {
           line-height: 1.5;
         }
 
+        .app-icon-container {
+          width: 100%;
+          border-radius: 35px;
+          overflow: hidden;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+          transition: all 0.3s ease;
+        }
+
         .app-icon {
           width: 100%;
           height: auto;
-          border-radius: 35px !important;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-          transition: all 0.3s ease;
           display: block;
-          background: transparent;
-          border: none;
-          overflow: hidden;
+          border-radius: 0;
+          box-shadow: none;
+          margin: 0;
+          padding: 0;
         }
 
         .image-wrapper:hover .app-icon {
