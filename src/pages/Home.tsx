@@ -4,6 +4,7 @@ import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
+import homeBackground from '../assets/home-background.png';
 
 function Home() {
   useEffect(() => {
@@ -48,7 +49,7 @@ function Home() {
       <div 
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'linear-gradient(135deg, #f5e8c7 0%, #e8d5b7 50%, #d4c5aa 100%)',
+          backgroundImage: `url(${homeBackground})`,
         }}
       />
 
