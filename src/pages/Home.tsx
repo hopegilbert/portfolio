@@ -82,13 +82,6 @@ function Home() {
         </div>
       </div>
 
-      {/* Subtitle */}
-      <div className="subtitle-frame">
-        <p className="subtitle">
-          A curated collection of creative works, ideas, and projects across multiple disciplines.
-        </p>
-      </div>
-
       {/* Masonry Grid */}
       <div className="masonry-container">
         <div className="masonry-grid">
@@ -337,29 +330,6 @@ function Home() {
           outline: none;
         }
 
-        .subtitle-frame {
-          backdrop-filter: blur(9px);
-          background-color: rgba(253, 233, 240, 0.2);
-          padding: 1.5rem 2rem;
-          border-radius: 8px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          max-width: 1200px;
-          margin: 2rem auto;
-          position: relative;
-          z-index: 1;
-        }
-
-        .subtitle {
-          font-size: 1.5rem;
-          font-weight: bold;
-          color: #a86b7a;
-          margin: 0;
-          font-family: 'Lora', serif;
-          text-align: center;
-        }
 
         .masonry-container {
           width: 100%;
