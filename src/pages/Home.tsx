@@ -55,7 +55,7 @@ function Home() {
       {/* Title Frame */}
       <div className="title-frame">
         <div className="title-image-frame">
-          <h1>HOPE GILBERT</h1>
+          <h1>Hope Gilbert</h1>
         </div>
       </div>
 
@@ -213,7 +213,7 @@ function Home() {
       </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');
 
         html {
           scroll-behavior: smooth;
@@ -243,14 +243,14 @@ function Home() {
         }
 
         .title-image-frame h1 {
-          font-family: 'Cormorant Garamond', serif;
+          font-family: 'Cinzel', serif;
           font-size: 4rem;
           color: #a86b7a;
           margin: 0;
           padding: 0 2rem;
           text-align: center;
-          font-weight: 300;
-          letter-spacing: 0.1em;
+          font-weight: 600;
+          letter-spacing: 0.05em;
         }
 
         .subtitle-frame {
