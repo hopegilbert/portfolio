@@ -473,7 +473,7 @@ function Home() {
         .app-icon {
           width: 100%;
           height: auto;
-          border-radius: 18px;
+          border-radius: 25px;
           box-shadow: 
             0 4px 16px rgba(0, 0, 0, 0.15),
             0 1px 4px rgba(0, 0, 0, 0.1),
