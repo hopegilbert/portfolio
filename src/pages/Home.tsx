@@ -44,14 +44,13 @@ function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Fixed Background */}
-      <div 
-        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${homeBackground})`,
-        }}
-      />
+    <div className="min-h-screen" style={{
+      backgroundImage: `url(${homeBackground})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed'
+    }}>
 
       {/* Title Frame */}
       <div className="title-frame">

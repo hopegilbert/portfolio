@@ -13,7 +13,7 @@ import Platforms from './pages/Platforms';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,7 +27,7 @@ function App() {
         <Route path="/social-media" element={<SocialMedia />} />
         <Route path="/platforms" element={<Platforms />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
