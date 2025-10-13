@@ -5,6 +5,7 @@ import imagesLoaded from 'imagesloaded';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
+import titleFrame from '../assets/home-frames/title-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -54,7 +55,12 @@ function Home() {
 
       {/* Title Frame */}
       <div className="title-frame">
-        <div className="title-image-frame">
+        <div className="title-image-frame" style={{
+          backgroundImage: `url(${titleFrame})`,
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}>
           <h1>Hope Gilbert</h1>
         </div>
       </div>
@@ -229,17 +235,13 @@ function Home() {
         }
 
         .title-image-frame {
-          background: linear-gradient(135deg, rgba(253, 233, 240, 0.3) 0%, rgba(245, 201, 224, 0.3) 100%);
-          backdrop-filter: blur(9px);
-          border: 4px solid rgba(168, 107, 122, 0.2);
-          border-radius: 8px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           width: 100%;
-          max-width: 1200px;
-          padding: 4rem 2rem;
+          max-width: 1600px;
+          min-height: 350px;
           display: flex;
           align-items: center;
           justify-content: center;
+          padding: 4rem 2rem;
         }
 
         .title-image-frame h1 {
