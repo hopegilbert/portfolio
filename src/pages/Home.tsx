@@ -255,7 +255,7 @@ function Home() {
         .profile-content {
           display: flex;
           gap: 3rem;
-          align-items: flex-start;
+          align-items: center;
           max-width: 1400px;
           width: 100%;
           justify-content: center;
@@ -265,15 +265,15 @@ function Home() {
           background-color: #f8f6f3;
           border: 1px solid #e0ddd8;
           border-radius: 8px;
-          padding: 2rem;
+          padding: 1.5rem;
           box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
           flex: 1;
-          max-width: 600px;
+          max-width: 500px;
         }
 
         .artist-name {
           font-family: 'Cinzel', serif;
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           font-weight: 700;
           color: #2c2c2c;
           margin: 0 0 0.5rem 0;
@@ -313,8 +313,8 @@ function Home() {
 
         .description {
           font-family: 'Lora', serif;
-          font-size: 1rem;
-          line-height: 1.6;
+          font-size: 0.9rem;
+          line-height: 1.5;
           color: #2c2c2c;
           text-align: justify;
           margin: 0;
