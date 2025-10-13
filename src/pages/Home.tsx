@@ -133,17 +133,6 @@ function Home() {
           </div>
         </div>
 
-        {/* Video Editing */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src={videoFrame} 
-              alt="Video Editing"
-            />
-            <Link to="/video-editing" className="hover-button">Video Editing</Link>
-          </div>
-        </div>
-
         {/* Movies */}
         <div className="grid-item">
           <div className="image-wrapper">
@@ -152,6 +141,17 @@ function Home() {
               alt="Movies"
             />
             <Link to="/movies" className="hover-button">View Movies</Link>
+          </div>
+        </div>
+
+        {/* Video Editing */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src={videoFrame} 
+              alt="Video Editing"
+            />
+            <Link to="/video-editing" className="hover-button">Video Editing</Link>
           </div>
         </div>
 
