@@ -6,6 +6,7 @@ import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
 import hopeImage from '../assets/home-frames/hope.png';
+import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -101,7 +102,7 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/530x586/b8a892/5a4a3a?text=Intelligence" 
+              src={intelligenceFrame} 
               alt="Intelligence Hub"
             />
             <Link to="/intelligence-hub" className="hover-button">Intelligence Hub</Link>
