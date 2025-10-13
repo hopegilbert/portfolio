@@ -90,7 +90,8 @@ function Home() {
       </div>
 
       {/* Masonry Grid */}
-      <div className="masonry-grid">
+      <div className="masonry-container">
+        <div className="masonry-grid">
         
         {/* Play Dress Up - Large */}
         <div className="grid-item">
@@ -225,7 +226,6 @@ function Home() {
             <Link to="/video-editing" className="hover-button">Video Editing</Link>
           </div>
         </div>
-
       </div>
 
       {/* Footer */}
@@ -234,6 +234,7 @@ function Home() {
           <p>More to come... this museum is ever-evolving.</p>
         </footer>
       </div>
+    </div>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');
@@ -360,10 +361,16 @@ function Home() {
           text-align: center;
         }
 
-        .masonry-grid {
-          max-width: 100%;
-          margin: 0 auto;
+        .masonry-container {
+          display: flex;
+          justify-content: center;
+          width: 100%;
           padding: 0 1rem;
+        }
+
+        .masonry-grid {
+          max-width: 1200px;
+          width: 100%;
           column-count: 4;
           column-gap: 1rem;
         }
