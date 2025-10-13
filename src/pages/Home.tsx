@@ -237,11 +237,11 @@ function Home() {
         .title-image-frame {
           width: 100%;
           max-width: 2000px;
-          min-height: 300px;
+          min-height: 450px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 4rem 3rem;
+          padding: 5rem 3rem;
         }
 
         .title-image-frame h1 {
