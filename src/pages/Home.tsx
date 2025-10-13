@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
+import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -71,7 +72,7 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/567x758/d4c5aa/8b7355?text=Fashion" 
+              src={dressUpFrame} 
               alt="Play Dress Up"
             />
             <Link to="/play-dress-up" className="hover-button">Play Dress Up!</Link>
