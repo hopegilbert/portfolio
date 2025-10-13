@@ -159,15 +159,12 @@ function Home() {
 
         {/* Apps */}
         <div className="grid-item">
-          <div className="app-icon-container">
-            <div className="app-icon-wrapper">
-              <img 
-                src={appIcon} 
-                alt="Apps"
-                className="app-icon"
-              />
-              <div className="app-label">Apps</div>
-            </div>
+          <div className="image-wrapper">
+            <img 
+              src={appIcon} 
+              alt="Apps"
+              className="app-icon"
+            />
             <Link to="/apps" className="hover-button">View Apps</Link>
           </div>
         </div>
@@ -473,53 +470,13 @@ function Home() {
           line-height: 1.5;
         }
 
-        .app-icon-container {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 2rem;
-          background: linear-gradient(145deg, #f8f6f3, #e8d5b7);
-          border-radius: 20px;
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-          cursor: pointer;
-          transition: all 0.3s ease;
-          min-height: 300px;
-        }
-
-        .app-icon-container:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-        }
-
-        .app-icon-wrapper {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 1rem;
-        }
-
         .app-icon {
-          width: 120px;
-          height: 120px;
+          width: 100%;
+          height: auto;
           border-radius: 22px;
-          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-          margin-bottom: 1rem;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
           transition: all 0.3s ease;
-        }
-
-        .app-icon-container:hover .app-icon {
-          transform: scale(1.05);
-        }
-
-        .app-label {
-          font-family: 'Lora', serif;
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: #2c2c2c;
-          text-align: center;
-          margin-top: 0.5rem;
+          display: block;
         }
 
         .footer-frame {
