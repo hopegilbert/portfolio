@@ -124,6 +124,29 @@ function Home() {
           </div>
         </div>
 
+        {/* Apps */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src={appIcon} 
+              alt="Apps"
+              className="app-icon"
+            />
+            <Link to="/apps" className="hover-button">View Apps</Link>
+          </div>
+        </div>
+
+        {/* Video Editing */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src={videoFrame} 
+              alt="Video Editing"
+            />
+            <Link to="/video-editing" className="hover-button">Video Editing</Link>
+          </div>
+        </div>
+
         {/* Document Design */}
         <div className="grid-item">
           <div className="image-wrapper">
@@ -143,29 +166,6 @@ function Home() {
               alt="Movies"
             />
             <Link to="/movies" className="hover-button">View Movies</Link>
-          </div>
-        </div>
-
-        {/* Video Editing */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src={videoFrame} 
-              alt="Video Editing"
-            />
-            <Link to="/video-editing" className="hover-button">Video Editing</Link>
-          </div>
-        </div>
-
-        {/* Apps */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src={appIcon} 
-              alt="Apps"
-              className="app-icon"
-            />
-            <Link to="/apps" className="hover-button">View Apps</Link>
           </div>
         </div>
 
