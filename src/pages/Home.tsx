@@ -229,9 +229,9 @@ function Home() {
         }
 
         .title-image-frame {
-          background: linear-gradient(135deg, rgba(245, 232, 199, 0.3) 0%, rgba(212, 197, 170, 0.3) 100%);
+          background: linear-gradient(135deg, rgba(253, 233, 240, 0.3) 0%, rgba(245, 201, 224, 0.3) 100%);
           backdrop-filter: blur(9px);
-          border: 4px solid rgba(130, 24, 24, 0.2);
+          border: 4px solid rgba(168, 107, 122, 0.2);
           border-radius: 8px;
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           width: 100%;
@@ -245,7 +245,7 @@ function Home() {
         .title-image-frame h1 {
           font-family: 'Playfair Display', serif;
           font-size: 4rem;
-          color: #821818;
+          color: #a86b7a;
           margin: 0;
           padding: 0 2rem;
           text-align: center;
@@ -254,7 +254,7 @@ function Home() {
 
         .subtitle-frame {
           backdrop-filter: blur(9px);
-          background-color: rgba(245, 232, 199, 0.2);
+          background-color: rgba(253, 233, 240, 0.2);
           padding: 1.5rem 2rem;
           border-radius: 8px;
           display: flex;
@@ -270,7 +270,7 @@ function Home() {
         .subtitle {
           font-size: 1.5rem;
           font-weight: bold;
-          color: #821818;
+          color: #a86b7a;
           margin: 0;
           font-family: 'Lora', serif;
           text-align: center;
@@ -328,7 +328,7 @@ function Home() {
           left: 50%;
           transform: translate(-50%, -50%);
           background: transparent;
-          color: #f5e8c7;
+          color: #fde9f0;
           padding: 1rem;
           text-align: center;
           font-family: 'Lora', serif;
@@ -349,8 +349,8 @@ function Home() {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          background-color: #f5e8c7;
-          color: #821818;
+          background-color: #fde9f0;
+          color: #a86b7a;
           padding: 0.75rem 1.5rem;
           border: none;
           border-radius: 25px;
@@ -370,7 +370,7 @@ function Home() {
         }
 
         .hover-button:hover {
-          background-color: #dbc692;
+          background-color: #f5c9e0;
         }
 
         .overlay-content {
@@ -386,7 +386,7 @@ function Home() {
           align-items: center;
           text-align: center;
           font-family: 'Lora', serif;
-          color: #831416;
+          color: #a86b7a;
           z-index: 2;
         }
 
@@ -394,19 +394,19 @@ function Home() {
           font-family: 'Lora', serif;
           font-size: 1.5rem;
           margin-bottom: 0.5rem;
-          color: #831416;
+          color: #a86b7a;
           font-weight: 600;
         }
 
         .overlay-content p {
-          color: #831416;
+          color: #a86b7a;
           font-size: 1rem;
           line-height: 1.5;
         }
 
         .footer-frame {
           backdrop-filter: blur(9px);
-          background-color: rgba(245, 232, 199, 0.2);
+          background-color: rgba(253, 233, 240, 0.2);
           padding: 1.5rem 2rem;
           border-radius: 8px;
           display: flex;
@@ -421,7 +421,7 @@ function Home() {
 
         footer p {
           margin: 0;
-          color: #821818;
+          color: #a86b7a;
           font-weight: bold;
           font-family: 'Lora', serif;
           font-size: 1.1rem;
