@@ -473,7 +473,7 @@ function Home() {
         .app-icon {
           width: 100%;
           height: auto;
-          border-radius: 25px;
+          border-radius: 35px !important;
           box-shadow: 
             0 4px 16px rgba(0, 0, 0, 0.15),
             0 1px 4px rgba(0, 0, 0, 0.1),
@@ -482,6 +482,7 @@ function Home() {
           display: block;
           background: linear-gradient(145deg, #ffffff, #f0f0f0);
           border: 1px solid rgba(0, 0, 0, 0.1);
+          overflow: hidden;
         }
 
         .image-wrapper:hover .app-icon {
