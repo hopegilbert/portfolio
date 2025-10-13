@@ -7,6 +7,7 @@ import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
 import hopeImage from '../assets/home-frames/hope.png';
 import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
+import videoFrame from '../assets/home-frames/video-frame.gif';
 
 function Home() {
   useEffect(() => {
@@ -124,10 +125,10 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/536x714/c4b5a2/7a6a5a?text=Video" 
+              src={videoFrame} 
               alt="Video Editing"
             />
-            <div className="hover-text">Video production and editing projects</div>
+            <Link to="/video-editing" className="hover-button">Video Editing</Link>
           </div>
         </div>
 
