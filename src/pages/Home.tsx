@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
+import paintingFrame from '../assets/home-frames/painting-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -94,10 +95,10 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/408x739/d4c5aa/8b7355?text=Art" 
+              src={paintingFrame} 
               alt="Art Work"
             />
-            <div className="hover-text">Creative artwork and visual design</div>
+            <Link to="/art-work" className="hover-button">View Art!</Link>
           </div>
         </div>
 
