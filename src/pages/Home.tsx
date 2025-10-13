@@ -9,6 +9,7 @@ import hopeImage from '../assets/home-frames/hope.png';
 import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
 import videoFrame from '../assets/home-frames/video-frame.gif';
 import documentFrame from '../assets/home-frames/document-frame.png';
+import moviesFrame from '../assets/home-frames/movies-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -137,7 +138,7 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/575x610/d4c5aa/8b7355?text=Movies" 
+              src={moviesFrame} 
               alt="Movies"
             />
             <Link to="/movies" className="hover-button">View Movies</Link>
