@@ -57,7 +57,7 @@ function Home() {
       <div className="title-frame">
         <div className="title-image-frame" style={{
           backgroundImage: `url(${titleFrame})`,
-          backgroundSize: 'contain',
+          backgroundSize: '100% 80%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}>
@@ -237,11 +237,11 @@ function Home() {
         .title-image-frame {
           width: 100%;
           max-width: 2000px;
-          min-height: 450px;
+          min-height: 300px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 5rem 3rem;
+          padding: 4rem 3rem;
         }
 
         .title-image-frame h1 {
