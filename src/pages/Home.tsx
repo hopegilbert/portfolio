@@ -57,7 +57,7 @@ function Home() {
       <div className="title-frame">
         <div className="title-image-frame" style={{
           backgroundImage: `url(${titleFrame})`,
-          backgroundSize: '100% 80%',
+          backgroundSize: '100% 92%',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}>
