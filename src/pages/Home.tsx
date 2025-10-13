@@ -5,7 +5,7 @@ import imagesLoaded from 'imagesloaded';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
-import titleFrame from '../assets/home-frames/title-frame.png';
+import hopeImage from '../assets/home-frames/hope.png';
 
 function Home() {
   useEffect(() => {
@@ -53,15 +53,32 @@ function Home() {
       backgroundAttachment: 'fixed'
     }}>
 
-      {/* Title Frame */}
-      <div className="title-frame">
-        <div className="title-image-frame" style={{
-          backgroundImage: `url(${titleFrame})`,
-          backgroundSize: 'contain',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
-          <h1>Hope Gilbert</h1>
+      {/* Profile Section */}
+      <div className="profile-section">
+        <div className="profile-content">
+          {/* Museum Plaque */}
+          <div className="museum-plaque">
+            <h1 className="artist-name">Hope Gilbert</h1>
+            <p className="artist-dates">Creative Professional, United Kingdom</p>
+            
+            <h2 className="artwork-title">Digital Portfolio, 2025</h2>
+            <p className="medium">Multidisciplinary creative work</p>
+            <p className="acquisition">Personal collection</p>
+            
+            <p className="description">
+              Hope Gilbert is a multidisciplinary creative professional whose work spans fashion, 
+              technology, art, and digital media. Her approach combines analytical thinking with 
+              artistic vision, creating projects that bridge the gap between traditional craft 
+              and modern innovation. Through her diverse portfolio, Gilbert explores themes of 
+              identity, creativity, and the intersection of human expression with technological 
+              advancement.
+            </p>
+          </div>
+          
+          {/* Portrait */}
+          <div className="portrait-frame">
+            <img src={hopeImage} alt="Hope Gilbert" />
+          </div>
         </div>
       </div>
 
@@ -225,34 +242,94 @@ function Home() {
           scroll-behavior: smooth;
         }
 
-        .title-frame {
+        .profile-section {
           display: flex;
           justify-content: center;
           margin-bottom: 1.5rem;
           position: relative;
           z-index: 1;
-          padding-top: 3rem;
+          padding: 3rem 1rem;
         }
 
-        .title-image-frame {
-          width: 100%;
-          max-width: 2000px;
-          min-height: 450px;
+        .profile-content {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 5rem 3rem;
+          gap: 3rem;
+          align-items: flex-start;
+          max-width: 1400px;
+          width: 100%;
         }
 
-        .title-image-frame h1 {
+        .museum-plaque {
+          background-color: #f8f6f3;
+          border: 1px solid #e0ddd8;
+          border-radius: 8px;
+          padding: 2rem;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          flex: 1;
+          max-width: 600px;
+        }
+
+        .artist-name {
           font-family: 'Cinzel', serif;
-          font-size: 4rem;
-          color: #a86b7a;
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #2c2c2c;
+          margin: 0 0 0.5rem 0;
+          line-height: 1.1;
+        }
+
+        .artist-dates {
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          color: #666;
+          margin: 0 0 1.5rem 0;
+        }
+
+        .artwork-title {
+          font-family: 'Lora', serif;
+          font-size: 1.3rem;
+          font-style: italic;
+          font-weight: 500;
+          color: #2c2c2c;
+          margin: 0 0 0.3rem 0;
+        }
+
+        .medium {
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          color: #2c2c2c;
+          margin: 0 0 0.3rem 0;
+        }
+
+        .acquisition {
+          font-family: 'Lora', serif;
+          font-size: 0.9rem;
+          font-style: italic;
+          color: #666;
+          margin: 0 0 1.5rem 0;
+        }
+
+        .description {
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #2c2c2c;
+          text-align: justify;
           margin: 0;
-          padding: 0 2rem;
-          text-align: center;
-          font-weight: 600;
-          letter-spacing: 0.05em;
+        }
+
+        .portrait-frame {
+          flex: 0 0 400px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .portrait-frame img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
         }
 
         .subtitle-frame {
@@ -438,17 +515,32 @@ function Home() {
         }
 
         @media (max-width: 768px) {
+          .profile-content {
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+          }
+
+          .portrait-frame {
+            flex: none;
+            max-width: 300px;
+          }
+
+          .museum-plaque {
+            max-width: none;
+            padding: 1.5rem;
+          }
+
+          .artist-name {
+            font-size: 2rem;
+          }
+
           .masonry-grid {
             padding: 0 0.5rem;
           }
 
           .grid-item {
             width: calc(50% - 8px);
-          }
-
-          .title-image-frame h1 {
-            font-size: 2rem;
-            padding: 0 1rem;
           }
 
           .subtitle {
