@@ -8,6 +8,7 @@ import homeBackground from '../assets/home-background.png';
 import hopeImage from '../assets/home-frames/hope.png';
 import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
 import videoFrame from '../assets/home-frames/video-frame.gif';
+import documentFrame from '../assets/home-frames/document-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -125,10 +126,10 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/504x584/c4b5a2/7a6a5a?text=Documents" 
+              src={documentFrame} 
               alt="Document Design"
             />
-            <div className="hover-text">Professional document and layout design</div>
+            <Link to="/document-design" className="hover-button">Document Design</Link>
           </div>
         </div>
 
