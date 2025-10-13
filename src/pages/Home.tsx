@@ -236,12 +236,12 @@ function Home() {
 
         .title-image-frame {
           width: 100%;
-          max-width: 1600px;
-          min-height: 350px;
+          max-width: 2000px;
+          min-height: 450px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 4rem 2rem;
+          padding: 5rem 3rem;
         }
 
         .title-image-frame h1 {
