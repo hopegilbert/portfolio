@@ -143,6 +143,7 @@ function Home() {
                 alt="Apps"
               />
             </div>
+            <div className="app-hover-text">App Design</div>
             <Link to="/apps" className="hover-button">View Apps</Link>
           </div>
         </div>
@@ -532,6 +533,29 @@ function Home() {
         .minimal-app-container:hover .minimal-app-icon {
           transform: scale(1.05);
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-hover-text {
+          opacity: 0;
+          position: absolute;
+          bottom: 1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(168, 107, 122, 0.9);
+          color: #fde9f0;
+          padding: 0.5rem 1rem;
+          border-radius: 20px;
+          font-family: 'Lora', serif;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .minimal-app-container:hover .app-hover-text {
+          opacity: 1;
+          transform: translateX(-50%) translateY(-5px);
         }
 
         .image-wrapper:hover .app-icon {
