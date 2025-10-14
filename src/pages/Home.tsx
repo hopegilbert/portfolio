@@ -97,6 +97,7 @@ function Home() {
           <div className="portrait-frame">
             <Link to="/profile" className="portrait-link">
               <img src={hopeImage} alt="Hope Gilbert" />
+              <div className="portrait-shadow-overlay"></div>
               <div className="portrait-overlay">
                 <span className="overlay-text">View Profile</span>
               </div>
@@ -313,13 +314,13 @@ function Home() {
         }
 
         .artwork-title {
-          font-family: 'Lora', serif;
-          font-size: 1.3rem;
-          font-style: italic;
-          font-weight: 600;
-          color: #e91e63;
-          text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
-          margin: 0 0 0.3rem 0;
+          font-family: 'Lora', serif !important;
+          font-size: 1.3rem !important;
+          font-style: italic !important;
+          font-weight: 600 !important;
+          color: #e91e63 !important;
+          text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) !important;
+          margin: 0 0 0.3rem 0 !important;
         }
 
         .medium {
@@ -368,16 +369,26 @@ function Home() {
         }
 
         .portrait-link:hover img {
-          filter: brightness(1.02);
-          mask: url('/portfolio/assets/hope-Utfvr75w.png');
-          -webkit-mask: url('/portfolio/assets/hope-Utfvr75w.png');
-          mask-size: contain;
-          -webkit-mask-size: contain;
-          mask-repeat: no-repeat;
-          -webkit-mask-repeat: no-repeat;
-          mask-position: center;
-          -webkit-mask-position: center;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+          filter: brightness(0.3);
+        }
+
+        .portrait-shadow-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: url('/portfolio/assets/hope-Utfvr75w.png') no-repeat center;
+          background-size: contain;
+          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .portrait-link:hover .portrait-shadow-overlay {
+          opacity: 1;
         }
 
 
