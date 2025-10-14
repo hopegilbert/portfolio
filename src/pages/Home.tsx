@@ -317,8 +317,8 @@ function Home() {
           font-size: 1.3rem;
           font-style: italic;
           font-weight: 600;
-          color: #000000;
-          text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+          color: #e91e63;
+          text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
           margin: 0 0 0.3rem 0;
         }
 
@@ -368,7 +368,8 @@ function Home() {
         }
 
         .portrait-link:hover img {
-          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) brightness(1.02);
+          -webkit-filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) brightness(1.02);
         }
 
         .portrait-frame img {
