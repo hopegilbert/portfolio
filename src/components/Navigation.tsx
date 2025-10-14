@@ -9,9 +9,11 @@ function Navigation() {
   const isDocumentDesign = location.pathname === '/document-design' || location.pathname === '/portfolio/document-design';
   const isVideoEditing = location.pathname === '/video-editing' || location.pathname === '/portfolio/video-editing';
   const isPlatforms = location.pathname === '/platforms' || location.pathname === '/portfolio/platforms';
+  const isSocialMedia = location.pathname === '/social-media' || location.pathname === '/portfolio/social-media';
+  const isIntelligenceHub = location.pathname === '/intelligence-hub' || location.pathname === '/portfolio/intelligence-hub';
 
-  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, Document Design, Video Editing, or Platforms pages (full-screen experiences)
-  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign || isVideoEditing || isPlatforms) {
+  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, Document Design, Video Editing, Platforms, Social Media, or Intelligence Hub pages (full-screen experiences)
+  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign || isVideoEditing || isPlatforms || isSocialMedia || isIntelligenceHub) {
     return null;
   }
 
