@@ -7,9 +7,11 @@ function Navigation() {
   const isMovies = location.pathname === '/movies' || location.pathname === '/portfolio/movies';
   const isArtWork = location.pathname === '/art-work' || location.pathname === '/portfolio/art-work';
   const isDocumentDesign = location.pathname === '/document-design' || location.pathname === '/portfolio/document-design';
+  const isVideoEditing = location.pathname === '/video-editing' || location.pathname === '/portfolio/video-editing';
+  const isPlatforms = location.pathname === '/platforms' || location.pathname === '/portfolio/platforms';
 
-  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, or Document Design pages (full-screen experiences)
-  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign) {
+  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, Document Design, Video Editing, or Platforms pages (full-screen experiences)
+  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign || isVideoEditing || isPlatforms) {
     return null;
   }
 
