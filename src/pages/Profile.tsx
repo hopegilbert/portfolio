@@ -42,20 +42,20 @@ const Profile: React.FC = () => {
       color: '#6366f1'
     },
     {
-      title: 'Frameworks & Libraries',
+      title: 'Development Tools',
       skills: ['React', 'Vite', 'Git', 'npm', 'Xcode'],
       icon: '⚛️',
       color: '#8b5cf6'
     },
     {
       title: 'Design & Creative',
-      skills: ['Adobe Illustrator', 'Photoshop', 'Premiere Pro', 'InDesign', 'Procreate', 'CapCut', 'Canva'],
+      skills: ['Adobe Illustrator', 'Photoshop', 'Premiere Pro', 'InDesign', 'Procreate', 'CapCut', 'Canva', 'WordPress'],
       icon: '🎨',
       color: '#ec4899'
     },
     {
       title: 'Marketing & Business',
-      skills: ['HubSpot Marketing Hub', 'HubSpot Sales Software', 'SEO Copywriting', 'Social Media PPC', 'Facebook Ads Manager', 'Google Analytics'],
+      skills: ['HubSpot Marketing Hub', 'HubSpot Sales Software', 'SEO Copywriting', 'Social Media PPC', 'Facebook Ads Manager', 'Google Analytics', 'Email Marketing'],
       icon: '📈',
       color: '#10b981'
     }
@@ -63,71 +63,88 @@ const Profile: React.FC = () => {
 
   const timelineEvents: TimelineEvent[] = [
     {
-      year: '2024',
-      title: 'Firewalk Fundraiser',
-      description: 'Completed Firewalk for Simon on the Streets, raising £270 for homelessness support',
+      year: 'Nov 2024',
+      title: 'Firewalk for Simon on the Streets',
+      description: 'Raised £270 by walking over hot coals to support those facing homelessness',
       type: 'achievement',
       icon: '🔥'
     },
     {
-      year: '2024',
-      title: 'HubSpot Certification',
-      description: 'Earned HubSpot Sales Software certification (Nov 2024 - Dec 2025)',
+      year: 'Nov 2024',
+      title: 'HubSpot Sales Software Certification',
+      description: 'Certified in HubSpot Sales Software (Nov 2024 - Dec 2025)',
       type: 'achievement',
       icon: '🏆'
     },
     {
-      year: '2024',
+      year: 'May 2025',
       title: 'Marketing & Business Development Associate',
-      description: 'Current role at Mawney Partners, supporting document preparation, design work, and operations',
+      description: 'Mawney Partners, London - Supporting document preparation, design work, and operations',
       type: 'work',
       icon: '💼'
     },
     {
-      year: '2023',
+      year: 'Jan 2025',
       title: 'Marketing Executive',
-      description: 'Worked at Flat Fee Recruiter, developing digital marketing campaigns and strategies',
+      description: 'Flat Fee Recruiter - Drove marketing efforts, executed targeted campaigns',
       type: 'work',
       icon: '📊'
     },
     {
-      year: '2021-2024',
-      title: 'Self-Taught Programming',
-      description: 'Learned Python, JavaScript, TypeScript, Swift, and built multiple projects including Mawney Partners App and this portfolio',
-      type: 'personal',
-      icon: '🚀'
+      year: 'Oct 2024',
+      title: 'Marketing Assistant/Graduate Trainee',
+      description: 'Flat Fee Recruiter - Blended strategy with creativity for compelling campaigns',
+      type: 'work',
+      icon: '📈'
+    },
+    {
+      year: 'Jul 2021',
+      title: 'Tough Mudder for Breast Cancer Now',
+      description: 'Completed 10-mile obstacle course, raising over £1,100',
+      type: 'achievement',
+      icon: '🏃‍♀️'
     },
     {
       year: '2018-2021',
-      title: 'BSc Psychology',
-      description: 'Graduated from Durham University with dissertation on visual perception and cognitive psychology',
+      title: 'BSc Psychology - Durham University',
+      description: 'Graduated with 2:1 honors. Dissertation achieved First (76%) on cognitive estimation and visual perception',
       type: 'education',
       icon: '🎓'
+    },
+    {
+      year: '2010',
+      title: 'Swimathon for Marie Curie',
+      description: 'Raised over £1,000 for cancer support',
+      type: 'achievement',
+      icon: '🏊‍♀️'
     }
   ];
 
   const achievements = [
-    { title: 'John Snow Ball Chair', description: 'Organized largest college ball at Durham University', icon: '🎭' },
-    { title: 'Tough Mudder Participant', description: 'Completed challenging obstacle course for charity', icon: '🏃‍♀️' },
-    { title: 'Swimathon Organizer', description: 'Raised funds through swimming challenges', icon: '🏊‍♀️' },
-    { title: 'Fresher Representative', description: 'Led student representation and events', icon: '👥' },
-    { title: '20 Academic Articles', description: 'Published research on psychology, business, and recruitment', icon: '📚' }
+    { title: 'John Snow Ball Chair', description: 'Managed three large-scale events for over 700 guests, overseeing themes, entertainment, and catering', icon: '🎭' },
+    { title: 'John Snow Charity Fashion Show', description: 'Compered event that raised over £13,500', icon: '💝' },
+    { title: 'First Class Dissertation', description: 'Achieved First (76%) in Psychology dissertation at Durham University', icon: '🎓' },
+    { title: 'Full Arts Colours', description: 'Awarded for excellence in the arts at Woodhouse Grove School', icon: '🎨' },
+    { title: '2nd VII Netball Colours', description: 'Recognized for netball achievements', icon: '🏐' },
+    { title: 'Sarah Ridy Cup for Singing', description: 'School award for vocal performance', icon: '🎤' },
+    { title: 'Grade 7 Musical Theatre Distinction', description: 'Achieved distinction in Musical Theatre (Dec 2019)', icon: '🎭' }
   ];
 
   const personalInterests = [
-    { interest: 'Sports & Fitness', description: 'Netball, swimming, coaching, and maintaining an active lifestyle', icon: '⚽' },
-    { interest: 'Creative Arts', description: 'Digital art, traditional painting, video editing, and graphic design', icon: '🎨' },
-    { interest: 'Theatre & Music', description: 'Singing, performing arts, and cultural appreciation', icon: '🎭' },
-    { interest: 'Travel & Culture', description: 'Extensive European travel and cultural exploration', icon: '✈️' },
-    { interest: 'Social Impact', description: 'Charity work, fundraising, and community involvement', icon: '❤️' }
+    { interest: 'Sports & Netball', description: 'Played for school Second Netball Team and District Team, helped college team secure top league position', icon: '🏐' },
+    { interest: 'Swimming & Coaching', description: 'Assistant Swim Coach at Ducklings and Dolphins (Sept 2019 - Jul 2020)', icon: '🏊‍♀️' },
+    { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 5 Flute', icon: '🎤' },
+    { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: '🎨' },
+    { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: '✈️' },
+    { interest: 'Charity & Social Impact', description: 'Raised over £15,000 for various charities including Breast Cancer Now, Marie Curie, and Simon on the Streets', icon: '❤️' }
   ];
 
   const careerGoals = [
     'Web Development & Design',
-    'AI & Machine Learning',
-    'Marketing Strategy & Innovation',
-    'Entrepreneurship & Business Growth',
-    'Social Impact Through Technology'
+    'Artificial Intelligence',
+    'Marketing & Digital Strategy',
+    'Human-Centered Design',
+    'Technology & Creativity Intersection'
   ];
 
   const renderOverview = () => (
@@ -135,29 +152,30 @@ const Profile: React.FC = () => {
       <div className="hero-content">
         <div className="hero-text">
           <h1>Hope Gilbert</h1>
-          <p className="hero-subtitle">Marketing Professional • Self-Taught Developer • Creative Visionary</p>
+          <p className="hero-subtitle">Marketing & Business Development • Self-Taught Developer • Psychology Graduate</p>
           <p className="hero-description">
-            A dynamic professional blending psychology, marketing expertise, and self-taught programming skills. 
-            Currently driving business development at Mawney Partners while building innovative digital solutions 
-            and maintaining a passion for creative expression and social impact.
+            Marketing and Business Development Associate at Mawney Partners with a BSc in Psychology from Durham University. 
+            Combining marketing expertise, self-taught programming skills (Python, JavaScript, TypeScript, Swift), 
+            and creative design abilities to deliver innovative digital solutions. Passionate about bridging technology, 
+            psychology, and creative expression.
           </p>
         </div>
         <div className="hero-stats">
           <div className="stat">
-            <span className="stat-number">20+</span>
-            <span className="stat-label">Articles Published</span>
+            <span className="stat-number">20</span>
+            <span className="stat-label">Academic Articles</span>
           </div>
           <div className="stat">
             <span className="stat-number">7</span>
             <span className="stat-label">Programming Languages</span>
           </div>
           <div className="stat">
-            <span className="stat-number">£500+</span>
-            <span className="stat-label">Charity Raised</span>
+            <span className="stat-number">£15K+</span>
+            <span className="stat-label">Charity Funds Raised</span>
           </div>
           <div className="stat">
-            <span className="stat-number">3</span>
-            <span className="stat-label">Major Projects</span>
+            <span className="stat-number">17+</span>
+            <span className="stat-label">Digital Art Pieces</span>
           </div>
         </div>
       </div>
@@ -254,9 +272,9 @@ const Profile: React.FC = () => {
       <h2>Let's Connect</h2>
       <div className="contact-info">
         <div className="contact-methods">
-          <a href="mailto:hope.gilbert@example.com" className="contact-link">
+          <a href="mailto:hopegilbert@live.com" className="contact-link">
             <span className="contact-icon">📧</span>
-            <span>hope.gilbert@example.com</span>
+            <span>hopegilbert@live.com</span>
           </a>
           <a href="https://www.linkedin.com/in/hope-gilbert-1942471bb/" target="_blank" rel="noopener noreferrer" className="contact-link">
             <span className="contact-icon">💼</span>
@@ -264,7 +282,7 @@ const Profile: React.FC = () => {
           </a>
         </div>
         <p className="contact-note">
-          Always excited to discuss new opportunities, collaborations, and innovative projects!
+          Based in London, England. Open to discussing opportunities in web development, design, AI, and marketing.
         </p>
       </div>
     </div>
