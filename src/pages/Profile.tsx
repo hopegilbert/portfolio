@@ -200,7 +200,7 @@ const Profile: React.FC = () => {
       {
         year: '2024',
         title: 'John Snow Charity Fashion Show',
-        description: 'Organized charity fashion show raising £13,500',
+        description: 'Compered charity fashion show raising £13,500',
         type: 'achievement',
         icon: 'fa-tshirt'
       },
@@ -221,7 +221,7 @@ const Profile: React.FC = () => {
     { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: 'fa-medal' },
     { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: 'fa-palette' },
     { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: 'fa-trophy' },
-    { title: 'John Snow Charity Fashion Show', description: 'Organized charity fashion show raising £13,500', icon: 'fa-tshirt' }
+    { title: 'John Snow Charity Fashion Show', description: 'Compered charity fashion show raising £13,500', icon: 'fa-tshirt' }
   ];
 
   const personalInterests = [
@@ -230,7 +230,7 @@ const Profile: React.FC = () => {
     { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 6 Flute', icon: 'fa-music' },
     { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: 'fa-paint-brush' },
     { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: 'fa-globe-europe' },
-    { interest: 'Charity & Social Impact', description: 'Raised significant funds for various charities including John Snow Charity Fashion Show (£13,500), Tough Mudder for Breast Cancer Now (£1,100+), Marie Curie (£1,000+), and Simon on the Streets (£270)', icon: 'fa-heart' }
+    { interest: 'Charity & Social Impact', description: 'Raised significant funds for various charities including compering John Snow Charity Fashion Show (£13,500), Tough Mudder for Breast Cancer Now (£1,100+), Marie Curie (£1,000+), and Simon on the Streets (£270)', icon: 'fa-heart' }
   ];
 
   const careerGoals = [
