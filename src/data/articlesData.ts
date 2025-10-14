@@ -1093,6 +1093,52 @@ export const articlesData: Article[] = [
       'Vogel, E. K., McCollough, A. W., & Machizawa, M. G. (2005). Neural measures reveal individual differences in controlling access to working memory. Nature, 438(7067), 500–503. https://doi.org/10.1038/nature04171',
       'Zhang, W., & Luck, S. J. (2008). Discrete fixed-resolution representations in visual working memory. Nature, 453(7192), 233–235. https://doi.org/10.1038/nature06860'
     ]
+  },
+  {
+    id: 20,
+    title: 'Are you promoting positive mental health in the workplace?',
+    excerpt: 'A comprehensive guide for employers on promoting positive mental health in the workplace, including practical tips and the business benefits of prioritizing employee wellbeing.',
+    date: 'October 10, 2023',
+    readTime: '5 min read',
+    category: 'Business Psychology',
+    content: `
+      <h1>Are you promoting positive mental health in the workplace?</h1>
+      
+      <p><em>October 10, 2023</em></p>
+
+      <p>Over the past decade awareness surrounding mental health has dramatically improved, particularly in the workplace, where the huge disruption brought about by the COVID pandemic exposed the risks of burnout and the potential benefits of new ways of working.</p>
+
+      <p>It is clear that businesses committed to promoting and protecting employees' mental health will not only benefit from a positive environment and being a good place to work, they will also be more likely to succeed.</p>
+
+      <p>This is because employers that demonstrate a positive attitude to mental health also benefit from reduced staff turnover, fewer absences and increased productivity.</p>
+
+      <h2>Promoting Positive Mental Health: Top Tips for Employers</h2>
+
+      <p><strong>Do you check in with your employees wellbeing?</strong></p>
+
+      <p>By following a few simple principles you can help sustain a positive workplace environment:</p>
+
+      <h3>Be open and inviting</h3>
+      <p>An aloof leadership style will soon result in an erosion of trust, stifled communication, and lower morale. It hinders team cohesion, reduces feedback opportunities, and can increase turnover. Approachable leadership fosters a healthier work environment.</p>
+
+      <h3>Support a positive work/life balance</h3>
+      <p>Flexible working is known to help with wellbeing in many ways such as reduced stress, improved memory, better sleep habits and improved mood. Nowadays, '<a href="https://www.peoplemanagement.co.uk/article/1830737/growing-number-jobseekers-value-work-anywhere-schemes-mental-health-support-research-finds" target="_blank" rel="noopener noreferrer">the vast majority of workers are seeking work from home jobs</a>' and savvy employers are learning to embrace this.</p>
+
+      <h3>Be reasonable in your expectations</h3>
+      <p>Stress and pressure can really harm a person's mental health. Pushing people to their limits or asking for more than they can give will ultimately result in burnout. This doesn't mean that people don't want their work to be challenging, but by keeping your expectations realistic you will ensure consistent good performance.</p>
+
+      <h3>Think outside the box</h3>
+      <p>There are many other ways to keep your employees mental health in good shape, such as promoting specific activities or events.</p>
+
+      <h2>The Bottom Line: Why Prioritising Mental Health in the Workplace Pays Off</h2>
+
+      <p>By keeping your employees mentally healthy you will increase engagement and help them perform at their best. 'Addressing wellbeing at work increases productivity by as much as 12%.'</p>
+
+      <p>In today's competitive business landscape, the well-being of employees isn't just a moral obligation — this should go without saying – it's a strategic advantage.</p>
+    `,
+    references: [
+      'People Management. (2023). Growing number of jobseekers value \'work from anywhere\' schemes and mental health support, research finds. Retrieved from https://www.peoplemanagement.co.uk/article/1830737/growing-number-jobseekers-value-work-anywhere-schemes-mental-health-support-research-finds'
+    ]
   }
 ];
 

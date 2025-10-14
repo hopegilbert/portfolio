@@ -7,11 +7,11 @@ const articles = articlesData;
 
 // AI responses based on Hope Gilbert's professional background
     const sampleResponses: Record<string, string> = {
-      'experience': `Hope Gilbert is currently a Marketing and Business Development Associate at Mawney Partners (May 2025 - Present) in London. She joined Mawney Partners after completing her BSc in Psychology from Durham University, bringing several years of marketing experience specializing in design and development. She supports the team with document preparation, design work, and operations. Previously, she was a Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025) and Marketing Assistant/Graduate Trainee (Oct 2024 - Dec 2024), where she drove marketing efforts, blended strategy with creativity, and executed targeted campaigns. Her diverse background includes freelance design work for KoreaSphereUK and Palatine Power, bartending roles, childcare work, and swim coaching.`,
+      'experience': `Hope Gilbert is currently a Marketing and Business Development Associate at Mawney Partners (May 2025 - Present) in London. She joined Mawney Partners after completing her BSc in Psychology from Durham University, bringing several years of marketing experience specializing in design and development. She supports the team with document preparation, design work, and operations. Previously, she was a Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025) and Marketing Assistant/Graduate Trainee (Oct 2024 - Dec 2024), where she drove marketing efforts, blended strategy with creativity, and executed targeted campaigns. Her diverse background includes freelance design work for KoreaSphereUK and Palatine Power, bartending roles, childcare work, and swim coaching. **Notable Projects:** She has built the Mawney Partners App and Website, created Market Maps, and developed this comprehensive portfolio website showcasing her full-stack development skills.`,
   
   'marketing': `Hope has extensive marketing experience across multiple roles. As Marketing and Business Development Associate at Mawney Partners, she supports document preparation, design work, and operations. Previously as Marketing Executive at Flat Fee Recruiter, she drove marketing efforts by blending strategy with creativity to craft compelling campaigns that resonate with both clients and candidates. She executed targeted marketing strategies, developed engaging content, and leveraged data to optimize performance. Her expertise includes social media PPC advertising, email marketing, HubSpot Marketing Hub, Facebook Ads, Google Analytics, website building with WordPress and HTML, and comprehensive digital marketing strategy. She's certified in HubSpot Sales Software (Nov 2024 - Dec 2025) and has extensive experience with design tools like Adobe Illustrator, CapCut, and social media platforms.`,
   
-  'skills': `Hope's technical skills include WordPress, HTML (self-taught), SEO Copywriting, HubSpot Marketing Hub, HubSpot Sales Software (certified Nov 2024 - Dec 2025), Office 365, Social Media PPC, Facebook Ads Manager, Google Analytics, Adobe Illustrator, Procreate, CapCut, and YouTube. She's proficient in Photoshop, Premiere Pro, InDesign, Canva, and GitHub. Her marketing expertise spans email marketing, social media marketing, digital marketing, marketing strategy, website building, and event coordination through Eventbrite. Her creative abilities span traditional art mediums (acrylic, watercolor, oil, pencil) to digital illustration and video editing. Her soft skills include: excellent communication, organization, time management, reliability, team collaboration, friendly demeanor, and kindness. She also has strong analytical and research abilities from her psychology degree.`,
+  'skills': `Hope has an impressive range of technical and creative skills. **Programming Languages:** She has taught herself Python, HTML, CSS, JavaScript, JSON, Swift, TypeScript (TSX), and more. **Frameworks & Libraries:** She's proficient in React, Vite, and various other frameworks (evident from building this comprehensive portfolio website). **Development Tools:** Git, npm, Xcode for iOS development, and other essential development tools. **Marketing & Design:** WordPress, SEO Copywriting, HubSpot Marketing Hub, HubSpot Sales Software (certified Nov 2024 - Dec 2025), Office 365, Social Media PPC, Facebook Ads Manager, Google Analytics, Adobe Illustrator, Photoshop, Premiere Pro, InDesign, Procreate, CapCut, Canva, and YouTube. **Backend Basics:** She has foundational knowledge in backend technologies and databases. Her marketing expertise spans email marketing, social media marketing, digital marketing, marketing strategy, website building, and event coordination. Her creative abilities span traditional art mediums (acrylic, watercolor, oil, pencil) to digital illustration and video editing. Her soft skills include excellent communication, organization, time management, reliability, team collaboration, friendly demeanor, and kindness. She also has strong analytical and research abilities from her psychology degree.`,
   
   'education': `Hope graduated from Durham University with a BSc in Psychology, achieving a 2:1 honors degree. Her dissertation explored "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" She previously attended Woodhouse Grove School where she earned A*BB in her A-levels. Her psychology degree strengthened her analytical and research abilities, fostering a data-driven approach to decision-making. Additional coursework in English and business enhanced her communication and strategic thinking skills.`,
   
@@ -23,21 +23,25 @@ const articles = articlesData;
   
   'creative': `Hope's creative work spans multiple disciplines. Her A-Level Art background enables her to design visually compelling marketing materials, logos, and packaging. She creates digital art using Procreate and Adobe Illustrator, produces video content with CapCut and Premiere Pro, and designs social media content using Canva. Her portfolio showcases 17+ digital art pieces including portraits and mixed media work, social media designs, video editing projects, app mockups, and document layouts. She combines artistic vision with technical proficiency across traditional and digital mediums.`,
   
-  'portfolio': `Hope's portfolio demonstrates her multidisciplinary talents: (1) Psychology Research - her dissertation and 18 academic essays on cognitive psychology, autism, anxiety, and neuroscience; (2) Digital Art - 17+ pieces including portraits, mixed media, and illustrations; (3) Marketing Work - social media campaigns, PPC advertising, email marketing, and branded content; (4) Design Projects - logos, packaging, document layouts, and promotional materials; (5) Video Editing - content for social media and promotional videos; (6) Web Development - HTML websites and WordPress pages; (7) App Design - UI/UX mockups and interactive experiences. You can explore all sections through her portfolio gallery!`,
+  'portfolio': `Hope's portfolio demonstrates her multidisciplinary talents: (1) Psychology Research - her dissertation and 19 academic essays on cognitive psychology, autism, anxiety, neuroscience, and workplace psychology; (2) Digital Art - 17+ pieces including portraits, mixed media, and illustrations; (3) Marketing Work - social media campaigns, PPC advertising, email marketing, and branded content; (4) Design Projects - logos, packaging, document layouts, and promotional materials; (5) Video Editing - content for social media and promotional videos; (6) Web Development - HTML websites and WordPress pages; (7) App Design - UI/UX mockups and interactive experiences. You can explore all sections through her portfolio gallery!`,
   
-  'articles': `Hope has published extensive academic research including her dissertation and 18 essays on topics like: Autism and Anxiety (sensory processing differences), Dopamine and Reward Systems, Visual Attention and Working Memory, Face Recognition, Eyewitness Testimony, Theatre of Consciousness, Vegetative State, Neural Personality, Drug Addiction and Treatment, Crime and Youth, Marriage, Jurors Competency, Stressors and Mental Health, Close Relationships, Cognitive Biology, Business Psychology (organizational functioning), and Dogs in Prison Rehabilitation. All articles demonstrate her strong research and analytical abilities. Check the Articles & Work tab to read them!`,
+  'articles': `Hope has published extensive academic research including her dissertation and 19 essays on topics like: Autism and Anxiety (sensory processing differences), Dopamine and Reward Systems, Visual Attention and Working Memory, Face Recognition, Eyewitness Testimony, Theatre of Consciousness, Vegetative State, Neural Personality, Drug Addiction and Treatment, Crime and Youth, Marriage, Jurors Competency, Stressors and Mental Health, Close Relationships, Cognitive Biology, Business Psychology (organizational functioning), Dogs in Prison Rehabilitation, and workplace mental health promotion. Her recent work includes "Are you promoting positive mental health in the workplace?" (October 2023) which provides practical guidance for employers on supporting employee wellbeing. All articles demonstrate her strong research and analytical abilities. Check the Articles & Work tab to read them!`,
   
   'sports': `Hope is athletic and has been actively involved in sports throughout her education. She played for her school's Second Netball Team and District Team, represented her House in various sports competitions, and helped her college netball team secure the top position in the league through dedication and training. She also worked as an Assistant Swim Coach at Ducklings and Dolphins (Sept 2019 - Jul 2020), combining her passion for sports with mentorship.`,
   
   'achievements': `Hope has received numerous honors and achievements including: Full Arts Colours, 2nd VII Netball Colours, Sarah Ridy Cup for Singing, Atkinson House Service Award, Grade 7 Musical Theatre Distinction (Dec 2019), and Grade 5 Flute Pass (Mar 2018). She achieved a First (76%) in her psychology dissertation at Durham University. Professionally, she was promoted from Marketing Assistant to Marketing Executive at Flat Fee Recruiter, and now works as Marketing and Business Development Associate at Mawney Partners. She successfully managed large-scale events for 700+ guests as Ball Chair and raised over £15,000+ for various charities through organized events and personal fundraising efforts, including her recent Firewalk for Simon on the Streets (Nov 2024). She's certified in HubSpot Sales Software (Nov 2024 - Dec 2025) and has multiple LinkedIn Learning certifications in diversity recruiting, interviewing, and HR practices.`,
   
-  'contact': `You can reach Hope Gilbert via email at hopegilbert@live.com or by phone at 07929460839. She is currently based in London, England, working as Marketing and Business Development Associate at Mawney Partners. For professional inquiries, you can also connect with her on LinkedIn at www.linkedin.com/in/hope-gilbert-1942471bb. Her portfolio website showcases her diverse work across psychology research, digital art, marketing, design, and web development.`
+  'contact': `You can reach Hope Gilbert via email at hopegilbert@live.com. She is currently based in London, England, working as Marketing and Business Development Associate at Mawney Partners. For professional inquiries, you can also connect with her on LinkedIn at www.linkedin.com/in/hope-gilbert-1942471bb. Her portfolio website showcases her diverse work across psychology research, digital art, marketing, design, and web development.`,
+  
+  'interests': `Hope has diverse personal interests that complement her professional work. She's passionate about sports, socializing, creative activities, theatre, and music. Her unique talents include singing and art, which she has developed alongside her professional skills. She has traveled extensively, particularly throughout Europe, which has enriched her cultural perspective. These interests demonstrate her well-rounded personality and creative mindset that translates into her professional work.`,
+  
+  'career_goals': `Hope is particularly interested in web development, design, AI, and marketing - areas where she can combine her technical skills, creative abilities, and analytical mindset. Her self-taught programming skills, combined with her marketing experience and psychology background, position her well for roles that bridge technology and human-centered design. She's passionate about creating digital experiences that are both functional and engaging, as evidenced by her portfolio projects including the Mawney Partners App and Website, Market Maps, and this comprehensive portfolio.`
 };
 
 function IntelligenceHub() {
   const [activeTab, setActiveTab] = useState<'ai' | 'articles'>('ai');
   const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant', content: string }>>([
-    { role: 'assistant', content: 'Hi! I\'m your AI assistant with comprehensive knowledge about Hope Gilbert. I can help you learn about her current role at Mawney Partners, marketing expertise, psychology research, creative work, charity fundraising, leadership experience, and much more! What would you like to know?' }
+    { role: 'assistant', content: 'Hi! I\'m your AI assistant with comprehensive knowledge about Hope Gilbert. I can help you learn about her current role at Mawney Partners, self-taught coding skills (Python, JavaScript, TypeScript, Swift), marketing expertise, psychology research, creative work, charity fundraising, personal interests, career goals, and much more! What would you like to know?' }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -63,14 +67,16 @@ function IntelligenceHub() {
         'experience', 'work', 'job', 'career', 'professional', 'background', 'history', 
         'current', 'present', 'position', 'role', 'employment', 'mawney', 'partners',
         'flat fee', 'recruiter', 'marketing executive', 'business development', 'associate',
-        'bartender', 'waiter', 'waitress', 'barista', 'childcare', 'swim coach'
+        'bartender', 'waiter', 'waitress', 'barista', 'childcare', 'swim coach',
+        'current job', 'what is', 'tell me about', 'coding projects', 'projects has', 'built'
       ];
       
       // Marketing Keywords
       const marketingKeywords = [
         'marketing', 'campaign', 'social media', 'digital', 'advertising', 'ppc', 'seo',
         'content', 'brand', 'strategy', 'analytics', 'facebook', 'instagram', 'linkedin',
-        'email marketing', 'hubspot', 'google ads', 'promotion', 'outreach', 'seo copywriting'
+        'email marketing', 'hubspot', 'google ads', 'promotion', 'outreach', 'seo copywriting',
+        'marketing skills', 'what marketing'
       ];
       
       // Skills Keywords
@@ -78,7 +84,8 @@ function IntelligenceHub() {
         'skill', 'ability', 'proficient', 'technical', 'competency', 'expertise',
         'software', 'tool', 'certification', 'qualified', 'trained', 'capable',
         'adobe', 'photoshop', 'illustrator', 'wordpress', 'html', 'css', 'capcut',
-        'procreate', 'canva', 'premiere pro', 'indesign'
+        'procreate', 'canva', 'premiere pro', 'indesign', 'what skills', 'skills does',
+        'programming languages', 'python', 'javascript', 'typescript', 'swift', 'react', 'vite'
       ];
       
       // Education Keywords
@@ -92,7 +99,7 @@ function IntelligenceHub() {
       const researchKeywords = [
         'research', 'dissertation', 'academic', 'study', 'psychology', 'cognitive',
         'visual', 'perception', 'thouless', 'experiment', 'findings', 'analysis',
-        'publication', 'essay', 'paper', 'investigation', 'autism', 'anxiety'
+        'publication', 'essay', 'paper', 'investigation', 'autism', 'anxiety', 'research has'
       ];
       
       // Leadership Keywords
@@ -106,7 +113,7 @@ function IntelligenceHub() {
       const charityKeywords = [
         'charity', 'fundraising', 'volunteer', 'raise', 'donation', 'fundraiser',
         'breast cancer', 'marie curie', 'simon on the streets', 'firewalk',
-        'tough mudder', 'swimathon', 'homelessness', 'cancer', 'care'
+        'tough mudder', 'swimathon', 'homelessness', 'cancer', 'care', 'charity work'
       ];
       
       // Creative Keywords
@@ -137,13 +144,26 @@ function IntelligenceHub() {
       // Achievements Keywords
       const achievementsKeywords = [
         'achievement', 'award', 'honor', 'accomplishment', 'success', 'recognition',
-        'distinction', 'colours', 'grade', 'certification', 'certificate'
+        'distinction', 'colours', 'grade', 'certification', 'certificate', 'recent achievements',
+        'tell me about her recent', 'achievements'
       ];
       
       // Contact Keywords
       const contactKeywords = [
         'contact', 'email', 'phone', 'linkedin', 'reach', 'connect', 'get in touch',
-        'communication', 'message', 'call', 'email address', 'phone number'
+        'communication', 'message', 'call', 'email address', 'phone number', 'how can i contact'
+      ];
+      
+      // Interests Keywords
+      const interestsKeywords = [
+        'interests', 'hobbies', 'personal', 'sports', 'socialising', 'creative', 'theatre', 'music',
+        'singing', 'art', 'travel', 'europe', 'cultural', 'passionate', 'talents'
+      ];
+      
+      // Career Goals Keywords
+      const careerGoalsKeywords = [
+        'career goals', 'aspirations', 'future', 'web development', 'design', 'ai', 'marketing',
+        'interested in', 'want to', 'looking for', 'professional goals', 'ambitions'
       ];
 
       // Calculate confidence scores for each category
@@ -160,14 +180,16 @@ function IntelligenceHub() {
         { name: 'articles', keywords: articlesKeywords },
         { name: 'sports', keywords: sportsKeywords },
         { name: 'achievements', keywords: achievementsKeywords },
-        { name: 'contact', keywords: contactKeywords }
+        { name: 'contact', keywords: contactKeywords },
+        { name: 'interests', keywords: interestsKeywords },
+        { name: 'career_goals', keywords: careerGoalsKeywords }
       ];
 
       let bestMatch = { category: '', score: 0 };
 
       categories.forEach(category => {
         const matches = category.keywords.filter(keyword => message.includes(keyword));
-        const score = matches.length / category.keywords.length;
+        const score = matches.length;
         
         if (score > bestMatch.score) {
           bestMatch = { category: category.name, score: score };
@@ -175,7 +197,7 @@ function IntelligenceHub() {
       });
 
       // Handle multi-topic queries and context-aware responses
-      if (bestMatch.score >= 0.1) {
+      if (bestMatch.score > 0) {
         response = sampleResponses[bestMatch.category];
         
         // Add context for current/recent information
@@ -197,19 +219,26 @@ function IntelligenceHub() {
             response += "\n\n**Latest Certification:** Hope recently earned her HubSpot Sales Software certification (November 2024 - December 2025) and has been expanding her digital marketing expertise.";
           }
         }
+        
+        // Add website navigation guidance
+        if (bestMatch.category === 'creative' || bestMatch.category === 'portfolio' || bestMatch.category === 'articles') {
+          response += "\n\n**Explore More:** Check out the different sections of this portfolio website to see Hope's creative work, digital art, video projects, academic articles, and more detailed examples of her projects!";
+        }
       } else {
         // Enhanced fallback responses with helpful suggestions
         response = `I'd be happy to help! You can ask me about Hope's:
 
-🎯 **Professional Experience** - Current role at Mawney Partners, previous marketing roles at Flat Fee Recruiter
-💡 **Skills & Expertise** - Technical skills, certifications (including new HubSpot certification), creative abilities  
+🎯 **Professional Experience** - Current role at Mawney Partners, previous marketing roles, coding projects
+💡 **Skills & Expertise** - Programming languages (Python, JavaScript, TypeScript, Swift), frameworks, certifications
 🎓 **Education & Research** - Psychology degree from Durham University, dissertation, academic work
 🏆 **Achievements & Leadership** - Awards, honors, event organization (John Snow Ball Chair)
 🎨 **Creative Work** - Digital art, design projects, portfolio pieces, freelance work
 💝 **Charity Work** - Recent Firewalk fundraiser, Tough Mudder, Swimathon, and other fundraising efforts
+🎭 **Personal Interests** - Sports, theatre, music, singing, travel, creative activities
+🚀 **Career Goals** - Web development, design, AI, marketing interests and aspirations
 📞 **Contact Information** - How to reach Hope professionally
 
-**Try asking:** "What's Hope's current job?" or "Tell me about her recent achievements" or "What skills does she have?"
+**Try asking:** "What programming languages does Hope know?" or "What are her career goals?" or "Tell me about her personal interests"
 
 What would you like to know more about?`;
       }
@@ -284,7 +313,7 @@ What would you like to know more about?`;
               <input
                 type="text"
                 className="chat-input"
-                placeholder="Ask me about Hope's current role, recent achievements, marketing skills, charity work, research..."
+                placeholder="Ask me about Hope's coding skills, career goals, personal interests, projects, experience..."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
@@ -296,11 +325,11 @@ What would you like to know more about?`;
 
             <div className="suggested-questions">
               <p className="suggestions-label">Suggested questions:</p>
+              <button onClick={() => setInputValue("What programming languages does Hope know?")}>What programming languages does Hope know?</button>
+              <button onClick={() => setInputValue("What are Hope's career goals?")}>What are Hope's career goals?</button>
+              <button onClick={() => setInputValue("Tell me about Hope's personal interests")}>Tell me about Hope's personal interests</button>
+              <button onClick={() => setInputValue("What coding projects has Hope built?")}>What coding projects has Hope built?</button>
               <button onClick={() => setInputValue("What is Hope's current job?")}>What is Hope's current job?</button>
-              <button onClick={() => setInputValue("Tell me about Hope's recent achievements")}>Tell me about Hope's recent achievements</button>
-              <button onClick={() => setInputValue("What marketing skills does Hope have?")}>What marketing skills does Hope have?</button>
-              <button onClick={() => setInputValue("Tell me about Hope's charity work")}>Tell me about Hope's charity work</button>
-              <button onClick={() => setInputValue("What research has Hope done?")}>What research has Hope done?</button>
               <button onClick={() => setInputValue("How can I contact Hope?")}>How can I contact Hope?</button>
             </div>
           </div>
