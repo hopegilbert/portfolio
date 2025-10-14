@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Profile.css';
 
 interface SkillCategory {
@@ -676,6 +677,10 @@ const Profile: React.FC = () => {
 
       {/* Navigation */}
       <nav className="profile-nav">
+        <Link to="/" className="back-link">
+          <span className="back-icon">←</span>
+          <span>Back to Portfolio</span>
+        </Link>
         
         <div className="profile-nav-menu">
           <button 
