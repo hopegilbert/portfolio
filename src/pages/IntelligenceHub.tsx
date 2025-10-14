@@ -15,7 +15,9 @@ const articles = articlesData;
   
   'education': `Hope graduated from Durham University with a BSc in Psychology, achieving a 2:1 honors degree. Her dissertation explored "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" She previously attended Woodhouse Grove School where she earned A*BB in her A-levels. Her psychology degree strengthened her analytical and research abilities, fostering a data-driven approach to decision-making. Additional coursework in English and business enhanced her communication and strategic thinking skills.`,
   
-  'research': `Hope's research interests include cognitive psychology, visual perception, perceptual constancy, autism spectrum disorders, anxiety, neuroscience, consciousness, and behavioral psychology. Her dissertation at Durham University investigated the relationship between cognitive estimation and visual experience using psychophysical methods and Thouless's theory of phenomenal regression. She has published 19 academic works covering diverse topics from eyewitness testimony to dopamine reward systems, sensory processing in autism, and neural personality differences.`,
+  'research': `Hope's research interests include cognitive psychology, visual perception, perceptual constancy, autism spectrum disorders, anxiety, neuroscience, consciousness, and behavioral psychology. Her dissertation at Durham University investigated the relationship between cognitive estimation and visual experience using psychophysical methods and Thouless's theory of phenomenal regression. She has published 20 academic works covering diverse topics from eyewitness testimony to dopamine reward systems, sensory processing in autism, and neural personality differences.`,
+  
+  'dissertation': `Hope's dissertation, titled "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material, or Do They Occur Independently and Concurrently?" was completed at Durham University and achieved a First (76%). This comprehensive research explored the relationship between cognitive estimation and visual experience using psychophysical methods and Thouless's theory of phenomenal regression. The study involved three participants and used repeated measures design to investigate viewing angles of 20 degrees and 40 degrees. Hope's findings suggest that while cognitive estimation can influence visual perception, the two processes often operate in parallel, with each contributing uniquely to our understanding of object properties. The dissertation demonstrates her strong analytical abilities and research expertise in cognitive psychology.`,
   
   'leadership': `Hope has extensive leadership experience, having served as John Snow Ball Chair where she managed three large-scale events for over 700 guests, overseeing themes, entertainment, and catering while leading a team of three and coordinating with vendors, venues, and students. She independently organized a Valentine's Ball for nearly 200 guests in school. She also served as Fresher Representative at John Snow College, completing training in Alcohol Awareness, Consent Matters, and Active Bystander Intervention. Her leadership roles also included Prefect and Head of House positions, developing expertise in team management, event coordination, and stakeholder communication.`,
   
@@ -91,15 +93,21 @@ function IntelligenceHub() {
       // Education Keywords
       const educationKeywords = [
         'education', 'degree', 'university', 'durham', 'psychology', 'bsc', 'qualification',
-        'graduated', 'academic', 'study', 'course', 'dissertation', 'thesis', 'research',
-        'woodhouse grove', 'a-level', 'a level', 'school'
+        'graduated', 'academic', 'study', 'course', 'woodhouse grove', 'a-level', 'a level', 'school'
       ];
       
       // Research Keywords
       const researchKeywords = [
-        'research', 'dissertation', 'academic', 'study', 'psychology', 'cognitive',
+        'research', 'academic', 'study', 'psychology', 'cognitive',
         'visual', 'perception', 'thouless', 'experiment', 'findings', 'analysis',
         'publication', 'essay', 'paper', 'investigation', 'autism', 'anxiety', 'research has'
+      ];
+      
+      // Dissertation Keywords
+      const dissertationKeywords = [
+        'dissertation', 'tell me about', 'what is', 'hope\'s dissertation', 'cognitive estimation',
+        'visual experience', 'object shape', 'material perception', 'durham', 'psychology degree',
+        'first class', '76%'
       ];
       
       // Leadership Keywords
@@ -173,6 +181,7 @@ function IntelligenceHub() {
         { name: 'skills', keywords: skillsKeywords },
         { name: 'education', keywords: educationKeywords },
         { name: 'research', keywords: researchKeywords },
+        { name: 'dissertation', keywords: dissertationKeywords },
         { name: 'leadership', keywords: leadershipKeywords },
         { name: 'charity', keywords: charityKeywords },
         { name: 'creative', keywords: creativeKeywords },
@@ -191,8 +200,13 @@ function IntelligenceHub() {
         const matches = category.keywords.filter(keyword => message.includes(keyword));
         const score = matches.length;
         
-        if (score > bestMatch.score) {
-          bestMatch = { category: category.name, score: score };
+        // Boost score for specific important keywords
+        const importantKeywords = ['dissertation', 'current', 'recent', 'skills', 'experience', 'marketing', 'coding', 'projects'];
+        const importantMatches = matches.filter(keyword => importantKeywords.includes(keyword));
+        const boostedScore = score + (importantMatches.length * 2);
+        
+        if (boostedScore > bestMatch.score) {
+          bestMatch = { category: category.name, score: boostedScore };
         }
       });
 
@@ -231,6 +245,7 @@ function IntelligenceHub() {
 🎯 **Professional Experience** - Current role at Mawney Partners, previous marketing roles, coding projects
 💡 **Skills & Expertise** - Programming languages (Python, JavaScript, TypeScript, Swift), frameworks, certifications
 🎓 **Education & Research** - Psychology degree from Durham University, dissertation, academic work
+📚 **Dissertation** - Detailed information about Hope's cognitive psychology research
 🏆 **Achievements & Leadership** - Awards, honors, event organization (John Snow Ball Chair)
 🎨 **Creative Work** - Digital art, design projects, portfolio pieces, freelance work
 💝 **Charity Work** - Recent Firewalk fundraiser, Tough Mudder, Swimathon, and other fundraising efforts
