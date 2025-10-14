@@ -253,7 +253,7 @@ function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 2rem 1rem;
+          padding: 1rem 1rem 0.5rem 1rem;
           position: relative;
           z-index: 1;
         }
@@ -271,7 +271,7 @@ function Home() {
           margin-bottom: 1.5rem;
           position: relative;
           z-index: 1;
-          padding: 3rem 1rem;
+          padding: 1rem 1rem 3rem 1rem;
         }
 
         .profile-content {
