@@ -79,7 +79,16 @@ function Home() {
             <h1 className="artist-name">Hope Gilbert</h1>
             <p className="artist-dates">Creative Professional, United Kingdom</p>
             
-            <h2 className="artwork-title" style={{color: '#e91e63', fontSize: '1.5rem', fontWeight: '600', fontStyle: 'italic'}}>Digital Portfolio, 2025</h2>
+            <div style={{
+              color: '#e91e63', 
+              fontSize: '1.8rem', 
+              fontWeight: '700', 
+              fontStyle: 'italic',
+              display: 'block',
+              margin: '0 0 0.3rem 0',
+              fontFamily: 'Lora, serif',
+              lineHeight: '1.2'
+            }}>Digital Portfolio, 2025</div>
             <p className="medium">Multidisciplinary creative work</p>
             <p className="acquisition">Personal collection</p>
             
