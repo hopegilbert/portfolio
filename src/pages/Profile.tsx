@@ -9,6 +9,14 @@ interface SkillCategory {
   color: string;
 }
 
+interface TimelineEvent {
+  year: string;
+  title: string;
+  description: string;
+  type: 'education' | 'work' | 'achievement' | 'personal';
+  icon: string;
+}
+
 interface WorkExperience {
   company: string;
   role: string;
@@ -70,10 +78,90 @@ const Profile: React.FC = () => {
     }
   ];
 
+  const timelineEvents: TimelineEvent[] = [
+    {
+      year: '2025',
+      title: 'Marketing & Business Development Associate',
+      description: 'Started at Mawney Partners in London (May 2025 - Present), supporting document preparation, design work, and operations',
+      type: 'work',
+      icon: '💼'
+    },
+    {
+      year: '2025',
+      title: 'Marketing Executive',
+      description: 'Promoted to Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025)',
+      type: 'work',
+      icon: '📊'
+    },
+    {
+      year: '2024',
+      title: 'Marketing Assistant/Graduate Trainee',
+      description: 'Began career at Flat Fee Recruiter (Oct 2024 - Dec 2024), blending strategy with creativity',
+      type: 'work',
+      icon: '📈'
+    },
+    {
+      year: '2024',
+      title: 'HubSpot Sales Software Certification',
+      description: 'Earned certification (Nov 2024 - Dec 2025)',
+      type: 'achievement',
+      icon: '🏆'
+    },
+    {
+      year: '2024',
+      title: 'Firewalk for Simon on the Streets',
+      description: 'Walked over hot coals to raise £270 for homelessness support (Nov 2024)',
+      type: 'achievement',
+      icon: '🔥'
+    },
+    {
+      year: '2024',
+      title: 'Graduated Durham University',
+      description: 'BSc Psychology with 2:1 honors. Dissertation achieved First Class (76%)',
+      type: 'education',
+      icon: '🎓'
+    },
+    {
+      year: '2021',
+      title: 'Tough Mudder for Breast Cancer Now',
+      description: 'Completed 10-mile obstacle course (Jan-Jul 2021), raising over £1,100',
+      type: 'achievement',
+      icon: '🏃‍♀️'
+    },
+    {
+      year: '2020',
+      title: 'Started Durham University',
+      description: 'Began BSc Psychology degree at Durham University',
+      type: 'education',
+      icon: '🎓'
+    },
+    {
+      year: '2019-2020',
+      title: 'Assistant Swim Coach',
+      description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
+      type: 'work',
+      icon: '🏊‍♀️'
+    },
+    {
+      year: '2020',
+      title: 'Graduated Woodhouse Grove School',
+      description: 'Completed A-Levels with A*BB (Art A*, Psychology B, English Literature B)',
+      type: 'education',
+      icon: '🎓'
+    },
+    {
+      year: '2010',
+      title: 'Swimathon for Marie Curie',
+      description: 'Raised over £1,000 for cancer support',
+      type: 'achievement',
+      icon: '🏊‍♀️'
+    }
+  ];
+
   const achievements = [
     { title: 'John Snow Ball Chair', description: 'Managed large-scale events, overseeing themes, entertainment, and catering', icon: '🎭' },
     { title: 'John Snow Netball Club', description: 'Social Secretary and Gym Coordinator at Durham University', icon: '🏐' },
-    { title: 'First Class Dissertation', description: 'Achieved First Class (1st) in Psychology dissertation at Durham University', icon: '🎓' },
+    { title: 'First Class Dissertation', description: 'Achieved First Class (76%) in Psychology dissertation at Durham University', icon: '🎓' },
     { title: 'Head of Atkinson House', description: 'Leadership role at Woodhouse Grove School', icon: '👑' },
     { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: '🎖️' },
     { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: '🎨' },
@@ -190,7 +278,7 @@ const Profile: React.FC = () => {
       period: '2020 - 2024',
       grade: '2:1 (Second Class Honours, Upper Division)',
       highlights: [
-        'Dissertation: "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" - First Class (1st)',
+        'Dissertation: "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" - First Class (76%)',
         'Studied modules in social, cognitive and biological psychology with advanced research methods and statistics',
         'Took elective English Literature module in year 1',
         'Final year modules included Business and Economic Psychology, Close Relationships, Psychology and Law',
@@ -332,6 +420,26 @@ const Profile: React.FC = () => {
     </div>
   );
 
+  const renderTimeline = () => (
+    <div className="profile-section">
+      <h2>Journey & Achievements</h2>
+      <div className="timeline">
+        {timelineEvents.map((event, index) => (
+          <div key={index} className={`timeline-item ${event.type}`}>
+            <div className="timeline-marker">
+              <span className="timeline-icon">{event.icon}</span>
+            </div>
+            <div className="timeline-content">
+              <div className="timeline-year">{event.year}</div>
+              <h3>{event.title}</h3>
+              <p>{event.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   const renderAchievements = () => (
     <div className="profile-section">
       <h2>Notable Achievements</h2>
@@ -447,6 +555,12 @@ const Profile: React.FC = () => {
             Skills
           </button>
           <button 
+            className={activeSection === 'timeline' ? 'active' : ''}
+            onClick={() => setActiveSection('timeline')}
+          >
+            Timeline
+          </button>
+          <button 
             className={activeSection === 'achievements' ? 'active' : ''}
             onClick={() => setActiveSection('achievements')}
           >
@@ -474,6 +588,7 @@ const Profile: React.FC = () => {
           {activeSection === 'experience' && renderExperience()}
           {activeSection === 'education' && renderEducation()}
           {activeSection === 'skills' && renderSkills()}
+          {activeSection === 'timeline' && renderTimeline()}
           {activeSection === 'achievements' && renderAchievements()}
           {activeSection === 'personal' && renderPersonal()}
           {activeSection === 'contact' && renderContact()}
