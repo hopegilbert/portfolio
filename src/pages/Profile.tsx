@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import './Profile.css';
 
 interface SkillCategory {
@@ -86,20 +85,48 @@ const Profile: React.FC = () => {
       type: 'work',
       icon: 'fa-briefcase'
     },
-    {
-      year: '2025',
-      title: 'Marketing Executive',
-      description: 'Promoted to Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025)',
-      type: 'work',
-      icon: 'fa-chart-bar'
-    },
-    {
-      year: '2024',
-      title: 'Marketing Assistant/Graduate Trainee',
-      description: 'Began career at Flat Fee Recruiter (Oct 2024 - Dec 2024), blending strategy with creativity',
-      type: 'work',
-      icon: 'fa-chart-line'
-    },
+      {
+        year: '2023-2025',
+        title: 'Marketing Executive',
+        description: 'Marketing Executive at Flat Fee Recruiter (May 2023 - Present), Leeds, England',
+        type: 'work',
+        icon: 'fa-chart-bar'
+      },
+      {
+        year: '2023',
+        title: 'Bar Tender',
+        description: 'Revolution Bars (Feb 2023 - May 2023), Leeds, England',
+        type: 'work',
+        icon: 'fa-glass-martini-alt'
+      },
+      {
+        year: '2022',
+        title: 'Recruitment Administrator',
+        description: 'Mammoet (Oct 2022 - Dec 2022), Leeds, England',
+        type: 'work',
+        icon: 'fa-briefcase'
+      },
+      {
+        year: '2022',
+        title: 'Bar Tender',
+        description: 'Jimmy Allens (Aug 2022 - Feb 2023), Leeds, England',
+        type: 'work',
+        icon: 'fa-glass-martini-alt'
+      },
+      {
+        year: '2022',
+        title: 'Barista',
+        description: 'M&S (Aug 2022 - Oct 2022), Leeds, England',
+        type: 'work',
+        icon: 'fa-coffee'
+      },
+      {
+        year: '2021-2022',
+        title: 'Childcare',
+        description: 'Children\'s Corner (Aug 2021 - Jun 2022), Leeds, England',
+        type: 'work',
+        icon: 'fa-child'
+      },
     {
       year: '2024',
       title: 'HubSpot Sales Software Certification',
@@ -150,11 +177,18 @@ const Profile: React.FC = () => {
         icon: 'fa-glass-martini-alt'
       },
       {
-        year: '2017-2020',
-        title: 'Childcare Provider',
-        description: 'Provided childcare services for multiple families',
+        year: '2019-2020',
+        title: 'Waitress',
+        description: 'Stansfield Arms (Dec 2019 - Jan 2020), Yorkshire, England',
         type: 'work',
-        icon: 'fa-child'
+        icon: 'fa-utensils'
+      },
+      {
+        year: '2017-2019',
+        title: 'Shop Assistant',
+        description: 'Firefly Pottery (Aug 2017 - Dec 2019), Yorkshire, England',
+        type: 'work',
+        icon: 'fa-store'
       },
     {
       year: '2020',
@@ -193,7 +227,7 @@ const Profile: React.FC = () => {
   const personalInterests = [
     { interest: 'Sports & Netball', description: 'Played for school Second Netball Team and District Team, helped college team secure top league position', icon: 'fa-volleyball-ball' },
     { interest: 'Swimming & Coaching', description: 'Assistant Swim Coach at Ducklings and Dolphins (Sept 2019 - Jul 2020)', icon: 'fa-swimmer' },
-    { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 5 Flute', icon: 'fa-music' },
+    { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 6 Flute', icon: 'fa-music' },
     { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: 'fa-paint-brush' },
     { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: 'fa-globe-europe' },
     { interest: 'Charity & Social Impact', description: 'Raised significant funds for various charities including John Snow Charity Fashion Show (£13,500), Tough Mudder for Breast Cancer Now (£1,100+), Marie Curie (£1,000+), and Simon on the Streets (£270)', icon: 'fa-heart' }
@@ -224,8 +258,8 @@ const Profile: React.FC = () => {
     {
       company: 'Flat Fee Recruiter',
       role: 'Marketing Executive',
-      period: 'Jan 2025 - Apr 2025',
-      location: 'Remote',
+      period: 'May 2023 - Present',
+      location: 'Leeds, England',
       description: 'Promoted to Marketing Executive, driving marketing efforts by blending strategy with creativity to craft compelling campaigns.',
       responsibilities: [
         'Executed targeted marketing strategies',
@@ -236,17 +270,73 @@ const Profile: React.FC = () => {
       ]
     },
     {
-      company: 'Flat Fee Recruiter',
-      role: 'Marketing Assistant / Graduate Trainee',
-      period: 'Oct 2024 - Dec 2024',
-      location: 'Remote',
-      description: 'Started career in marketing, blending strategy with creativity for compelling campaigns that resonate with clients and candidates.',
+      company: 'Revolution Bars',
+      role: 'Bar Tender',
+      period: 'Feb 2023 - May 2023',
+      location: 'Leeds, England',
+      description: 'Provided excellent customer service in a busy bar environment.',
       responsibilities: [
-        'Assisted in developing marketing campaigns',
-        'Managed social media accounts and content',
-        'Supported email marketing initiatives',
-        'Conducted market research and analysis',
-        'Collaborated with design team on promotional materials'
+        'Served drinks and cocktails to customers',
+        'Managed busy periods efficiently',
+        'Handled cash and card transactions',
+        'Maintained clean and organized bar area',
+        'Provided excellent customer service'
+      ]
+    },
+    {
+      company: 'Mammoet',
+      role: 'Recruitment Administrator',
+      period: 'Oct 2022 - Dec 2022',
+      location: 'Leeds, England',
+      description: 'Administrative support for recruitment processes.',
+      responsibilities: [
+        'Assisted with recruitment administration',
+        'Coordinated candidate communications',
+        'Maintained recruitment databases',
+        'Supported recruitment team with administrative tasks',
+        'Ensured compliance with recruitment procedures'
+      ]
+    },
+    {
+      company: 'Jimmy Allens',
+      role: 'Bar Tender',
+      period: 'Aug 2022 - Feb 2023',
+      location: 'Leeds, England',
+      description: 'Bar service in restaurant environment.',
+      responsibilities: [
+        'Served drinks to restaurant customers',
+        'Managed bar operations during service',
+        'Handled payments and transactions',
+        'Maintained bar cleanliness and organization',
+        'Worked effectively in team environment'
+      ]
+    },
+    {
+      company: 'M&S',
+      role: 'Barista',
+      period: 'Aug 2022 - Oct 2022',
+      location: 'Leeds, England',
+      description: 'Coffee service and customer service.',
+      responsibilities: [
+        'Prepared and served coffee and beverages',
+        'Maintained coffee equipment',
+        'Provided excellent customer service',
+        'Handled cash and card transactions',
+        'Managed inventory and stock rotation'
+      ]
+    },
+    {
+      company: 'Children\'s Corner',
+      role: 'Childcare',
+      period: 'Aug 2021 - Jun 2022',
+      location: 'Leeds, England',
+      description: 'Provided childcare services for multiple families.',
+      responsibilities: [
+        'Supervised children of various ages',
+        'Organized educational and recreational activities',
+        'Ensured children\'s safety and wellbeing',
+        'Maintained clean and organized environments',
+        'Built strong relationships with families'
       ]
     },
     {
@@ -306,17 +396,31 @@ const Profile: React.FC = () => {
       ]
     },
     {
-      company: 'Various Bars & Restaurants',
-      role: 'Bartender & Server',
-      period: '2018 - 2021',
-      location: 'Various',
-      description: 'Worked in hospitality industry providing excellent customer service.',
+      company: 'Stansfield Arms',
+      role: 'Waitress',
+      period: 'Dec 2019 - Jan 2020',
+      location: 'Yorkshire, England',
+      description: 'Waitress service in restaurant environment.',
       responsibilities: [
-        'Served drinks and food to customers',
-        'Managed busy periods efficiently',
+        'Served food and beverages to customers',
+        'Managed tables and customer service',
         'Handled cash and card transactions',
-        'Maintained clean work areas',
-        'Provided excellent customer service'
+        'Maintained clean dining areas',
+        'Worked effectively in team environment'
+      ]
+    },
+    {
+      company: 'Firefly Pottery',
+      role: 'Shop Assistant',
+      period: 'Aug 2017 - Dec 2019',
+      location: 'Yorkshire, England',
+      description: 'Retail assistant in pottery shop.',
+      responsibilities: [
+        'Provided customer service and assistance',
+        'Handled sales and transactions',
+        'Maintained shop appearance and organization',
+        'Managed inventory and stock',
+        'Built relationships with customers'
       ]
     }
   ];
@@ -334,6 +438,7 @@ const Profile: React.FC = () => {
         'Final year modules included Business and Economic Psychology, Close Relationships, Psychology and Law',
         'John Snow Ball Chair - organized large-scale events',
         'John Snow Netball Club Social Secretary and Gym Coordinator',
+        'Fresher Representative - completed training in Alcohol Awareness, Consent Matters, and Active Bystander Intervention',
         'Strong analytical and research abilities, fostering data-driven decision-making'
       ]
     },
@@ -352,7 +457,7 @@ const Profile: React.FC = () => {
         'Full Arts Colours - recognition for excellence in the arts',
         'Sarah Ridy Cup for Singing - vocal performance award',
         'Grade 7 Musical Theatre (Distinction) - Dec 2019',
-        'Grade 5 Flute (Pass) - Mar 2018'
+        'Grade 6 Flute (Pass)'
       ]
     }
   ];
@@ -527,7 +632,7 @@ const Profile: React.FC = () => {
         <div className="goals-list">
           {careerGoals.map((goal, index) => (
             <div key={index} className="goal-item">
-              <span className="goal-icon">🎯</span>
+              <i className="fas fa-bullseye goal-icon"></i>
               <span>{goal}</span>
             </div>
           ))}
@@ -542,11 +647,11 @@ const Profile: React.FC = () => {
       <div className="contact-info">
         <div className="contact-methods">
           <a href="mailto:hopegilbert@live.com" className="contact-link">
-            <span className="contact-icon">📧</span>
+            <i className="fas fa-envelope contact-icon"></i>
             <span>hopegilbert@live.com</span>
           </a>
           <a href="https://www.linkedin.com/in/hope-gilbert-1942471bb/" target="_blank" rel="noopener noreferrer" className="contact-link">
-            <span className="contact-icon">💼</span>
+            <i className="fas fa-briefcase contact-icon"></i>
             <span>LinkedIn Profile</span>
           </a>
         </div>
@@ -578,10 +683,6 @@ const Profile: React.FC = () => {
 
       {/* Navigation */}
       <nav className="profile-nav">
-        <Link to="/" className="back-link">
-          <span className="back-icon">←</span>
-          <span>Back to Portfolio</span>
-        </Link>
         
         <div className="profile-nav-menu">
           <button 

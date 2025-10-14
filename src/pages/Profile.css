@@ -358,6 +358,7 @@
 
 .category-icon {
   font-size: 2rem;
+  color: white;
 }
 
 .category-header h3 {
@@ -606,6 +607,7 @@
 
 .timeline-icon {
   font-size: 1.5rem;
+  color: white;
 }
 
 .timeline-content {
@@ -688,6 +690,7 @@
 .achievement-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: white;
 }
 
 .achievement-card h3 {
@@ -727,6 +730,17 @@
 .interest-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: white;
+}
+
+.goal-icon {
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.contact-icon {
+  color: white;
+  margin-right: 0.5rem;
 }
 
 .interest-card h3 {
