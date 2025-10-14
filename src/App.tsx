@@ -10,6 +10,7 @@ import Apps from './pages/Apps';
 import DocumentDesign from './pages/DocumentDesign';
 import SocialMedia from './pages/SocialMedia';
 import Platforms from './pages/Platforms';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/play-dress-up" element={<PlayDressUp />} />
         <Route path="/intelligence-hub" element={<IntelligenceHub />} />
         <Route path="/art-work" element={<ArtWork />} />

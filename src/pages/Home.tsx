@@ -95,7 +95,12 @@ function Home() {
           
           {/* Portrait */}
           <div className="portrait-frame">
-            <img src={hopeImage} alt="Hope Gilbert" />
+            <Link to="/profile" className="portrait-link">
+              <img src={hopeImage} alt="Hope Gilbert" />
+              <div className="portrait-overlay">
+                <span className="overlay-text">View Profile</span>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -348,6 +353,19 @@ function Home() {
           background: transparent;
         }
 
+        .portrait-link {
+          position: relative;
+          display: block;
+          transition: all 0.3s ease;
+          border-radius: 10px;
+          overflow: hidden;
+        }
+
+        .portrait-link:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
         .portrait-frame img {
           max-width: 100%;
           height: auto;
@@ -355,6 +373,37 @@ function Home() {
           display: block;
           border: none;
           outline: none;
+          transition: all 0.3s ease;
+        }
+
+        .portrait-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.7);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: all 0.3s ease;
+        }
+
+        .portrait-link:hover .portrait-overlay {
+          opacity: 1;
+        }
+
+        .overlay-text {
+          color: white;
+          font-size: 1.2rem;
+          font-weight: 600;
+          text-align: center;
+          padding: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 25px;
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
 
