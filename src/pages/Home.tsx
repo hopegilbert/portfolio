@@ -79,7 +79,7 @@ function Home() {
             <h1 className="artist-name">Hope Gilbert</h1>
             <p className="artist-dates">Creative Professional, United Kingdom</p>
             
-            <h2 className="artwork-title">Digital Portfolio, 2025</h2>
+            <h2 className="artwork-title !text-pink-500 !text-xl !font-semibold !italic">Digital Portfolio, 2025</h2>
             <p className="medium">Multidisciplinary creative work</p>
             <p className="acquisition">Personal collection</p>
             
@@ -310,14 +310,22 @@ function Home() {
           margin: 0 0 1.5rem 0;
         }
 
-        .artwork-title {
+        .museum-plaque .artwork-title,
+        .museum-plaque h2.artwork-title {
           font-family: 'Lora', serif !important;
-          font-size: 1.3rem !important;
+          font-size: 1.5rem !important;
           font-style: italic !important;
           font-weight: 600 !important;
           color: #e91e63 !important;
           text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9) !important;
           margin: 0 0 0.3rem 0 !important;
+          display: block !important;
+        }
+
+        /* Override any Tailwind CSS */
+        .museum-plaque .artwork-title * {
+          color: #e91e63 !important;
+          font-size: 1.5rem !important;
         }
 
         .medium {
