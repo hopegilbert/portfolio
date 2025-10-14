@@ -95,13 +95,10 @@ function Home() {
           
           {/* Portrait */}
           <div className="portrait-frame">
-            <Link to="/profile" className="portrait-link">
+            <div className="portrait-image-wrapper">
               <img src={hopeImage} alt="Hope Gilbert" />
-              <div className="portrait-shadow-overlay"></div>
-              <div className="portrait-overlay">
-                <span className="overlay-text">View Profile</span>
-              </div>
-            </Link>
+              <Link to="/profile" className="portrait-hover-button">View Profile</Link>
+            </div>
           </div>
         </div>
       </div>
@@ -355,83 +352,57 @@ function Home() {
           background: transparent;
         }
 
-        .portrait-link {
+        .portrait-image-wrapper {
           position: relative;
-          display: block;
+          display: inline-block;
+          width: 100%;
+          cursor: pointer;
+          overflow: hidden;
+          border-radius: 8px;
           transition: all 0.3s ease;
-          background: transparent;
-          padding: 0;
-          margin: 0;
         }
 
-        .portrait-link:hover {
+        .portrait-image-wrapper:hover {
           transform: scale(1.05);
         }
 
-        .portrait-link:hover img {
+        .portrait-image-wrapper img {
+          display: block;
+          width: 100%;
+          height: auto;
+          transition: all 0.3s ease;
+        }
+
+        .portrait-image-wrapper:hover img {
           filter: brightness(0.3);
         }
 
-        .portrait-shadow-overlay {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url('/portfolio/assets/hope-Utfvr75w.png') no-repeat center;
-          background-size: contain;
-          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+        .portrait-hover-button {
           opacity: 0;
-          transition: opacity 0.3s ease;
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .portrait-link:hover .portrait-shadow-overlay {
-          opacity: 1;
-        }
-
-
-        .portrait-frame img {
-          max-width: 100%;
-          height: auto;
-          background: transparent;
-          display: block;
-          border: none;
-          outline: none;
-          transition: all 0.3s ease;
-          padding: 0;
-          margin: 0;
-        }
-
-        .portrait-overlay {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.7);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: all 0.3s ease;
-        }
-
-        .portrait-link:hover .portrait-overlay {
-          opacity: 1;
-        }
-
-        .overlay-text {
-          color: white;
-          font-size: 1.2rem;
-          font-weight: 600;
-          text-align: center;
-          padding: 1rem;
-          background: rgba(255, 255, 255, 0.1);
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: #fde9f0;
+          color: #2c2c2c;
+          padding: 0.75rem 1.5rem;
           border-radius: 25px;
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: all 0.3s ease;
+          z-index: 3;
+          cursor: pointer;
+        }
+
+        .portrait-image-wrapper:hover .portrait-hover-button {
+          opacity: 1;
+          transform: translate(-50%, -52%);
+          box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .portrait-hover-button:hover {
+          background-color: #f5c9e0;
         }
 
 
