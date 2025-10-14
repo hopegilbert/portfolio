@@ -11,9 +11,10 @@ function Navigation() {
   const isPlatforms = location.pathname === '/platforms' || location.pathname === '/portfolio/platforms';
   const isSocialMedia = location.pathname === '/social-media' || location.pathname === '/portfolio/social-media';
   const isIntelligenceHub = location.pathname === '/intelligence-hub' || location.pathname === '/portfolio/intelligence-hub';
+  const isProfile = location.pathname === '/profile' || location.pathname === '/portfolio/profile';
 
-  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, Document Design, Video Editing, Platforms, Social Media, or Intelligence Hub pages (full-screen experiences)
-  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign || isVideoEditing || isPlatforms || isSocialMedia || isIntelligenceHub) {
+  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, Document Design, Video Editing, Platforms, Social Media, Intelligence Hub, or Profile pages (full-screen experiences)
+  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign || isVideoEditing || isPlatforms || isSocialMedia || isIntelligenceHub || isProfile) {
     return null;
   }
 
