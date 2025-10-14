@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
+import IPhoneModal from '../components/iPhoneModal';
+import BusinessApp from './BusinessApp';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
@@ -17,6 +19,8 @@ import socialMediaFrame from '../assets/home-frames/social-media-frame.png';
 import frame1 from '../assets/home-frames/frame 1.png';
 
 function Home() {
+  const [isAppModalOpen, setIsAppModalOpen] = useState(false);
+
   useEffect(() => {
     const grid = document.querySelector('.masonry-grid');
     const gridItems = document.querySelectorAll('.grid-item');
@@ -135,7 +139,12 @@ function Home() {
               />
             </div>
             <div className="app-hover-text">App Design</div>
-            <Link to="/apps" className="hover-button">View Apps</Link>
+            <button 
+              onClick={() => setIsAppModalOpen(true)} 
+              className="hover-button"
+            >
+              Open App
+            </button>
           </div>
         </div>
 
@@ -225,6 +234,11 @@ function Home() {
         </footer>
       </div>
     </div>
+
+      {/* iPhone Modal for Business App */}
+      <IPhoneModal isOpen={isAppModalOpen} onClose={() => setIsAppModalOpen(false)}>
+        <BusinessApp />
+      </IPhoneModal>
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');

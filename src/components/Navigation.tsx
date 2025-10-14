@@ -5,9 +5,11 @@ function Navigation() {
   const isHome = location.pathname === '/' || location.pathname === '/portfolio' || location.pathname === '/portfolio/';
   const isPlayDressUp = location.pathname === '/play-dress-up' || location.pathname === '/portfolio/play-dress-up';
   const isMovies = location.pathname === '/movies' || location.pathname === '/portfolio/movies';
+  const isArtWork = location.pathname === '/art-work' || location.pathname === '/portfolio/art-work';
+  const isDocumentDesign = location.pathname === '/document-design' || location.pathname === '/portfolio/document-design';
 
-  // Don't show navigation on home page, Play Dress Up, or Movies pages (full-screen experiences)
-  if (isHome || isPlayDressUp || isMovies) {
+  // Don't show navigation on home page, Play Dress Up, Movies, Art Work, or Document Design pages (full-screen experiences)
+  if (isHome || isPlayDressUp || isMovies || isArtWork || isDocumentDesign) {
     return null;
   }
 
