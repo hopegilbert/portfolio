@@ -85,48 +85,6 @@ const Profile: React.FC = () => {
       type: 'work',
       icon: 'fa-briefcase'
     },
-      {
-        year: '2023-2025',
-        title: 'Marketing Executive',
-        description: 'Marketing Executive at Flat Fee Recruiter (May 2023 - Present), Leeds, England',
-        type: 'work',
-        icon: 'fa-chart-bar'
-      },
-      {
-        year: '2023',
-        title: 'Bar Tender',
-        description: 'Revolution Bars (Feb 2023 - May 2023), Leeds, England',
-        type: 'work',
-        icon: 'fa-glass-martini-alt'
-      },
-      {
-        year: '2022',
-        title: 'Recruitment Administrator',
-        description: 'Mammoet (Oct 2022 - Dec 2022), Leeds, England',
-        type: 'work',
-        icon: 'fa-briefcase'
-      },
-      {
-        year: '2022',
-        title: 'Bar Tender',
-        description: 'Jimmy Allens (Aug 2022 - Feb 2023), Leeds, England',
-        type: 'work',
-        icon: 'fa-glass-martini-alt'
-      },
-      {
-        year: '2022',
-        title: 'Barista',
-        description: 'M&S (Aug 2022 - Oct 2022), Leeds, England',
-        type: 'work',
-        icon: 'fa-coffee'
-      },
-      {
-        year: '2021-2022',
-        title: 'Childcare',
-        description: 'Children\'s Corner (Aug 2021 - Jun 2022), Leeds, England',
-        type: 'work',
-        icon: 'fa-child'
-      },
     {
       year: '2024',
       title: 'HubSpot Sales Software Certification',
@@ -143,10 +101,59 @@ const Profile: React.FC = () => {
     },
     {
       year: '2024',
+      title: 'John Snow Charity Fashion Show',
+      description: 'Compered charity fashion show raising £13,500',
+      type: 'achievement',
+      icon: 'fa-tshirt'
+    },
+    {
+      year: '2024',
       title: 'Graduated Durham University',
       description: 'BSc Psychology with 2:1 honors. Dissertation achieved First Class (76%)',
       type: 'education',
       icon: 'fa-graduation-cap'
+    },
+    {
+      year: '2023-2025',
+      title: 'Marketing Executive',
+      description: 'Marketing Executive at Flat Fee Recruiter (May 2023 - Present), Leeds, England',
+      type: 'work',
+      icon: 'fa-chart-bar'
+    },
+    {
+      year: '2023',
+      title: 'Bar Tender',
+      description: 'Revolution Bars (Feb 2023 - May 2023), Leeds, England',
+      type: 'work',
+      icon: 'fa-glass-martini-alt'
+    },
+    {
+      year: '2022',
+      title: 'Recruitment Administrator',
+      description: 'Mammoet (Oct 2022 - Dec 2022), Leeds, England',
+      type: 'work',
+      icon: 'fa-briefcase'
+    },
+    {
+      year: '2022',
+      title: 'Bar Tender',
+      description: 'Jimmy Allens (Aug 2022 - Feb 2023), Leeds, England',
+      type: 'work',
+      icon: 'fa-glass-martini-alt'
+    },
+    {
+      year: '2022',
+      title: 'Barista',
+      description: 'M&S (Aug 2022 - Oct 2022), Leeds, England',
+      type: 'work',
+      icon: 'fa-coffee'
+    },
+    {
+      year: '2021-2022',
+      title: 'Childcare',
+      description: 'Children\'s Corner (Aug 2021 - Jun 2022), Leeds, England',
+      type: 'work',
+      icon: 'fa-child'
     },
     {
       year: '2021',
@@ -157,60 +164,46 @@ const Profile: React.FC = () => {
     },
     {
       year: '2020',
-      title: 'Started Durham University',
-      description: 'Began BSc Psychology degree at Durham University',
-      type: 'education',
-      icon: 'fa-university'
-    },
-      {
-        year: '2019-2020',
-        title: 'Assistant Swim Coach',
-        description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
-        type: 'work',
-        icon: 'fa-swimming-pool'
-      },
-      {
-        year: '2018-2021',
-        title: 'Hospitality Work',
-        description: 'Bartender and server roles in various bars and restaurants',
-        type: 'work',
-        icon: 'fa-glass-martini-alt'
-      },
-      {
-        year: '2019-2020',
-        title: 'Waitress',
-        description: 'Stansfield Arms (Dec 2019 - Jan 2020), Yorkshire, England',
-        type: 'work',
-        icon: 'fa-utensils'
-      },
-      {
-        year: '2017-2019',
-        title: 'Shop Assistant',
-        description: 'Firefly Pottery (Aug 2017 - Dec 2019), Yorkshire, England',
-        type: 'work',
-        icon: 'fa-store'
-      },
-    {
-      year: '2020',
       title: 'Graduated Woodhouse Grove School',
       description: 'Completed A-Levels with A*BB (Art A*, Psychology B, English Literature B)',
       type: 'education',
       icon: 'fa-school'
     },
-      {
-        year: '2024',
-        title: 'John Snow Charity Fashion Show',
-        description: 'Compered charity fashion show raising £13,500',
-        type: 'achievement',
-        icon: 'fa-tshirt'
-      },
-      {
-        year: '2010',
-        title: 'Swimathon for Marie Curie',
-        description: 'Raised over £1,000 for cancer support',
-        type: 'achievement',
-        icon: 'fa-hands-helping'
-      }
+    {
+      year: '2020',
+      title: 'Started Durham University',
+      description: 'Began BSc Psychology degree at Durham University',
+      type: 'education',
+      icon: 'fa-university'
+    },
+    {
+      year: '2019-2020',
+      title: 'Assistant Swim Coach',
+      description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
+      type: 'work',
+      icon: 'fa-swimming-pool'
+    },
+    {
+      year: '2019-2020',
+      title: 'Waitress',
+      description: 'Stansfield Arms (Dec 2019 - Jan 2020), Yorkshire, England',
+      type: 'work',
+      icon: 'fa-utensils'
+    },
+    {
+      year: '2017-2019',
+      title: 'Shop Assistant',
+      description: 'Firefly Pottery (Aug 2017 - Dec 2019), Yorkshire, England',
+      type: 'work',
+      icon: 'fa-store'
+    },
+    {
+      year: '2010',
+      title: 'Swimathon for Marie Curie',
+      description: 'Raised over £1,000 for cancer support',
+      type: 'achievement',
+      icon: 'fa-hands-helping'
+    }
   ];
 
   const achievements = [
