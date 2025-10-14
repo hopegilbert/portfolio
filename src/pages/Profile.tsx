@@ -5,7 +5,18 @@ import portrait1 from '../assets/profile/portrait-1.png';
 import portrait2 from '../assets/profile/portrait-2.png';
 import portrait3 from '../assets/profile/portrait-3.png';
 import portrait4 from '../assets/profile/portrait-4.png';
-import hope2 from '../assets/profile/hope-2.png';
+import hopeDurham from '../assets/profile/hope-durham.png';
+import hopeFlatfee from '../assets/profile/hope-flatfee.png';
+import hopeGraduation from '../assets/profile/hope-graduation.png';
+import hope from '../assets/hope.jpg';
+import colorPalette from '../assets/profile/colour-pallet.png';
+import pinkPalette from '../assets/profile/pink-pallet.png';
+import typography1 from '../assets/profile/Minimalist Simple Typography Milk Creative Studio Logo.png';
+import typography2 from '../assets/profile/typography-2.png';
+import contentCreation from '../assets/profile/content.png';
+import branding from '../assets/profile/brand.png';
+import digitalTools from '../assets/profile/tools.png';
+import psychology from '../assets/profile/psychology.jpg';
 
 interface SkillCategory {
   title: string;
@@ -465,21 +476,9 @@ const Profile: React.FC = () => {
     <div className="portfolio-container">
       {/* Cover Page */}
       <div className="cover-page">
-        <div className="cover-background">
-          <div className="cover-typography">
-            <span className="portfolio-text">PRO</span>
-            <span className="portfolio-text">FILE</span>
-          </div>
-          <div className="photobooth-strip">
-            <img src={portrait1} alt="Portrait 1" className="strip-photo" />
-            <img src={portrait2} alt="Portrait 2" className="strip-photo" />
-            <img src={portrait3} alt="Portrait 3" className="strip-photo" />
-            <img src={portrait4} alt="Portrait 4" className="strip-photo" />
-          </div>
-        </div>
-        <div className="cover-info">
+        <div className="cover-header">
           <div className="cover-name">
-            <h1>Hope Gilbert</h1>
+          <h1>Hope Gilbert</h1>
             <p className="tagline">Marketing & Business Development • Visual Storytelling</p>
           </div>
           <div className="cover-contact">
@@ -487,30 +486,33 @@ const Profile: React.FC = () => {
             <p>@hopegilbs</p>
           </div>
         </div>
-        <div className="cover-accent">
-          <div className="ink-doodle"></div>
-        </div>
-      </div>
-
-      {/* Page 1: About Me */}
-      <div className="about-page">
-        <div className="about-layout">
-          <div className="about-image">
-            <img src={hope2} alt="Hope Gilbert" className="polaroid-photo" />
+        <div className="cover-content">
+          <div className="cover-background">
+            <div className="cover-typography">
+              <span className="portfolio-text">PRO</span>
+              <span className="portfolio-text">FILE</span>
+            </div>
+            <div className="photobooth-strip">
+              <img src={portrait1} alt="Portrait 1" className="strip-photo" />
+              <img src={portrait2} alt="Portrait 2" className="strip-photo" />
+              <img src={portrait3} alt="Portrait 3" className="strip-photo" />
+              <img src={portrait4} alt="Portrait 4" className="strip-photo" />
+            </div>
           </div>
           <div className="about-content">
             <h2>About Me</h2>
             <p className="intro-text">
               I'm Hope Gilbert, a Marketing and Business Development Associate at Mawney Partners with a BSc in Psychology from Durham University. 
               I combine marketing expertise, self-taught programming skills (Python, JavaScript, TypeScript, Swift), 
-              and creative design abilities to deliver innovative digital solutions. Passionate about bridging technology, 
-              psychology, and creative expression.
-            </p>
+            and creative design abilities to deliver innovative digital solutions. Passionate about bridging technology, 
+            psychology, and creative expression.
+          </p>
+            
             <div className="quick-facts">
               <div className="fact-item">
                 <span className="fact-icon"><i className="fas fa-graduation-cap"></i></span>
                 <span className="fact-text">BSc Psychology Graduate</span>
-              </div>
+        </div>
               <div className="fact-item">
                 <span className="fact-icon"><i className="fas fa-map-marker-alt"></i></span>
                 <span className="fact-text">London, England</span>
@@ -536,6 +538,7 @@ const Profile: React.FC = () => {
         </div>
       </div>
 
+
       {/* Page 2: My Journey */}
       <div className="journey-page">
         <h2>A Visual Journey So Far</h2>
@@ -547,7 +550,7 @@ const Profile: React.FC = () => {
               <p>Began BSc Psychology degree, studying modules in social, cognitive and biological psychology</p>
               <span className="handwritten-note">when psychology met creativity</span>
             </div>
-            <img src="https://via.placeholder.com/80x80/FFB6C1/FFFFFF?text=2020" alt="2020 milestone" className="timeline-photo" />
+            <img src={hopeDurham} alt="Hope at Durham University" className="timeline-photo" />
           </div>
           <div className="timeline-item">
             <div className="timeline-year">2022</div>
@@ -556,7 +559,7 @@ const Profile: React.FC = () => {
               <p>Started at Flat Fee Recruiter, developing targeted marketing strategies and social media campaigns</p>
               <span className="handwritten-note">when strategy met creativity</span>
             </div>
-            <img src="https://via.placeholder.com/80x80/FFB6C1/FFFFFF?text=2022" alt="2022 milestone" className="timeline-photo" />
+            <img src={hopeFlatfee} alt="Hope at Flat Fee Recruiter" className="timeline-photo" />
           </div>
           <div className="timeline-item">
             <div className="timeline-year">2024</div>
@@ -565,7 +568,7 @@ const Profile: React.FC = () => {
               <p>Graduated Durham University with 2:1 honors, dissertation achieved First Class (76%)</p>
               <span className="handwritten-note">when it all came together</span>
             </div>
-            <img src="https://via.placeholder.com/80x80/FFB6C1/FFFFFF?text=2024" alt="2024 milestone" className="timeline-photo" />
+            <img src={hopeGraduation} alt="Hope's graduation from Durham University" className="timeline-photo" />
           </div>
           <div className="timeline-item">
             <div className="timeline-year">2025</div>
@@ -574,80 +577,56 @@ const Profile: React.FC = () => {
               <p>Marketing & Business Development Associate, built Mawney Partners App and Website</p>
               <span className="handwritten-note">when tech met marketing</span>
             </div>
-            <img src="https://via.placeholder.com/80x80/FFB6C1/FFFFFF?text=2025" alt="2025 milestone" className="timeline-photo" />
+            <img src={hope} alt="Hope at Mawney Partners" className="timeline-photo" />
           </div>
         </div>
       </div>
 
-      {/* Page 3: Selected Works */}
-      <div className="works-page">
-        <h2>Selected Works</h2>
-        <div className="works-grid">
-          <div className="work-item">
-            <img src="https://via.placeholder.com/300x200/FFB6C1/FFFFFF?text=Brand+Identity" alt="Brand Identity Project" className="work-image" />
-            <div className="work-overlay">
-              <h3>Brand Identity for Mawney Partners</h3>
-              <p>Complete visual identity and digital presence</p>
-            </div>
-          </div>
-          <div className="work-item">
-            <img src="https://via.placeholder.com/300x200/FFB6C1/FFFFFF?text=Marketing+Strategy" alt="Marketing Strategy" className="work-image" />
-            <div className="work-overlay">
-              <h3>Marketing Strategy & Campaigns</h3>
-              <p>Targeted campaigns with 85% engagement growth</p>
-            </div>
-          </div>
-          <div className="work-item">
-            <img src="https://via.placeholder.com/300x200/FFB6C1/FFFFFF?text=Web+Development" alt="Web Development" className="work-image" />
-            <div className="work-overlay">
-              <h3>Web Development Projects</h3>
-              <p>Full-stack applications and responsive designs</p>
-            </div>
-          </div>
-          <div className="work-item">
-            <img src="https://via.placeholder.com/300x200/FFB6C1/FFFFFF?text=Digital+Design" alt="Digital Design" className="work-image" />
-            <div className="work-overlay">
-              <h3>Digital Design & Content</h3>
-              <p>Visual storytelling across multiple platforms</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Page 4: Skills & Tools */}
       <div className="skills-page">
         <h2>What I Bring to the Table</h2>
         <div className="skills-sections">
-          <div className="skill-section">
-            <h3>Content Creation</h3>
-            <div className="skill-items">
-              <div className="skill-item">Video Scripting</div>
-              <div className="skill-item">Storyboarding</div>
-              <div className="skill-item">Video Editing</div>
-              <div className="skill-item">Social Media Content</div>
+            <div className="skill-section">
+              <h3>Content Creation</h3>
+              <div className="skill-items">
+                <div className="skill-item">Video Scripting</div>
+                <div className="skill-item">Storyboarding</div>
+                <div className="skill-item">Video Editing</div>
+                <div className="skill-item">Social Media Content</div>
+              </div>
+              <img src={contentCreation} alt="Content Creation" className="skill-visual" />
             </div>
-            <img src="https://via.placeholder.com/200x150/FFB6C1/FFFFFF?text=Content+Creation" alt="Content Creation" className="skill-visual" />
-          </div>
-          <div className="skill-section">
-            <h3>Branding & Strategy</h3>
-            <div className="skill-items">
-              <div className="skill-item">Visual Identity</div>
-              <div className="skill-item">Campaign Ideation</div>
-              <div className="skill-item">Brand Storytelling</div>
-              <div className="skill-item">Market Analysis</div>
+            <div className="skill-section">
+              <h3>Branding & Strategy</h3>
+              <div className="skill-items">
+                <div className="skill-item">Visual Identity</div>
+                <div className="skill-item">Campaign Ideation</div>
+                <div className="skill-item">Brand Storytelling</div>
+                <div className="skill-item">Market Analysis</div>
+              </div>
+              <img src={branding} alt="Branding" className="skill-visual" />
             </div>
-            <img src="https://via.placeholder.com/200x150/FFB6C1/FFFFFF?text=Branding" alt="Branding" className="skill-visual" />
-          </div>
-          <div className="skill-section">
-            <h3>Digital Tools</h3>
-            <div className="skill-items">
-              <div className="skill-item">Adobe Creative Suite</div>
-              <div className="skill-item">React & JavaScript</div>
-              <div className="skill-item">HubSpot Marketing</div>
-              <div className="skill-item">Google Analytics</div>
+            <div className="skill-section">
+              <h3>Digital Tools</h3>
+              <div className="skill-items">
+                <div className="skill-item">Adobe Creative Suite</div>
+                <div className="skill-item">React & JavaScript</div>
+                <div className="skill-item">HubSpot Marketing</div>
+                <div className="skill-item">Google Analytics</div>
+              </div>
+              <img src={digitalTools} alt="Digital Tools" className="skill-visual" />
             </div>
-            <img src="https://via.placeholder.com/200x150/FFB6C1/FFFFFF?text=Digital+Tools" alt="Digital Tools" className="skill-visual" />
-          </div>
+            <div className="skill-section">
+              <h3>Psychology & Research</h3>
+              <div className="skill-items">
+                <div className="skill-item">Behavioral Analysis</div>
+                <div className="skill-item">Data Visualization</div>
+                <div className="skill-item">Statistical Analysis</div>
+                <div className="skill-item">User Research</div>
+              </div>
+              <img src={psychology} alt="Psychology & Research" className="skill-visual" />
+            </div>
         </div>
       </div>
 
@@ -656,20 +635,18 @@ const Profile: React.FC = () => {
         <h2>My Aesthetic</h2>
         <div className="moodboard">
           <div className="moodboard-item">
-            <img src="https://via.placeholder.com/150x150/FFB6C1/FFFFFF?text=Color+1" alt="Color palette" className="moodboard-image" />
-            <span className="moodboard-label">Neutral Tones</span>
+            <img src={colorPalette} alt="Hope's color palette" className="moodboard-image" />
           </div>
           <div className="moodboard-item">
-            <img src="https://via.placeholder.com/150x150/FFB6C1/FFFFFF?text=Color+2" alt="Color palette" className="moodboard-image" />
-            <span className="moodboard-label">Pink Accents</span>
+            <img src={pinkPalette} alt="Hope's pink palette" className="moodboard-image" />
           </div>
-          <div className="moodboard-item">
-            <img src="https://via.placeholder.com/150x150/FFB6C1/FFFFFF?text=Typography" alt="Typography" className="moodboard-image" />
-            <span className="moodboard-label">Clean Typography</span>
-          </div>
-          <div className="moodboard-item">
-            <img src="https://via.placeholder.com/150x150/FFB6C1/FFFFFF?text=Pattern" alt="Pattern" className="moodboard-image" />
-            <span className="moodboard-label">Minimal Patterns</span>
+          <div className="typography-row">
+            <div className="moodboard-item">
+              <img src={typography1} alt="Typography example 1" className="moodboard-image" />
+            </div>
+            <div className="moodboard-item">
+              <img src={typography2} alt="Typography example 2" className="moodboard-image" />
+            </div>
           </div>
         </div>
         <div className="aesthetic-description">
@@ -679,46 +656,6 @@ const Profile: React.FC = () => {
         </div>
       </div>
 
-      {/* Page 6: Analytics / Impact */}
-      <div className="analytics-page">
-        <h2>It's Not Just Pretty — It Performs</h2>
-        <div className="analytics-content">
-          <div className="analytics-chart">
-            <div className="chart-container">
-              <div className="chart-bar" style={{height: '85%'}}>
-                <span className="chart-label">85%</span>
-                <span className="chart-text">Engagement Growth</span>
-              </div>
-              <div className="chart-bar" style={{height: '70%'}}>
-                <span className="chart-label">10K+</span>
-                <span className="chart-text">Video Views</span>
-              </div>
-              <div className="chart-bar" style={{height: '90%'}}>
-                <span className="chart-label">£15K+</span>
-                <span className="chart-text">Charity Raised</span>
-              </div>
-            </div>
-          </div>
-          <div className="analytics-insights">
-            <h3>Top-Performing Audience</h3>
-            <p>18–24, Marketing & Technology Focus</p>
-            <div className="insight-stats">
-              <div className="stat-item">
-                <span className="stat-number">20+</span>
-                <span className="stat-label">Academic Articles</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">7</span>
-                <span className="stat-label">Programming Languages</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">17+</span>
-                <span className="stat-label">Digital Art Pieces</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Page 7: Closing / Contact */}
       <div className="contact-page">
@@ -792,7 +729,7 @@ const Profile: React.FC = () => {
   const renderExperience = () => (
     <div className="portfolio-experience-page">
       <div className="experience-header">
-        <h2>Work Experience</h2>
+      <h2>Work Experience</h2>
         <p className="experience-subtitle">Building bridges between creativity and strategy</p>
       </div>
       
@@ -807,11 +744,11 @@ const Profile: React.FC = () => {
                 <h3>{job.role}</h3>
                 <h4>{job.company}</h4>
                 <p className="experience-location"><i className="fas fa-map-marker-alt"></i> {job.location}</p>
-                <p className="experience-description">{job.description}</p>
+            <p className="experience-description">{job.description}</p>
                 <div className="experience-highlights">
-                  {job.responsibilities.map((resp, respIndex) => (
+              {job.responsibilities.map((resp, respIndex) => (
                     <span key={respIndex} className="highlight-item">• {resp}</span>
-                  ))}
+              ))}
                 </div>
               </div>
             </div>
@@ -851,15 +788,15 @@ const Profile: React.FC = () => {
               <div className="education-period">{edu.period}</div>
             </div>
             <div className="education-content">
-              <h3>{edu.degree}</h3>
-              <h4>{edu.institution}</h4>
+                <h3>{edu.degree}</h3>
+                <h4>{edu.institution}</h4>
               <div className="education-grade">{edu.grade}</div>
               <div className="education-highlights">
                 {edu.highlights.map((highlight, highlightIndex) => (
                   <div key={highlightIndex} className="highlight-item">
                     <span className="highlight-bullet">▹</span>
                     <span className="highlight-text">{highlight}</span>
-                  </div>
+              </div>
                 ))}
               </div>
             </div>
@@ -945,16 +882,16 @@ const Profile: React.FC = () => {
       </div>
       
       <div className="achievements-showcase">
-        <div className="achievements-grid">
-          {achievements.map((achievement, index) => (
-            <div key={index} className="achievement-card">
-              <div className="achievement-icon">
-                <i className={`fas ${achievement.icon}`}></i>
-              </div>
-              <h3>{achievement.title}</h3>
-              <p>{achievement.description}</p>
+      <div className="achievements-grid">
+        {achievements.map((achievement, index) => (
+          <div key={index} className="achievement-card">
+            <div className="achievement-icon">
+              <i className={`fas ${achievement.icon}`}></i>
             </div>
-          ))}
+            <h3>{achievement.title}</h3>
+            <p>{achievement.description}</p>
+          </div>
+        ))}
         </div>
       </div>
       
@@ -990,16 +927,16 @@ const Profile: React.FC = () => {
       </div>
       
       <div className="interests-showcase">
-        <div className="interests-grid">
-          {personalInterests.map((item, index) => (
-            <div key={index} className="interest-card">
-              <div className="interest-icon">
-                <i className={`fas ${item.icon}`}></i>
-              </div>
-              <h3>{item.interest}</h3>
-              <p>{item.description}</p>
+      <div className="interests-grid">
+        {personalInterests.map((item, index) => (
+          <div key={index} className="interest-card">
+            <div className="interest-icon">
+              <i className={`fas ${item.icon}`}></i>
             </div>
-          ))}
+            <h3>{item.interest}</h3>
+            <p>{item.description}</p>
+          </div>
+        ))}
         </div>
       </div>
       
@@ -1035,7 +972,7 @@ const Profile: React.FC = () => {
   const renderContact = () => (
     <div className="portfolio-contact-page">
       <div className="contact-header">
-        <h2>Let's Connect</h2>
+      <h2>Let's Connect</h2>
         <p className="contact-subtitle">Ready to create something amazing together?</p>
       </div>
       
@@ -1048,7 +985,7 @@ const Profile: React.FC = () => {
             </p>
           </div>
           
-          <div className="contact-methods">
+        <div className="contact-methods">
             <a href="mailto:hopegilbert@live.com" className="contact-method">
               <div className="contact-icon"><i className="fas fa-envelope"></i></div>
               <div className="contact-details">
@@ -1063,8 +1000,8 @@ const Profile: React.FC = () => {
                 <span className="contact-label">LinkedIn</span>
                 <span className="contact-value">hope-gilbert-1942471bb</span>
               </div>
-            </a>
-          </div>
+          </a>
+        </div>
         </div>
       </div>
       

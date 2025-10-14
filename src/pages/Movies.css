@@ -1155,7 +1155,7 @@
 
 .license-footer p {
     margin: 0;
-    color: var(--text-color);
+    color: white;
     font-family: 'Lora', serif;
     font-size: 0.9rem;
     line-height: 1.5;

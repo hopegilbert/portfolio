@@ -318,19 +318,24 @@ function Movies() {
   };
 
   // Component to render watch providers
-  const WatchProviders = ({ movie }: { movie: Movie }) => {
+  const WatchProviders = ({ movie, isFlipped }: { movie: Movie; isFlipped: boolean }) => {
     const [providers, setProviders] = useState<any>(null);
     const [loading, setLoading] = useState(false);
+    const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
-      const loadProviders = async () => {
-        setLoading(true);
-        const data = await fetchWatchProviders(movie.title, movie.year);
-        setProviders(data);
-        setLoading(false);
-      };
-      loadProviders();
-    }, [movie.title, movie.year]);
+      // Only fetch if card is flipped AND hasn't been loaded before
+      if (isFlipped && !hasLoaded) {
+        const loadProviders = async () => {
+          setLoading(true);
+          const data = await fetchWatchProviders(movie.title, movie.year);
+          setProviders(data);
+          setLoading(false);
+          setHasLoaded(true);
+        };
+        loadProviders();
+      }
+    }, [isFlipped, movie.title, movie.year, hasLoaded]);
 
     if (loading) {
       return (
@@ -544,16 +549,16 @@ function Movies() {
                       </span>
                     </div>
                   </div>
-                  <div className="scrollable-content">
-                    <div className="review-section">
-                      <div className="review-heading-container">
-                        <h4 className="review-heading">My Review</h4>
-                        <div className="star-rating">{renderStars(movie.rating)}</div>
+                    <div className="scrollable-content">
+                      <div className="review-section">
+                        <div className="review-heading-container">
+                          <h4 className="review-heading">My Review</h4>
+                          <div className="star-rating">{renderStars(movie.rating)}</div>
+                        </div>
+                        <p className="review-text">{movie.review}</p>
                       </div>
-                      <p className="review-text">{movie.review}</p>
+                      <WatchProviders movie={movie} isFlipped={flippedCards.has(index)} />
                     </div>
-                    <WatchProviders movie={movie} />
-                  </div>
                 </div>
               </div>
             </div>
@@ -759,7 +764,7 @@ function Movies() {
                         </div>
                         <p className="review-text">{movie.review}</p>
                       </div>
-                      <WatchProviders movie={movie} />
+                      <WatchProviders movie={movie} isFlipped={flippedRecCards.has(index)} />
                     </div>
                   </div>
                 </div>
@@ -768,7 +773,6 @@ function Movies() {
           ) : (
             <div className="no-recommendations">
               <p>Click "Generate" to get personalized movie recommendations!</p>
-              <p className="api-note">Note: Requires a free TMDB API key. Visit <a href="https://www.themoviedb.org/settings/api" target="_blank" rel="noopener noreferrer">themoviedb.org</a> to get yours.</p>
             </div>
           )}
         </div>

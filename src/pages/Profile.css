@@ -1,12 +1,12 @@
 /* Portfolio Design - Inspired by Amy Faulkner & Stacey Wang */
-@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Silver+Gardens:wght@300;400;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 .profile-page {
   min-height: 100vh;
-  background: #FFE4E6; /* Light pink background */
+  background: #FFE5EC; /* Misty Rose background */
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 182, 193, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(251, 111, 146, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 194, 209, 0.1) 0%, transparent 50%);
   position: relative;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
@@ -27,9 +27,9 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(255, 228, 230, 0.95);
+  background: rgba(255, 229, 236, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+  border-bottom: 1px solid rgba(251, 111, 146, 0.3);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -45,13 +45,13 @@
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 25px;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
 }
 
 .back-link:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: translateX(-5px);
 }
 
@@ -72,23 +72,23 @@
 .profile-nav-menu button {
   padding: 0.75rem 1.5rem;
   border: none;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   color: #333;
   border-radius: 25px;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
 }
 
 .profile-nav-menu button:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: translateY(-2px);
 }
 
 .profile-nav-menu button.active {
   background: rgba(255, 182, 193, 0.4);
-  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);
+  box-shadow: 0 4px 15px rgba(251, 111, 146, 0.3);
 }
 
 /* Main Content */
@@ -118,16 +118,28 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 2rem;
+}
+
+.cover-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.cover-content {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
 }
 
 .cover-background {
   position: relative;
-  width: 100%;
-  max-width: 800px;
-  height: 600px;
+  width: 50%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -144,7 +156,7 @@
   font-family: 'Kalam', cursive;
   font-size: 12rem;
   font-weight: 700;
-  color: #FF1493;
+  color: #FB6F92;
   line-height: 0.8;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   transform: rotate(-2deg);
@@ -172,13 +184,24 @@
 }
 
 .cover-info {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  right: 2rem;
+  position: relative;
+  width: 50%;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 4;
+}
+
+.about-content {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
   z-index: 4;
 }
 
@@ -215,14 +238,6 @@
   z-index: 4;
 }
 
-.ink-doodle {
-  width: 40px;
-  height: 40px;
-  background: #333;
-  border-radius: 50% 20% 50% 20%;
-  transform: rotate(45deg);
-  opacity: 0.7;
-}
 
 /* About Page */
 .about-page {
@@ -256,9 +271,9 @@
 }
 
 .about-content h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 700;
 }
@@ -283,13 +298,13 @@
   padding: 1rem;
   background: white;
   border-radius: 10px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .fact-icon {
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .fact-icon i {
@@ -310,9 +325,9 @@
 }
 
 .journey-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -353,17 +368,18 @@
 }
 
 .timeline-year {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   background: white;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1rem;
   border-radius: 50px;
   border: 3px solid #FFB6C1;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 2;
   position: relative;
+  width: fit-content;
 }
 
 .timeline-content {
@@ -371,7 +387,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -389,11 +405,11 @@
 }
 
 .handwritten-note {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 0.9rem;
-  color: #FF69B4;
+  color: #FB6F92;
   font-style: italic;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   padding: 0.25rem 0.5rem;
   border-radius: 15px;
   display: inline-block;
@@ -416,9 +432,9 @@
 }
 
 .works-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -480,9 +496,9 @@
 }
 
 .skills-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -500,7 +516,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -521,13 +537,13 @@
 }
 
 .skill-item {
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   color: #333;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
 }
 
 .skill-visual {
@@ -546,9 +562,9 @@
 }
 
 .aesthetic-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -556,10 +572,43 @@
 
 .moodboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1200px;
   margin: 0 auto 3rem;
+  justify-items: center;
+}
+
+.typography-row {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.moodboard-item:first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.moodboard-item:nth-child(2) {
+  grid-column: 1 / -1;
+  margin-bottom: 2rem;
+}
+
+.moodboard-item:first-child .moodboard-image,
+.moodboard-item:nth-child(2) .moodboard-image {
+  width: 100%;
+  max-width: 1200px;
+  height: 400px;
+  object-fit: contain;
+}
+
+.typography-row .moodboard-image {
+  width: 400px;
+  height: 400px;
+  display: block;
 }
 
 .moodboard-item {
@@ -567,12 +616,10 @@
 }
 
 .moodboard-image {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  border: 3px solid #FFB6C1;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
 
@@ -602,9 +649,9 @@
 }
 
 .analytics-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -627,7 +674,7 @@
   padding: 2rem;
   background: white;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -662,7 +709,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -689,15 +736,15 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background: rgba(255, 182, 193, 0.1);
+  background: rgba(251, 111, 146, 0.1);
   border-radius: 10px;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
 }
 
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.25rem;
 }
 
@@ -719,9 +766,9 @@
 }
 
 .contact-page h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   text-align: center;
   margin: 0 0 4rem 0;
   font-weight: 700;
@@ -735,7 +782,7 @@
   background: white;
   padding: 3rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   text-align: center;
@@ -763,9 +810,9 @@
 }
 
 .signature {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
   font-weight: 600;
   border-top: 2px solid #FFB6C1;
   padding-top: 1rem;
@@ -788,7 +835,7 @@
   padding: 1rem 2rem;
   background: white;
   border-radius: 25px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
   font-weight: 500;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -949,7 +996,7 @@
   border-radius: 20px;
   padding: 3rem;
   margin-bottom: 2rem;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   animation: slideInUp 0.6s ease-out;
 }
@@ -971,7 +1018,7 @@
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
 }
 
 /* Rest of existing styles for other sections... */
@@ -985,7 +1032,7 @@
   background: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 2rem;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -1015,7 +1062,7 @@
 
 .category-icon {
   font-size: 2rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .category-header h3 {
@@ -1032,18 +1079,18 @@
 }
 
 .skill-item {
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   color: #333;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
 }
 
 .skill-item:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: scale(1.05);
 }
 
@@ -1060,7 +1107,7 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
@@ -1139,7 +1186,7 @@
   content: '▹';
   position: absolute;
   left: 0;
-  color: #FF69B4;
+  color: #FB6F92;
   font-size: 1.2rem;
 }
 
@@ -1160,7 +1207,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #FF69B4;
+  color: #FB6F92;
   font-size: 1.5rem;
   line-height: 1;
 }
@@ -1215,7 +1262,7 @@
 
 .timeline-icon {
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .timeline-content {
@@ -1223,7 +1270,7 @@
   padding: 2rem;
   border-radius: 15px;
   width: 45%;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   backdrop-filter: blur(10px);
 }
 
@@ -1260,7 +1307,7 @@
 /* Achievements Grid */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -1269,7 +1316,7 @@
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -1283,7 +1330,7 @@
 .achievement-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .achievement-card h3 {
@@ -1311,7 +1358,7 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -1323,7 +1370,7 @@
 .interest-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .interest-card h3 {
@@ -1343,7 +1390,7 @@
   background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
 }
 
 .career-goals h3 {
@@ -1367,19 +1414,19 @@
   color: #333;
   font-weight: 500;
   padding: 1rem;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   border-radius: 10px;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
 }
 
 .goal-item:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: translateX(10px);
 }
 
 .goal-icon {
-  color: #FF69B4;
+  color: #FB6F92;
   margin-right: 0.5rem;
   font-size: 1.2rem;
 }
@@ -1404,22 +1451,22 @@
   color: #333;
   text-decoration: none;
   padding: 1rem 2rem;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   border-radius: 25px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .contact-link:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .contact-icon {
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .contact-icon i {
@@ -1449,9 +1496,9 @@
 }
 
 .experience-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -1500,7 +1547,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
   max-width: 400px;
@@ -1508,10 +1555,10 @@
 }
 
 .experience-year {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 1rem;
 }
 
@@ -1536,7 +1583,7 @@
 }
 
 .experience-location i {
-  color: #FF69B4;
+  color: #FB6F92;
   margin-right: 0.5rem;
 }
 
@@ -1548,7 +1595,7 @@
 
 .experience-highlights {
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   gap: 0.5rem;
 }
 
@@ -1559,7 +1606,7 @@
 
 .highlight-more {
   font-size: 0.8rem;
-  color: #FF69B4;
+  color: #FB6F92;
   font-style: italic;
 }
 
@@ -1575,7 +1622,7 @@
   padding: 2rem;
   background: white;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -1583,7 +1630,7 @@
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -1606,9 +1653,9 @@
 }
 
 .education-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -1631,7 +1678,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
@@ -1641,7 +1688,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 182, 193, 0.1);
+  background: rgba(251, 111, 146, 0.1);
   border-radius: 15px;
   padding: 2rem;
 }
@@ -1649,7 +1696,7 @@
 .education-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .education-icon i {
@@ -1657,9 +1704,9 @@
 }
 
 .education-period {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 1.2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   font-weight: 600;
   text-align: center;
 }
@@ -1679,8 +1726,8 @@
 }
 
 .education-grade {
-  background: rgba(255, 182, 193, 0.2);
-  color: #FF69B4;
+  background: rgba(251, 111, 146, 0.2);
+  color: #FB6F92;
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -1702,7 +1749,7 @@
 }
 
 .highlight-bullet {
-  color: #FF69B4;
+  color: #FB6F92;
   font-size: 1rem;
   margin-top: 0.1rem;
 }
@@ -1720,16 +1767,16 @@
 }
 
 .education-achievements h3 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 600;
 }
 
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
@@ -1737,7 +1784,7 @@
   background: white;
   padding: 1.5rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -1745,7 +1792,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -1769,9 +1816,9 @@
 }
 
 .skills-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -1791,7 +1838,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
 }
@@ -1799,20 +1846,20 @@
 .skill-category-header {
   display: flex;
   align-items: center;
-  gap: 1rem;
+    gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
 .skill-category-icon {
   width: 60px;
   height: 60px;
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+    justify-content: center;
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .skill-category-header h3 {
@@ -1829,18 +1876,18 @@
 }
 
 .skill-tag {
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   color: #333;
-  padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
   border-radius: 20px;
-  font-size: 0.9rem;
+    font-size: 0.9rem;
   font-weight: 500;
-  border: 1px solid rgba(255, 182, 193, 0.3);
+  border: 1px solid rgba(251, 111, 146, 0.3);
   transition: all 0.3s ease;
 }
 
 .skill-tag:hover {
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   transform: translateY(-2px);
 }
 
@@ -1856,15 +1903,15 @@
   padding: 2rem;
   background: white;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .skill-stat .stat-number {
   display: block;
-  font-size: 2.5rem;
+    font-size: 2.5rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -1887,15 +1934,15 @@
 }
 
 .timeline-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
 
 .timeline-subtitle {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
   color: #666;
   margin: 0;
 }
@@ -1946,14 +1993,14 @@
   border: 3px solid #FF69B4;
   z-index: 10;
   font-size: 1.2rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .timeline-card {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 45%;
   position: relative;
@@ -1970,9 +2017,9 @@
 }
 
 .timeline-year {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 1.2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -1994,8 +2041,8 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(255, 182, 193, 0.2);
-  color: #FF69B4;
+  background: rgba(251, 111, 146, 0.2);
+  color: #FB6F92;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
@@ -2010,9 +2057,9 @@
 }
 
 .timeline-summary h3 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 600;
 }
@@ -2027,7 +2074,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -2036,7 +2083,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -2059,9 +2106,9 @@
 }
 
 .achievements-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -2084,9 +2131,9 @@
 }
 
 .achievements-impact h3 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 600;
 }
@@ -2101,7 +2148,7 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -2109,7 +2156,7 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -2133,9 +2180,9 @@
 }
 
 .personal-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -2158,9 +2205,9 @@
 }
 
 .career-aspirations h3 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 2rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 600;
 }
@@ -2168,23 +2215,23 @@
 .aspirations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
+    gap: 1rem;
+  }
 
 .aspiration-item {
   display: flex;
   align-items: center;
   gap: 1rem;
   background: white;
-  padding: 1.5rem;
+    padding: 1.5rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .aspiration-icon {
   font-size: 1.5rem;
-  color: #FF69B4;
+  color: #FB6F92;
 }
 
 .aspiration-icon i {
@@ -2208,16 +2255,16 @@
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .personal-stat .stat-number {
   display: block;
-  font-size: 2rem;
+    font-size: 2rem;
   font-weight: 700;
-  color: #FF69B4;
+  color: #FB6F92;
   margin-bottom: 0.5rem;
 }
 
@@ -2240,9 +2287,9 @@
 }
 
 .contact-header h2 {
-  font-family: 'Kalam', cursive;
+  font-family: 'Silver Gardens', cursive;
   font-size: 3rem;
-  color: #FF69B4;
+  color: #FB6F92;
   margin: 0 0 1rem 0;
   font-weight: 700;
 }
@@ -2262,7 +2309,7 @@
   background: white;
   padding: 3rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -2275,30 +2322,30 @@
   font-size: 1.1rem;
   color: #333;
   line-height: 1.6;
-  margin: 0;
-}
+    margin: 0;
+  }
 
-.contact-methods {
+  .contact-methods {
   display: flex;
-  flex-direction: column;
+    flex-direction: column;
   gap: 2rem;
 }
 
 .contact-method {
   display: flex;
-  align-items: center;
+    align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: rgba(255, 182, 193, 0.1);
+  background: rgba(251, 111, 146, 0.1);
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   text-decoration: none;
   color: #333;
   transition: all 0.3s ease;
 }
 
 .contact-method:hover {
-  background: rgba(255, 182, 193, 0.2);
+  background: rgba(251, 111, 146, 0.2);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
@@ -2307,17 +2354,17 @@
   font-size: 2rem;
   width: 60px;
   height: 60px;
-  background: rgba(255, 182, 193, 0.3);
+  background: rgba(251, 111, 146, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #FF69B4;
+    justify-content: center;
+  color: #FB6F92;
 }
 
 .contact-icon i {
-  font-size: 2rem;
-}
+    font-size: 2rem;
+  }
 
 .contact-details {
   display: flex;
@@ -2344,9 +2391,9 @@
 }
 
 .contact-availability h3 {
-  font-family: 'Kalam', cursive;
-  font-size: 2rem;
-  color: #FF69B4;
+  font-family: 'Silver Gardens', cursive;
+    font-size: 2rem;
+  color: #FB6F92;
   margin: 0 0 2rem 0;
   font-weight: 600;
 }
@@ -2361,7 +2408,7 @@
   background: white;
   padding: 1.5rem;
   border-radius: 15px;
-  border: 2px solid rgba(255, 182, 193, 0.3);
+  border: 2px solid rgba(251, 111, 146, 0.3);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-size: 1rem;
   color: #333;
@@ -2370,7 +2417,7 @@
 }
 
 .availability-item:hover {
-  background: rgba(255, 182, 193, 0.1);
+  background: rgba(251, 111, 146, 0.1);
   transform: translateY(-3px);
 }
 
@@ -2435,4 +2482,18 @@
   .contact-icon {
     align-self: center;
   }
+}
+
+/* About content in cover page - no box */
+.cover-page .about-content {
+  padding: 2rem;
+}
+
+.cover-page .about-content h2 {
+  font-family: 'Silver Gardens', cursive;
+  font-size: 2.5rem;
+  color: #FB6F92;
+  margin: 0 0 1.5rem 0;
+  font-weight: 600;
+  text-align: center;
 }
