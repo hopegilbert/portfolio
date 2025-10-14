@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import PlayDressUp from './pages/PlayDressUp';
 import IntelligenceHub from './pages/IntelligenceHub';
@@ -15,6 +16,7 @@ import Profile from './pages/Profile';
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
