@@ -316,8 +316,9 @@ function Home() {
           font-family: 'Lora', serif;
           font-size: 1.3rem;
           font-style: italic;
-          font-weight: 500;
+          font-weight: 600;
           color: #000000;
+          text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
           margin: 0 0 0.3rem 0;
         }
 
@@ -357,8 +358,9 @@ function Home() {
           position: relative;
           display: block;
           transition: all 0.3s ease;
-          border-radius: 10px;
-          overflow: hidden;
+          background: transparent;
+          padding: 0;
+          margin: 0;
         }
 
         .portrait-link:hover {
@@ -367,7 +369,6 @@ function Home() {
 
         .portrait-link:hover img {
           filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .portrait-frame img {
@@ -378,6 +379,8 @@ function Home() {
           border: none;
           outline: none;
           transition: all 0.3s ease;
+          padding: 0;
+          margin: 0;
         }
 
         .portrait-overlay {
