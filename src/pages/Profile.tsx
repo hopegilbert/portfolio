@@ -63,51 +63,72 @@ const Profile: React.FC = () => {
 
   const timelineEvents: TimelineEvent[] = [
     {
-      year: 'Nov 2024',
-      title: 'Firewalk for Simon on the Streets',
-      description: 'Raised £270 by walking over hot coals to support those facing homelessness',
-      type: 'achievement',
-      icon: '🔥'
-    },
-    {
-      year: 'Nov 2024',
-      title: 'HubSpot Sales Software Certification',
-      description: 'Certified in HubSpot Sales Software (Nov 2024 - Dec 2025)',
-      type: 'achievement',
-      icon: '🏆'
-    },
-    {
-      year: 'May 2025',
+      year: '2025',
       title: 'Marketing & Business Development Associate',
-      description: 'Mawney Partners, London - Supporting document preparation, design work, and operations',
+      description: 'Started at Mawney Partners in London (May 2025 - Present), supporting document preparation, design work, and operations',
       type: 'work',
       icon: '💼'
     },
     {
-      year: 'Jan 2025',
+      year: '2025',
       title: 'Marketing Executive',
-      description: 'Flat Fee Recruiter - Drove marketing efforts, executed targeted campaigns',
+      description: 'Promoted to Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025)',
       type: 'work',
       icon: '📊'
     },
     {
-      year: 'Oct 2024',
+      year: '2024',
       title: 'Marketing Assistant/Graduate Trainee',
-      description: 'Flat Fee Recruiter - Blended strategy with creativity for compelling campaigns',
+      description: 'Began career at Flat Fee Recruiter (Oct 2024 - Dec 2024), blending strategy with creativity',
       type: 'work',
       icon: '📈'
     },
     {
-      year: 'Jul 2021',
+      year: '2024',
+      title: 'HubSpot Sales Software Certification',
+      description: 'Earned certification (Nov 2024 - Dec 2025)',
+      type: 'achievement',
+      icon: '🏆'
+    },
+    {
+      year: '2024',
+      title: 'Firewalk for Simon on the Streets',
+      description: 'Walked over hot coals to raise £270 for homelessness support (Nov 2024)',
+      type: 'achievement',
+      icon: '🔥'
+    },
+    {
+      year: '2021',
+      title: 'Graduated Durham University',
+      description: 'BSc Psychology with 2:1 honors. Dissertation "Does Cognitive Estimation Precede Visual Experience?" achieved First (76%)',
+      type: 'education',
+      icon: '🎓'
+    },
+    {
+      year: '2021',
       title: 'Tough Mudder for Breast Cancer Now',
-      description: 'Completed 10-mile obstacle course, raising over £1,100',
+      description: 'Completed 10-mile obstacle course (Jan-Jul 2021), raising over £1,100',
       type: 'achievement',
       icon: '🏃‍♀️'
     },
     {
-      year: '2018-2021',
-      title: 'BSc Psychology - Durham University',
-      description: 'Graduated with 2:1 honors. Dissertation achieved First (76%) on cognitive estimation and visual perception',
+      year: '2019-2020',
+      title: 'Assistant Swim Coach',
+      description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
+      type: 'work',
+      icon: '🏊‍♀️'
+    },
+    {
+      year: '2019',
+      title: 'John Snow Ball Chair',
+      description: 'Organized three large-scale events for over 700 guests at Durham University',
+      type: 'achievement',
+      icon: '🎭'
+    },
+    {
+      year: '2018',
+      title: 'Started Durham University',
+      description: 'Began BSc Psychology degree at Durham University',
       type: 'education',
       icon: '🎓'
     },
