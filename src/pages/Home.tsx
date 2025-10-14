@@ -363,7 +363,10 @@ function Home() {
 
         .portrait-link:hover {
           transform: scale(1.05);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .portrait-link:hover img {
+          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
         }
 
         .portrait-frame img {
