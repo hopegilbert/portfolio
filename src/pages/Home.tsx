@@ -368,9 +368,18 @@ function Home() {
         }
 
         .portrait-link:hover img {
-          filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) brightness(1.02);
-          -webkit-filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3)) brightness(1.02);
+          filter: brightness(1.02);
+          mask: url('/portfolio/assets/hope-Utfvr75w.png');
+          -webkit-mask: url('/portfolio/assets/hope-Utfvr75w.png');
+          mask-size: contain;
+          -webkit-mask-size: contain;
+          mask-repeat: no-repeat;
+          -webkit-mask-repeat: no-repeat;
+          mask-position: center;
+          -webkit-mask-position: center;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
+
 
         .portrait-frame img {
           max-width: 100%;
