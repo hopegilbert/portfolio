@@ -80,7 +80,7 @@ function Home() {
             <p className="artist-dates">Creative Professional, United Kingdom</p>
             
             <div style={{
-              color: '#e91e63', 
+              color: '#f06292', 
               fontSize: '1.8rem', 
               fontWeight: '700', 
               fontStyle: 'italic',
