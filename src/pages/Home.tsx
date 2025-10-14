@@ -13,6 +13,9 @@ import moviesFrame from '../assets/home-frames/movies-frame.png';
 import appIcon from '../assets/home-frames/app-icon.png';
 import nameImage from '../assets/name.png';
 import platformsFrame from '../assets/home-frames/platforms-frame.png';
+import socialMediaFrame from '../assets/home-frames/social-media-frame.png';
+import frame1 from '../assets/home-frames/frame 1.png';
+import frame2 from '../assets/home-frames/frame 2.png';
 
 function Home() {
   useEffect(() => {
@@ -179,36 +182,29 @@ function Home() {
 
         {/* Info Card 1 */}
         <div className="grid-item">
-          <img 
-            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
-            alt="frame"
-          />
-          <div className="overlay-content">
-            <h2>Welcome</h2>
-            <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
-          </div>
-        </div>
-
-        {/* Social Media */}
-        <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/450x782/d4c5aa/8b7355?text=Social" 
-              alt="Social Media"
+              src={frame1} 
+              alt="Welcome"
             />
-            <Link to="/social-media" className="hover-button">Social Media</Link>
+            <div className="overlay-content">
+              <h2>Welcome</h2>
+              <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
+            </div>
           </div>
         </div>
 
         {/* Info Card 2 */}
         <div className="grid-item">
-          <img 
-            src="https://via.placeholder.com/530x586/e8d5b7/a89277?text=" 
-            alt="frame"
-          />
-          <div className="overlay-content">
-            <h2>About This Portfolio</h2>
-            <p>A digital museum of my work, ever-evolving and always growing.</p>
+          <div className="image-wrapper">
+            <img 
+              src={frame2} 
+              alt="About This Portfolio"
+            />
+            <div className="overlay-content">
+              <h2>About This Portfolio</h2>
+              <p>A digital museum of my work, ever-evolving and always growing.</p>
+            </div>
           </div>
         </div>
 
@@ -223,16 +219,17 @@ function Home() {
           </div>
         </div>
 
-        {/* Video Editing page link */}
+        {/* Social Media */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/499x665/c4b5a2/7a6a5a?text=More" 
-              alt="Video Editing"
+              src={socialMediaFrame} 
+              alt="Social Media"
             />
-            <Link to="/video-editing" className="hover-button">Video Editing</Link>
+            <Link to="/social-media" className="hover-button">Explore Social Media</Link>
           </div>
         </div>
+
       </div>
 
       {/* Footer */}

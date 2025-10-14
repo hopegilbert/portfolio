@@ -4,9 +4,10 @@ function Navigation() {
   const location = useLocation();
   const isHome = location.pathname === '/' || location.pathname === '/portfolio' || location.pathname === '/portfolio/';
   const isPlayDressUp = location.pathname === '/play-dress-up' || location.pathname === '/portfolio/play-dress-up';
+  const isMovies = location.pathname === '/movies' || location.pathname === '/portfolio/movies';
 
-  // Don't show navigation on home page or Play Dress Up page (full-screen experience)
-  if (isHome || isPlayDressUp) {
+  // Don't show navigation on home page, Play Dress Up, or Movies pages (full-screen experiences)
+  if (isHome || isPlayDressUp || isMovies) {
     return null;
   }
 
