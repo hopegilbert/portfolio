@@ -1139,6 +1139,47 @@ export const articlesData: Article[] = [
     references: [
       'People Management. (2023). Growing number of jobseekers value \'work from anywhere\' schemes and mental health support, research finds. Retrieved from https://www.peoplemanagement.co.uk/article/1830737/growing-number-jobseekers-value-work-anywhere-schemes-mental-health-support-research-finds'
     ]
+  },
+  {
+    id: 21,
+    title: 'The Importance of Salary Transparency',
+    excerpt: 'An analysis of why salary transparency in job advertisements benefits both employers and candidates, including research on gender equality and company culture impacts.',
+    date: '2024',
+    readTime: '4 min read',
+    category: 'Business Psychology',
+    content: `
+      <h1>The Importance of Salary Transparency</h1>
+
+      <p>What is your biggest motivator when applying for a job? Free tea and coffee? On-site parking? Staff discount? All welcome perks.</p>
+
+      <p>However, research suggests that for <a href="https://www.reed.co.uk/recruiter-advice/why-you-should-always-state-salary-in-your-job-ads/" target="_blank" rel="noopener noreferrer">nearly half of all candidates</a>, salary is the biggest motivator when applying for a job. In online polls conducted by Flat Fee Recruiter, 70% of respondents chose pay as their key consideration when applying for a job.</p>
+
+      <p>Despite this, <a href="https://www.reed.co.uk/recruiter-advice/how-to-attract-the-right-candidate-for-your-organisation/" target="_blank" rel="noopener noreferrer">many hiring managers</a> believe that not including a salary on their job adverts will have no negative effect on their campaign. As a result, they're missing out on nearly a third more applicants.</p>
+
+      <p>Not only will salary transparency improve the response to your job adverts. There are also ethical arguments for its inclusion.</p>
+
+      <h2>Positive Company Culture</h2>
+
+      <p>For example, it helps create the impression of a positive company culture. For better or worse, there's a common assumption that a hidden salary is a low salary. Either that, or the company in question is hiding the fact that it is prepared to pay more for new staff than its existing employees. Both options will not present your business in the best light, and a great number of quality candidates won't be prepared to give you the benefit of the doubt.</p>
+
+      <p>Likewise, terms such as 'negotiable' and 'competitive' are largely <a href="https://www.reed.co.uk/recruiter-advice/why-you-should-stop-using-competitive-and-negotiable-salaries-in-your-job-description/" target="_blank" rel="noopener noreferrer">regarded with suspicion</a>. At the end of the day, most jobseekers are looking for a pay increase, and are unlikely to consider leaving their current job for lower pay.</p>
+
+      <h2>Combat Gender Inequality</h2>
+
+      <p>With the increasing focus on maintaining equality in the workplace, salary transparency might also be effective in addressing the gender pay-gap. There is some evidence that <a href="https://www.cv-library.co.uk/recruitment-insight/women-less-likely-negotiate-job-pay-men/#:~:text=In%20fact%2C%20over%20half%20(55.1,willing%20to%20negotiate%20also%20varies" target="_blank" rel="noopener noreferrer">salary negotiations unfairly benefit men</a>. Research even suggests it contributes to subconscious bias in the workplace, with women <a href="https://psycnet.apa.org/record/2021-03654-001" target="_blank" rel="noopener noreferrer">treated negatively</a> for being assertive in a way that male candidates are not.</p>
+
+      <p>Clear salary expectations help combat this, which in turn will also contribute to higher staff morale and a positive company culture.</p>
+
+      <p>It is for this reason in particular that clear salary banding is increasingly common within larger companies, and even a <a href="https://www.nyc.gov/site/cchr/media/pay-transparency.page" target="_blank" rel="noopener noreferrer">legal requirement</a> in some regions around the world. But rather than regard this as a future hurdle to your recruitment strategy, it may ultimately improve your hiring success: appealing to the most candidates will help you attract the best candidates, which in the long run will be the greatest benefit to your business.</p>
+    `,
+    references: [
+      'Reed.co.uk. (2024). Why you should always state salary in your job ads. Retrieved from https://www.reed.co.uk/recruiter-advice/why-you-should-always-state-salary-in-your-job-ads/',
+      'Reed.co.uk. (2022). How to attract the right candidate for your organisation. Retrieved from https://www.reed.co.uk/recruiter-advice/how-to-attract-the-right-candidate-for-your-organisation/',
+      'Reed.co.uk. Why you should stop using competitive and negotiable salaries in your job description. Retrieved from https://www.reed.co.uk/recruiter-advice/why-you-should-stop-using-competitive-and-negotiable-salaries-in-your-job-description/',
+      'CV-Library. Women less likely to negotiate job pay than men. Retrieved from https://www.cv-library.co.uk/recruitment-insight/women-less-likely-negotiate-job-pay-men/',
+      'American Psychological Association. (2021). Record 2021-03654-001. Retrieved from https://psycnet.apa.org/record/2021-03654-001',
+      'New York City Commission on Human Rights. Pay Transparency. Retrieved from https://www.nyc.gov/site/cchr/media/pay-transparency.page'
+    ]
   }
 ];
 
