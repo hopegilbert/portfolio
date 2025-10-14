@@ -317,7 +317,7 @@ function Home() {
           font-size: 1.3rem;
           font-style: italic;
           font-weight: 500;
-          color: #1a1a1a;
+          color: #000000;
           margin: 0 0 0.3rem 0;
         }
 
@@ -367,6 +367,7 @@ function Home() {
 
         .portrait-link:hover img {
           filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .portrait-frame img {
