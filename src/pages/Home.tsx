@@ -11,6 +11,7 @@ import videoFrame from '../assets/home-frames/video-frame.gif';
 import documentFrame from '../assets/home-frames/document-frame.png';
 import moviesFrame from '../assets/home-frames/movies-frame.png';
 import appIcon from '../assets/home-frames/app-icon.png';
+import nameImage from '../assets/name.png';
 
 function Home() {
   useEffect(() => {
@@ -57,6 +58,11 @@ function Home() {
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed'
     }}>
+
+      {/* Name Header */}
+      <div className="name-header">
+        <img src={nameImage} alt="Hope Gilbert" className="name-image" />
+      </div>
 
       {/* Profile Section */}
       <div className="profile-section">
@@ -241,6 +247,22 @@ function Home() {
 
         html {
           scroll-behavior: smooth;
+        }
+
+        .name-header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 2rem 1rem;
+          position: relative;
+          z-index: 1;
+        }
+
+        .name-image {
+          max-width: 100%;
+          height: auto;
+          max-height: 120px;
+          object-fit: contain;
         }
 
         .profile-section {
