@@ -6,6 +6,7 @@ import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
 import hopeImage from '../assets/home-frames/hope.png';
+import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
 import videoFrame from '../assets/home-frames/video-frame.gif';
 import documentFrame from '../assets/home-frames/document-frame.png';
 import moviesFrame from '../assets/home-frames/movies-frame.png';
@@ -14,7 +15,6 @@ import nameImage from '../assets/name.png';
 import platformsFrame from '../assets/home-frames/platforms-frame.png';
 import socialMediaFrame from '../assets/home-frames/social-media-frame.png';
 import frame1 from '../assets/home-frames/frame 1.png';
-import frame2 from '../assets/home-frames/frame 2.png';
 
 function Home() {
   useEffect(() => {
@@ -161,17 +161,14 @@ function Home() {
           </div>
         </div>
 
-        {/* About This Portfolio */}
+        {/* Intelligence Hub */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src={frame2} 
-              alt="About This Portfolio"
+              src={intelligenceFrame} 
+              alt="Intelligence Hub"
             />
-            <div className="overlay-content">
-              <h2>About This Portfolio</h2>
-              <p>A digital museum of my work, ever-evolving and always growing.</p>
-            </div>
+            <Link to="/intelligence-hub" className="hover-button">Intelligence Hub</Link>
           </div>
         </div>
 
