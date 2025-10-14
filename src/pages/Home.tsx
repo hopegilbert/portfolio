@@ -12,6 +12,7 @@ import documentFrame from '../assets/home-frames/document-frame.png';
 import moviesFrame from '../assets/home-frames/movies-frame.png';
 import appIcon from '../assets/home-frames/app-icon.png';
 import nameImage from '../assets/name.png';
+import platformsFrame from '../assets/home-frames/platforms-frame.png';
 
 function Home() {
   useEffect(() => {
@@ -215,10 +216,10 @@ function Home() {
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src="https://via.placeholder.com/615x703/b8a892/5a4a3a?text=Platforms" 
+              src={platformsFrame} 
               alt="Platforms"
             />
-            <div className="hover-text">Platform development and management</div>
+            <Link to="/platforms" className="hover-button">Explore Platforms</Link>
           </div>
         </div>
 

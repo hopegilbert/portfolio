@@ -3,9 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 function Navigation() {
   const location = useLocation();
   const isHome = location.pathname === '/' || location.pathname === '/portfolio' || location.pathname === '/portfolio/';
+  const isPlayDressUp = location.pathname === '/play-dress-up' || location.pathname === '/portfolio/play-dress-up';
 
-  // Don't show navigation on home page
-  if (isHome) {
+  // Don't show navigation on home page or Play Dress Up page (full-screen experience)
+  if (isHome || isPlayDressUp) {
     return null;
   }
 
