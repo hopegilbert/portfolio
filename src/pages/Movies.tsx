@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { movies, type Movie } from '../data/movieData';
 import { TMDB_API_KEY, TMDB_BASE_URL } from '../config/tmdb';
 import './Movies.css';
@@ -29,6 +29,8 @@ function Movies() {
   const [recYear, setRecYear] = useState('all');
   const [recRating, setRecRating] = useState('all');
   const [loadingRecs, setLoadingRecs] = useState(false);
+  const [flippedRecCards, setFlippedRecCards] = useState<Set<number>>(new Set());
+  const [watchProviders, setWatchProviders] = useState<Record<string, any>>({});
 
   // Filter and sort movies
   const filteredMovies = useMemo(() => {
@@ -122,6 +124,63 @@ function Movies() {
       }
       return newSet;
     });
+  };
+
+  const handleRecCardClick = (index: number) => {
+    setFlippedRecCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
+  };
+
+  // Fetch watch providers for a movie
+  const fetchWatchProviders = async (title: string, year: number) => {
+    const cacheKey = `${title}-${year}`;
+    
+    // Return cached data if available
+    if (watchProviders[cacheKey]) {
+      return watchProviders[cacheKey];
+    }
+
+    try {
+      // First, search for the movie to get its TMDB ID
+      const searchResponse = await fetch(
+        `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}&year=${year}`
+      );
+      
+      if (!searchResponse.ok) return null;
+      
+      const searchData = await searchResponse.json();
+      const movieId = searchData.results?.[0]?.id;
+      
+      if (!movieId) return null;
+
+      // Then fetch watch providers using the movie ID
+      const providersResponse = await fetch(
+        `${TMDB_BASE_URL}/movie/${movieId}/watch/providers?api_key=${TMDB_API_KEY}`
+      );
+      
+      if (!providersResponse.ok) return null;
+      
+      const providersData = await providersResponse.json();
+      const gbProviders = providersData.results?.GB;
+      
+      // Cache the result
+      setWatchProviders(prev => ({
+        ...prev,
+        [cacheKey]: gbProviders
+      }));
+      
+      return gbProviders;
+    } catch (error) {
+      console.error('Error fetching watch providers:', error);
+      return null;
+    }
   };
 
   const resetFilters = () => {
@@ -256,6 +315,62 @@ function Movies() {
 
   const handleClose = () => {
     window.history.back();
+  };
+
+  // Component to render watch providers
+  const WatchProviders = ({ movie }: { movie: Movie }) => {
+    const [providers, setProviders] = useState<any>(null);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+      const loadProviders = async () => {
+        setLoading(true);
+        const data = await fetchWatchProviders(movie.title, movie.year);
+        setProviders(data);
+        setLoading(false);
+      };
+      loadProviders();
+    }, [movie.title, movie.year]);
+
+    if (loading) {
+      return (
+        <div className="watch-providers">
+          <h4 className="watch-providers-heading">Where to Watch</h4>
+          <p className="no-providers">Loading...</p>
+        </div>
+      );
+    }
+
+    const streamProviders = providers?.flatrate || [];
+    const rentProviders = providers?.rent || [];
+    const buyProviders = providers?.buy || [];
+    const allProviders = [...streamProviders, ...rentProviders, ...buyProviders];
+    
+    // Remove duplicates
+    const uniqueProviders = allProviders.filter((provider, index, self) =>
+      index === self.findIndex((p) => p.provider_id === provider.provider_id)
+    );
+
+    return (
+      <div className="watch-providers">
+        <h4 className="watch-providers-heading">Where to Watch</h4>
+        {uniqueProviders.length > 0 ? (
+          <div className="providers-grid">
+            {uniqueProviders.map((provider) => (
+              <img
+                key={provider.provider_id}
+                src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}
+                alt={provider.provider_name}
+                title={provider.provider_name}
+                className="provider-logo"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="no-providers">Not available on streaming</p>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -437,6 +552,7 @@ function Movies() {
                       </div>
                       <p className="review-text">{movie.review}</p>
                     </div>
+                    <WatchProviders movie={movie} />
                   </div>
                 </div>
               </div>
@@ -580,7 +696,12 @@ function Movies() {
             </div>
           ) : recommendations.length > 0 ? (
             recommendations.map((movie, index) => (
-              <div key={`rec-${index}`} className="recommendation-card movie-card">
+              <div 
+                key={`rec-${index}`} 
+                className={`recommendation-card movie-card ${flippedRecCards.has(index) ? 'flipped' : ''}`}
+                onClick={() => handleRecCardClick(index)}
+              >
+                {/* Front of card */}
                 <div className="movie-card-front">
                   <img 
                     src={movie.poster} 
@@ -599,6 +720,46 @@ function Movies() {
                           {movie.genre}
                         </span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Back of card */}
+                <div className="movie-card-back">
+                  <div className="back-content">
+                    <h3>
+                      {movie.title}
+                      {movie.trailerUrl && (
+                        <a 
+                          href={movie.trailerUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="trailer-button"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <img src={trailerIcon} alt="Watch Trailer" />
+                        </a>
+                      )}
+                    </h3>
+                    <div className="back-date-genre-row">
+                      <span className={`year-display ${getDecadeClass(movie.year)}`}>
+                        {movie.year}
+                      </span>
+                      <div className="genre-badges">
+                        <span className={`genre-badge ${getGenreClass(movie.genre)}`}>
+                          {movie.genre}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="scrollable-content">
+                      <div className="review-section">
+                        <div className="review-heading-container">
+                          <h4 className="review-heading">Overview</h4>
+                          <div className="star-rating">{renderStars(movie.rating)}</div>
+                        </div>
+                        <p className="review-text">{movie.review}</p>
+                      </div>
+                      <WatchProviders movie={movie} />
                     </div>
                   </div>
                 </div>
