@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Monoton&family=Rubik+Mono+One&family=VT323&family=IBM+Plex+Mono:wght@400;500&family=Cormorant:wght@400;500;600&display=swap');
 
 :root {
     --primary-color: #000033;
@@ -50,8 +51,6 @@
     --shadow-color: rgba(0, 0, 0, 0.1);
     --header-height: 200px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Monoton&family=Rubik+Mono+One&family=VT323&family=IBM+Plex+Mono:wght@400;500&family=Cormorant:wght@400;500;600&display=swap');
 
 * {
     margin: 0;

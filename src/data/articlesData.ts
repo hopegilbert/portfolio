@@ -23,26 +23,181 @@ export const articlesData: Article[] = [
     content: `
       <h1>Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material, or Do They Occur Independently and Concurrently?</h1>
       
-      <div class="acknowledgments">
+      <div class="acknowledgments" style="background: rgba(168, 107, 122, 0.05); padding: 1.5rem; border-left: 4px solid #a86b7a; margin: 2rem 0;">
         <p>I am deeply thankful to my dissertation peers, for their exemplary work and steadfast support during this time. Their contributions have been truly remarkable.</p>
         <p>I would like to express my heartfelt gratitude to my dissertation supervisor for his unwavering support and invaluable insights throughout the course of this dissertation. His assistance and kind words of encouragement have been instrumental, and I am forever grateful.</p>
       </div>
 
-      <h2>Dissertation Sections</h2>
-      <p>This dissertation consists of multiple sections:</p>
+      <h2>Abstract</h2>
+      <p>This dissertation explores the relationship between cognitive estimation and visual experience in the perception of object shape and material. Through a series of experiments, we investigate whether cognitive estimation precedes visual experience or if these processes occur independently and concurrently.</p>
+      <p>Our findings suggest that while cognitive estimation can influence visual perception, the two processes often operate in parallel, with each contributing uniquely to our understanding of object properties. The implications of these findings for theories of perception and cognition are discussed.</p>
+
+      <h2>Introduction</h2>
+      <p>The relationship between visual experience and cognitive estimation has been a subject of philosophical and psychological inquiry for centuries. From the early debates about the nature of perception to contemporary cognitive neuroscience, understanding how we perceive and interpret the world around us remains a fundamental question.</p>
+      <p>This dissertation builds upon historical perspectives while incorporating modern experimental approaches to explore the dynamic interplay between visual perception and cognitive processes. We examine how our understanding of object properties emerges from the interaction between sensory input and higher-order cognitive functions.</p>
+
+      <h2>Methodology</h2>
+      
+      <h3>Design</h3>
+      <p>The study employed a repeated measures design, which allowed each participant to experience both levels of the independent variable: the viewing angles of the mug at 20 degrees and 40 degrees. This design was chosen to control for individual differences in perception and ensure that any observed effects were due to the manipulation of the viewing angle rather than variability between participants. The dependent variable was the number of times participants selected the 'rounder' option when comparing the CGI discs to the real mug's rim.</p>
+
+      <h3>Participants</h3>
+      <p>Three participants (2 males and 1 female) from Durham University participated in the study. Their ages ranged from 22 to 26 years. All participants reported having normal eyesight. The small sample size was strategically chosen to address the research question efficiently, following Aristotle's principle of careful and thorough investigation with a focused group. Taking a psychophysical approach in which a small number of participants make a large number of decisions over a carefully chose range of stimuli allows statistical analyses to be conducted at the level of individual observers is likely to produce clearer results than a groups study in which smaller numbers of trials lead to inaccurate estimates of each observers experience.</p>
+
+      <h3>Apparatus and Materials</h3>
+      <p>The experimental setup included several key components designed to ensure precision and consistency:</p>
+      
       <ul>
-        <li>Abstract</li>
-        <li>Introduction</li>
-        <li>Methodology</li>
-        <li>Procedure</li>
-        <li>Results</li>
-        <li>Discussion</li>
-        <li>Conclusion</li>
-        <li>References</li>
+        <li><strong>Chin Rest:</strong> A chin rest was used to stabilize participants' heads, ensuring that their viewing angle remained constant throughout the experiment. This device was crucial for maintaining consistent eye level and minimizing head movement, which could affect perception.</li>
+        <li><strong>Mug and CGI Ellipses:</strong> A real mug was used as the reference object. The stimuli consisted of a sequence of CGI ellipses with varying degrees of roundness, designed to mimic the rim of the mug. These ellipses had black contours and were presented on a plain white background to eliminate any potential distractions or contextual influences.</li>
+        <li><strong>MATLAB Programming Platform:</strong> The experiment was controlled using MATLAB (Mathworks, N.D.), which managed the presentation of stimuli and recorded responses. MATLAB was also used to measure and adjust the distance of the mug to achieve the correct viewing angles for each condition.</li>
+        <li><strong>Laptop and Stand:</strong> The laptop displaying the stimuli was positioned on a stand to align with the participants' eye level from the table top. This setup ensured that the visual stimuli were presented consistently across trials and participants.</li>
       </ul>
 
-      <p class="author">Written by Hope Gilbert<br>Durham University</p>
-    `
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/experimental-setup.png" alt="Experimental Setup Diagram" style="width: 100%; max-width: 700px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 1: Experimental Setup</p>
+      </div>
+
+      <h2>Procedure</h2>
+      <p>The experiment was conducted individually in a well-lit laboratory at Durham University to ensure a controlled environment and consistency across participants. The procedure was as follows:</p>
+
+      <ol>
+        <li><strong>Preparation:</strong> Participants were seated comfortably at a desk and instructed to place their heads on the chin rest. The height of their eyes was measured with a tape measure, and this measurement was input into MATLAB, which then computed the correct position for the mug to achieve the desired viewing angles of 20 degrees and 40 degrees.</li>
+
+        <li><strong>Stimulus Presentation:</strong> Participants were exposed to 30 blocks of trials, with 15 blocks at a 20-degree viewing angle and 15 blocks at a 40-degree viewing angle. Each block contained 90 trials (ten for each aspect ratio of ellipse), resulting in a total of 1,350 trials per viewing angle condition and 2,700 trials per participant. However, participant 1 could only complete 10 blocks of each trials for reasons of limited time. Meaning one participant did 900 trials per angle condition and 1,800 trials in total.</li>
+
+        <li><strong>Task Instructions:</strong> Participants were instructed to respond to each visual stimulus (CGI ellipses) by pressing the '.' key if they perceived the disc as thinner than the mug's rim or the ',' key if they perceived it as rounder. There were no time constraints imposed, allowing participants to take as much time as needed to ensure accurate responses.</li>
+
+        <li><strong>Trial Execution:</strong> Each CGI disc was displayed within the participant's eyeline, and the next disc appeared only after a response was made. This ensured that participants had sufficient time to compare each disc to the mug's rim without feeling rushed.</li>
+
+        <li><strong>Data Collection:</strong> For each block, a score was recorded, reflecting the frequency with which participants pressed the ',' (rounder) key. This score indicated how often participants perceived the displayed stimuli as rounder compared to the actual rim of the mug.</li>
+
+        <li><strong>Consistency and Control:</strong> The individual nature of the experiment in a controlled laboratory setting ensured that external variables were minimized, providing consistency across participants and trials.</li>
+      </ol>
+
+      <p>The aim was to determine whether the cognitive estimation of an object's intrinsic properties, such as the roundness of the mug's rim, precedes or influences visual experience. By comparing responses across different viewing angles, the study sought to reveal the shape of ellipse corresponding to the observer's experience. If this shape was significantly different to the shape of the geometrically correct perspectival projection of a circle at the given viewing angle this would indicate that prior knowledge and cognitive processes affect experience, thereby contributing to the ongoing debate on the interplay between cognitive estimation and visual experience.</p>
+
+      <h2>Results</h2>
+      <p>The points on the graph represent the proportion of trials where the participant identified the displayed ellipse on the screen as rounder than their experience of shape of the rim of the mug. The cumulative Gaussian curve fitted to these data allows us to estimate their subjective experience (the shape corresponding to the mean of the Gaussian) and the uncertainty in their decisions (the variance of the Gaussian), highlighting a gradual transition rather than a sharp change, which would indicate an absolute threshold.</p>
+
+      <p>The point where the fitted curve intersects the 50% mark represents the point of subjective equality (PSE), where participants would make an equal number of 'rounder' and 'not rounder' judgments. This point indicates where the shape on the screen matches the participants' experience of roundness. An PSE value of 5 in the 9 step set of stimuli we used would be expected if participants had perfect judgment, as this value represents the true point where the ellipse on the screen matches the actual shape.</p>
+
+      <h3>Participant 1</h3>
+      <p>The analysis of the 20-degree trials for Participant 1 reveals that the point of subjective equality (PSE) indicates an experience of equality when the ellipse is actually rounder, aligning with Thouless's findings. The true value of the point of objective equality falls significantly outside the 95% confidence interval (CI) of the PSE. This lack of overlap indicates a statistically significant deviation from objective equality, underscoring a perceptual shift consistent with prior cognitive estimations influencing visual experience.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure1.png" alt="Participant 1 - 20-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 2: Participant 1 - 20-degree Trials Graph</p>
+      </div>
+
+      <p>In the 40-degree condition, the results diverge from Thouless's theory. Here, the point of objective equality is within the 95% CI of the PSE, indicating that the participant's perceptual judgments were closer to objective equality under this viewing angle. This suggests that cognitive estimation did not significantly distort visual experience in this condition.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure2.png" alt="Participant 1 - 40-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 3: Participant 1 - 40-degree Trials Graph</p>
+      </div>
+
+      <h3>Participant 2</h3>
+      <p>For Participant 2, the 20-degree condition presented a substantial challenge, reflected by a large standard deviation (s.d.) in the cumulative Gaussian curve. Despite the increased difficulty and a larger CI, the PSE still shows a significant shift away from objective equality, indicating that cognitive estimations heavily influenced the participant's visual experience. The CI does not overlap with the point of objective equality, confirming this shift.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure3.png" alt="Participant 2 - 20-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 4: Participant 2 - 20-degree Trials Graph</p>
+      </div>
+
+      <p>In the 40-degree condition, Participant 2 exhibited a high degree of difficulty, responding almost uniformly across trials. This uniformity prevented the fitting of a meaningful curve, making it impossible to estimate the PSE accurately. This suggests that the task was too challenging for the participant, leading to consistent responses that did not vary with the stimulus.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure4.png" alt="Participant 2 - 40-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 5: Participant 2 - 40-degree Trials Graph</p>
+      </div>
+
+      <h3>Participant 3</h3>
+      <p>Participant 3's results closely mirror those of Participant 1. In the 20-degree trials, the PSE indicates that the participant perceives equality when the ellipse is rounder, consistent with Thouless's findings. The true point of objective equality falls well outside the 95% CI of the PSE, demonstrating a significant perceptual shift away from objective equality.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure5.png" alt="Participant 3 - 20-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 6: Participant 3 - 20-degree Trials Graph</p>
+      </div>
+
+      <p>In the 40-degree condition, Participant 3's PSE is significantly distant from the point of objective equality, indicating a large perceptual shift. This result aligns with Thouless's observations, suggesting that cognitive estimations significantly influence visual experience under this condition.</p>
+
+      <div style="margin: 2rem 0; text-align: center;">
+        <img src="/portfolio/essay-images/figure6.png" alt="Participant 3 - 40-degree Trials Graph" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <p style="margin-top: 1rem; font-style: italic; color: #666;">Figure 7: Participant 3 - 40-degree Trials Graph</p>
+      </div>
+
+      <h3>Summary and Implications</h3>
+      <p>We have 6 sets of data, of the 6 sets we could make estimates of the point of subject equality (PSE) in 5 sets. Of those 5 sets there are 4 sets that show absolutely clear shifts away objective equality consistent with Thouless.</p>
+
+      <p>Overall, the results across the three participants indicate that in 4 out of 5 measurable conditions, there is a clear shift away from objective equality consistent with Thouless's findings. These shifts suggest that cognitive estimations significantly influence visual experience, especially under conditions where the task is perceived as more difficult, such as the 20-degree viewing angle.</p>
+
+      <p>Given the substantial variability in task difficulty and shifts of the PSE away from objective equality, further experiments are warranted. Future studies could explore the relationship between task difficulty, foreshortening, and the size of the shift by varying the viewing angles incrementally (e.g., 10 degrees, 20 degrees, 30 degrees) to determine if the difficulty correlates with the extent of the shift. Such studies would provide deeper insights into the cognitive mechanisms underlying visual experience and the conditions under which cognitive estimations most strongly influence experience.</p>
+
+      <h2>Discussion</h2>
+      <p>The findings of this dissertation offer significant insights into the intricate relationship between cognitive estimation and visual experience. The study aimed to determine whether cognitive processes precede, follow, or occur concurrently with visual experiences. By revisiting Thouless's seminal experiments with a modern methodological approach, we have garnered evidence that supports the notion that cognitive estimation significantly influences visual experience, particularly under certain conditions.</p>
+
+      <h3>Summary of Findings</h3>
+      <p>The results show that in the majority of conditions tested (4 out of 5 measurable conditions), participants' perceptions deviated significantly from objective equality. This suggests that cognitive estimations of an object's intrinsic properties, such as the roundness of the mug's rim, indeed influence visual experience. Specifically:</p>
+
+      <ol>
+        <li><strong>20-Degree Viewing Angle:</strong> Both Participant 1 and Participant 3 showed a significant perceptual shift, indicating that their cognitive estimations of the mug's intrinsic roundness influenced their visual judgments. This aligns with Thouless's findings and suggests that when the visual task is more challenging due to greater perspective distortion, cognitive processes play a more prominent role in maintaining perceptual constancy.</li>
+        <li><strong>40-Degree Viewing Angle:</strong> The results were mixed. Participant 1's results suggested that cognitive estimation did not significantly distort visual experience under this condition, which contrasts with Thouless's theory. However, Participant 3 exhibited a significant perceptual shift, consistent with Thouless's observations. Participant 2, due to the difficulty of the task, was unable to provide meaningful data in this condition.</li>
+      </ol>
+
+      <p>These findings suggest that cognitive estimation and visual experience interact in a complex manner, where the influence of cognitive processes may vary depending on the viewing conditions and the perceived difficulty of the task.</p>
+
+      <h3>Implications for Perceptual Psychology</h3>
+      <p>The results contribute to the ongoing debate on whether cognitive estimation precedes or follows visual experience or whether they occur concurrently. The study provides evidence that supports the integration of cognitive processes and visual experience, aligning with contemporary views in perceptual psychology that advocate for a more dynamic and interconnected understanding of perception (Clark, 2013).</p>
+
+      <ol>
+        <li><strong>Perceptual Constancy:</strong> The findings reinforce the concept of perceptual constancy, where cognitive factors contribute to the stability of visual experience despite changes in sensory input. This supports Daoust's (2021) argument that cognitive processes underpin perceptual stability and are integral to maintaining consistent perceptions of object properties across varying conditions.</li>
+        <li><strong>Cognitive Influence on Perception:</strong> The significant shifts observed in the 20-degree condition highlight the role of cognitive estimations in visual experience, suggesting that our understanding of an object's intrinsic properties can influence how we perceive it from different perspectives. This finding extends Thouless's work and aligns with Hatfield's (2014) and Morales et al.'s (2020) research on the interplay between sensory inputs and cognitive interpretations.</li>
+        <li><strong>Interaction of Sensory and Cognitive Processes:</strong> The study shows that sensory and cognitive processes do not operate in isolation but rather interact in a complex manner. This interaction is particularly evident under challenging visual conditions, where cognitive estimations seem to play a more significant role in shaping visual experience. This supports the integrated approach to perception proposed by contemporary researchers like Clark (2013), who argue that perception is a dynamic interplay of sensory inputs and cognitive processes.</li>
+      </ol>
+
+      <h3>Methodological Considerations</h3>
+      <p>The experimental design, which involved a small number of participants making a large number of decisions, provided robust statistical analyses at the individual level. This approach allowed for a detailed examination of perceptual processes and minimized the influence of individual variability. However, the study's small sample size also presents limitations, necessitating further research with larger and more diverse participant groups to validate and extend these findings.</p>
+
+      <ol>
+        <li><strong>Small Sample Size:</strong> While the focused approach of using a small sample size with numerous trials per participant allows for detailed individual-level analysis, it limits the generalizability of the findings. Future research should involve a larger and more diverse sample to ensure that the results are broadly applicable.</li>
+        <li><strong>Task Difficulty and Variability:</strong> The variability in task difficulty across different viewing angles highlights the need for future studies to systematically vary viewing angles and task complexities. This would help to better understand the conditions under which cognitive estimations most strongly influence visual experience.</li>
+        <li><strong>Integration of Neuroimaging Techniques:</strong> Incorporating neuroimaging techniques in future studies could provide deeper insights into the neural mechanisms underlying the interaction between cognitive and perceptual processes. This could help to identify specific brain regions involved in integrating sensory and cognitive information during visual experience.</li>
+        <li><strong>Experimental Design Improvements:</strong> Future experiments should consider incorporating additional control conditions and varying the types of objects and perspectives used. This would provide a more comprehensive understanding of how cognitive estimation influences visual experience across different contexts and object types.</li>
+      </ol>
+
+      <h2>Conclusion</h2>
+      <p>This dissertation provides compelling evidence that cognitive estimation influences visual experience, particularly under conditions where visual tasks are challenging due to perspective distortions. The findings support a more integrated approach to understanding perception, where cognitive processes and visual experiences are dynamically interconnected. By building on Thouless's foundational work and incorporating modern methodologies, this research contributes to a more comprehensive theory of perception, highlighting the importance of cognitive factors in shaping our visual experiences. Understanding these relationships is crucial for advancing our knowledge of how the brain integrates sensory and cognitive information to produce coherent and stable perceptions of the world.</p>
+
+      <p>The study emphasizes the need for further research to explore the nuances of this interaction, including the potential for neuroimaging studies to shed light on the underlying neural mechanisms. By continuing to investigate the relationship between cognitive estimation and visual experience, we can develop a deeper understanding of the complex processes that underlie our ability to perceive and interpret the world around us.</p>
+
+      <p class="author" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(168, 107, 122, 0.2); text-align: right; font-style: italic; color: #8e8e8e;">Written by Hope Gilbert<br>Durham University, 2024</p>
+    `,
+    references: [
+      'Carbon, C. C. (2014). Understanding human perception by human-made illusions. Frontiers in Human Neuroscience, 8(566). https://doi.org/10.3389/fnhum.2014.00566',
+      'Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science. Behavioral and Brain Sciences, 36(3), 181–204. https://doi.org/10.1017/s0140525x12000477',
+      'Daoust, L. (2021). Stability by degrees: conceptions of constancy from the history of perceptual psychology. History & Philosophy of the Life Sciences, 43(1). https://doi.org/10.1007/s40656-021-00370-1',
+      'Duan, Z., & Curtis, C. E. (2024). Visual working memories are abstractions of percepts. https://doi.org/10.7554/elife.94191.2',
+      'Eysenck, M. W., & Keane, M. (2020). Cognitive Psychology: a student\'s handbook. Psychology Press.',
+      'Hatfield, G. (2014). Psychological Experiments and Phenomenal Experience in Size and Shape Constancy. Philosophy of Science, 81(5), 940–953. https://doi.org/10.1086/677891',
+      'Helmholtz, H. von. (2014). Handbuch der physiologischen Optik. Internet Archive. https://archive.org/details/handbuchderphysi00helm',
+      'Manassi, M., Murai, Y., & Whitney, D. (2023). Serial dependence in visual experience: A meta-analysis and review. Journal of Vision, 23(8), 18–18. https://doi.org/10.1167/jov.23.8.18',
+      'McCaffery, J. M., Robertson, D. J., Young, A. W., & Burton, A. M. (2018). Individual differences in face identity processing. Cognitive Research: Principles and Implications, 3(1). https://doi.org/10.1186/s41235-018-0112-9',
+      'McCourt, M. E. (2001). Vision Research. Annual Review of Psychology, 52(1), 617-640.',
+      'Morales, J., Bax, A., & Firestone, C. (2020). Sustained representation of perspectival shape. Proceedings of the National Academy of Sciences, 117(26), 14873–14882. https://doi.org/10.1073/pnas.2000715117',
+      'O\'Dea, J. (2020). Perceptual constancy and the dimensions of perceptual experience. Phenomenology and the Cognitive Sciences. https://doi.org/10.1007/s11097-020-09705-y',
+      'Padilla, L. M., Creem-Regehr, S. H., Hegarty, M., & Stefanucci, J. K. (2018). Decision making with visualizations: a cognitive framework across disciplines. Cognitive Research: Principles and Implications, 3(1). https://doi.org/10.1186/s41235-018-0120-9',
+      'Palmer, S. E. (1999). Vision Science: Photons to Phenomenology. MIT Press.',
+      'Schwenkler, J., & Assaf Weksler. (2019). Are perspectival shapes seen or imagined? An experimental approach. Philarchive.org.',
+      'Sebo Uithol, Bryant, K., Toni, I., & Mars, R. B. (2021). The Anticipatory and Task-Driven Nature of Visual experience. 31(12), 5354–5362. https://doi.org/10.1093/cercor/bhab163',
+      'Sereno, M. E., Robles, K. E., Kikumoto, A., & Bies, A. J. (2020). The Effects of Three-Dimensional Context on Shape Perception. Journal of Experimental Psychology: Human Perception and Performance.',
+      'THOULESS, R. H. (1931). PHENOMENAL REGRESSION TO THE REAL OBJECT. I. British Journal of Psychology General Section, 21(4), 339–359. https://doi.org/10.1111/j.2044-8295.1931.tb00597.x',
+      'Ungerleider, L. (1994). "What" and "where" in the human brain. Current Opinion in Neurobiology, 4(2), 157–165. https://doi.org/10.1016/0959-4388(94)90066-3',
+      'Visual experience and visual cognition in healthy and pathological ageing. (2024). Frontiers.',
+      'Visual experience - an overview | ScienceDirect Topics. (n.d.). Www.sciencedirect.com.',
+      'Zaira, C., & Tomaso, V. (2011). The Relationship between Visual experience, Imagery, and Cognitive Functions. Blind Vision, 49–73. https://doi.org/10.7551/mitpress/9780262015035.003.0003'
+    ]
   },
   {
     id: 2,
