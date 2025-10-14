@@ -317,7 +317,7 @@ function Home() {
           font-size: 1.3rem;
           font-style: italic;
           font-weight: 500;
-          color: #2c2c2c;
+          color: #1a1a1a;
           margin: 0 0 0.3rem 0;
         }
 
