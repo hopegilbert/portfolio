@@ -55,25 +55,25 @@ const Profile: React.FC = () => {
     {
       title: 'Programming Languages',
       skills: ['Python', 'JavaScript', 'TypeScript (TSX)', 'Swift', 'HTML', 'CSS', 'JSON'],
-      icon: '💻',
+      icon: 'fa-code',
       color: '#6366f1'
     },
     {
       title: 'Development Tools',
       skills: ['React', 'Vite', 'Git', 'npm', 'Xcode'],
-      icon: '⚛️',
+      icon: 'fa-layer-group',
       color: '#8b5cf6'
     },
     {
       title: 'Design & Creative',
       skills: ['Adobe Illustrator', 'Photoshop', 'Premiere Pro', 'InDesign', 'Procreate', 'CapCut', 'Canva', 'WordPress'],
-      icon: '🎨',
+      icon: 'fa-palette',
       color: '#ec4899'
     },
     {
       title: 'Marketing & Business',
       skills: ['HubSpot Marketing Hub', 'HubSpot Sales Software', 'SEO Copywriting', 'Social Media PPC', 'Facebook Ads Manager', 'Google Analytics', 'Email Marketing'],
-      icon: '📈',
+      icon: 'fa-chart-line',
       color: '#10b981'
     }
   ];
@@ -84,97 +84,97 @@ const Profile: React.FC = () => {
       title: 'Marketing & Business Development Associate',
       description: 'Started at Mawney Partners in London (May 2025 - Present), supporting document preparation, design work, and operations',
       type: 'work',
-      icon: '💼'
+      icon: 'fa-briefcase'
     },
     {
       year: '2025',
       title: 'Marketing Executive',
       description: 'Promoted to Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025)',
       type: 'work',
-      icon: '📊'
+      icon: 'fa-chart-bar'
     },
     {
       year: '2024',
       title: 'Marketing Assistant/Graduate Trainee',
       description: 'Began career at Flat Fee Recruiter (Oct 2024 - Dec 2024), blending strategy with creativity',
       type: 'work',
-      icon: '📈'
+      icon: 'fa-chart-line'
     },
     {
       year: '2024',
       title: 'HubSpot Sales Software Certification',
       description: 'Earned certification (Nov 2024 - Dec 2025)',
       type: 'achievement',
-      icon: '🏆'
+      icon: 'fa-award'
     },
     {
       year: '2024',
       title: 'Firewalk for Simon on the Streets',
       description: 'Walked over hot coals to raise £270 for homelessness support (Nov 2024)',
       type: 'achievement',
-      icon: '🔥'
+      icon: 'fa-fire'
     },
     {
       year: '2024',
       title: 'Graduated Durham University',
       description: 'BSc Psychology with 2:1 honors. Dissertation achieved First Class (76%)',
       type: 'education',
-      icon: '🎓'
+      icon: 'fa-graduation-cap'
     },
     {
       year: '2021',
       title: 'Tough Mudder for Breast Cancer Now',
       description: 'Completed 10-mile obstacle course (Jan-Jul 2021), raising over £1,100',
       type: 'achievement',
-      icon: '🏃‍♀️'
+      icon: 'fa-running'
     },
     {
       year: '2020',
       title: 'Started Durham University',
       description: 'Began BSc Psychology degree at Durham University',
       type: 'education',
-      icon: '🎓'
+      icon: 'fa-university'
     },
     {
       year: '2019-2020',
       title: 'Assistant Swim Coach',
       description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
       type: 'work',
-      icon: '🏊‍♀️'
+      icon: 'fa-swimming-pool'
     },
     {
       year: '2020',
       title: 'Graduated Woodhouse Grove School',
       description: 'Completed A-Levels with A*BB (Art A*, Psychology B, English Literature B)',
       type: 'education',
-      icon: '🎓'
+      icon: 'fa-school'
     },
     {
       year: '2010',
       title: 'Swimathon for Marie Curie',
       description: 'Raised over £1,000 for cancer support',
       type: 'achievement',
-      icon: '🏊‍♀️'
+      icon: 'fa-hands-helping'
     }
   ];
 
   const achievements = [
-    { title: 'John Snow Ball Chair', description: 'Managed large-scale events, overseeing themes, entertainment, and catering', icon: '🎭' },
-    { title: 'John Snow Netball Club', description: 'Social Secretary and Gym Coordinator at Durham University', icon: '🏐' },
-    { title: 'First Class Dissertation', description: 'Achieved First Class (76%) in Psychology dissertation at Durham University', icon: '🎓' },
-    { title: 'Head of Atkinson House', description: 'Leadership role at Woodhouse Grove School', icon: '👑' },
-    { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: '🎖️' },
-    { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: '🎨' },
-    { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: '🏐' }
+    { title: 'John Snow Ball Chair', description: 'Managed large-scale events, overseeing themes, entertainment, and catering', icon: 'fa-calendar-alt' },
+    { title: 'John Snow Netball Club', description: 'Social Secretary and Gym Coordinator at Durham University', icon: 'fa-users' },
+    { title: 'First Class Dissertation', description: 'Achieved First Class (76%) in Psychology dissertation at Durham University', icon: 'fa-graduation-cap' },
+    { title: 'Head of Atkinson House', description: 'Leadership role at Woodhouse Grove School', icon: 'fa-crown' },
+    { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: 'fa-medal' },
+    { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: 'fa-palette' },
+    { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: 'fa-trophy' }
   ];
 
   const personalInterests = [
-    { interest: 'Sports & Netball', description: 'Played for school Second Netball Team and District Team, helped college team secure top league position', icon: '🏐' },
-    { interest: 'Swimming & Coaching', description: 'Assistant Swim Coach at Ducklings and Dolphins (Sept 2019 - Jul 2020)', icon: '🏊‍♀️' },
-    { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 5 Flute', icon: '🎤' },
-    { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: '🎨' },
-    { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: '✈️' },
-    { interest: 'Charity & Social Impact', description: 'Raised over £15,000 for various charities including Breast Cancer Now, Marie Curie, and Simon on the Streets', icon: '❤️' }
+    { interest: 'Sports & Netball', description: 'Played for school Second Netball Team and District Team, helped college team secure top league position', icon: 'fa-volleyball-ball' },
+    { interest: 'Swimming & Coaching', description: 'Assistant Swim Coach at Ducklings and Dolphins (Sept 2019 - Jul 2020)', icon: 'fa-swimmer' },
+    { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 5 Flute', icon: 'fa-music' },
+    { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: 'fa-paint-brush' },
+    { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: 'fa-globe-europe' },
+    { interest: 'Charity & Social Impact', description: 'Raised over £15,000 for various charities including Breast Cancer Now, Marie Curie, and Simon on the Streets', icon: 'fa-heart' }
   ];
 
   const careerGoals = [
@@ -349,7 +349,7 @@ const Profile: React.FC = () => {
         {skillCategories.map((category, index) => (
           <div key={index} className="skill-category" style={{ '--category-color': category.color } as React.CSSProperties}>
             <div className="category-header">
-              <span className="category-icon">{category.icon}</span>
+              <i className={`fas ${category.icon} category-icon`}></i>
               <h3>{category.title}</h3>
             </div>
             <div className="skills-list">
@@ -427,7 +427,7 @@ const Profile: React.FC = () => {
         {timelineEvents.map((event, index) => (
           <div key={index} className={`timeline-item ${event.type}`}>
             <div className="timeline-marker">
-              <span className="timeline-icon">{event.icon}</span>
+              <i className={`fas ${event.icon} timeline-icon`}></i>
             </div>
             <div className="timeline-content">
               <div className="timeline-year">{event.year}</div>
@@ -446,7 +446,9 @@ const Profile: React.FC = () => {
       <div className="achievements-grid">
         {achievements.map((achievement, index) => (
           <div key={index} className="achievement-card">
-            <div className="achievement-icon">{achievement.icon}</div>
+            <div className="achievement-icon">
+              <i className={`fas ${achievement.icon}`}></i>
+            </div>
             <h3>{achievement.title}</h3>
             <p>{achievement.description}</p>
           </div>
@@ -461,7 +463,9 @@ const Profile: React.FC = () => {
       <div className="interests-grid">
         {personalInterests.map((item, index) => (
           <div key={index} className="interest-card">
-            <div className="interest-icon">{item.icon}</div>
+            <div className="interest-icon">
+              <i className={`fas ${item.icon}`}></i>
+            </div>
             <h3>{item.interest}</h3>
             <p>{item.description}</p>
           </div>
