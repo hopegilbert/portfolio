@@ -135,13 +135,27 @@ const Profile: React.FC = () => {
       type: 'education',
       icon: 'fa-university'
     },
-    {
-      year: '2019-2020',
-      title: 'Assistant Swim Coach',
-      description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
-      type: 'work',
-      icon: 'fa-swimming-pool'
-    },
+      {
+        year: '2019-2020',
+        title: 'Assistant Swim Coach',
+        description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
+        type: 'work',
+        icon: 'fa-swimming-pool'
+      },
+      {
+        year: '2018-2021',
+        title: 'Hospitality Work',
+        description: 'Bartender and server roles in various bars and restaurants',
+        type: 'work',
+        icon: 'fa-glass-martini-alt'
+      },
+      {
+        year: '2017-2020',
+        title: 'Childcare Provider',
+        description: 'Provided childcare services for multiple families',
+        type: 'work',
+        icon: 'fa-child'
+      },
     {
       year: '2020',
       title: 'Graduated Woodhouse Grove School',
@@ -149,13 +163,20 @@ const Profile: React.FC = () => {
       type: 'education',
       icon: 'fa-school'
     },
-    {
-      year: '2010',
-      title: 'Swimathon for Marie Curie',
-      description: 'Raised over £1,000 for cancer support',
-      type: 'achievement',
-      icon: 'fa-hands-helping'
-    }
+      {
+        year: '2024',
+        title: 'John Snow Charity Fashion Show',
+        description: 'Organized charity fashion show raising £13,500',
+        type: 'achievement',
+        icon: 'fa-tshirt'
+      },
+      {
+        year: '2010',
+        title: 'Swimathon for Marie Curie',
+        description: 'Raised over £1,000 for cancer support',
+        type: 'achievement',
+        icon: 'fa-hands-helping'
+      }
   ];
 
   const achievements = [
@@ -165,7 +186,8 @@ const Profile: React.FC = () => {
     { title: 'Head of Atkinson House', description: 'Leadership role at Woodhouse Grove School', icon: 'fa-crown' },
     { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: 'fa-medal' },
     { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: 'fa-palette' },
-    { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: 'fa-trophy' }
+    { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: 'fa-trophy' },
+    { title: 'John Snow Charity Fashion Show', description: 'Organized charity fashion show raising £13,500', icon: 'fa-tshirt' }
   ];
 
   const personalInterests = [
@@ -174,7 +196,7 @@ const Profile: React.FC = () => {
     { interest: 'Theatre & Music', description: 'Singing (Sarah Ridy Cup winner), Grade 7 Musical Theatre (Distinction), Grade 5 Flute', icon: 'fa-music' },
     { interest: 'Creative Arts', description: 'A-Level Art background, traditional mediums (acrylic, watercolor, oil, pencil) and digital art', icon: 'fa-paint-brush' },
     { interest: 'Travel & Culture', description: 'Extensive travel throughout Europe', icon: 'fa-globe-europe' },
-    { interest: 'Charity & Social Impact', description: 'Raised over £15,000 for various charities including Breast Cancer Now, Marie Curie, and Simon on the Streets', icon: 'fa-heart' }
+    { interest: 'Charity & Social Impact', description: 'Raised significant funds for various charities including John Snow Charity Fashion Show (£13,500), Tough Mudder for Breast Cancer Now (£1,100+), Marie Curie (£1,000+), and Simon on the Streets (£270)', icon: 'fa-heart' }
   ];
 
   const careerGoals = [
@@ -267,6 +289,34 @@ const Profile: React.FC = () => {
         'Developed social media content',
         'Collaborated with clients to meet design requirements',
         'Delivered projects on time and to specification'
+      ]
+    },
+    {
+      company: 'Childcare & Babysitting',
+      role: 'Childcare Provider',
+      period: '2017 - 2020',
+      location: 'Various',
+      description: 'Provided childcare services for multiple families, ensuring safety and engaging activities.',
+      responsibilities: [
+        'Supervised children of various ages',
+        'Organized educational and recreational activities',
+        'Ensured children\'s safety and wellbeing',
+        'Maintained clean and organized environments',
+        'Built strong relationships with families'
+      ]
+    },
+    {
+      company: 'Various Bars & Restaurants',
+      role: 'Bartender & Server',
+      period: '2018 - 2021',
+      location: 'Various',
+      description: 'Worked in hospitality industry providing excellent customer service.',
+      responsibilities: [
+        'Served drinks and food to customers',
+        'Managed busy periods efficiently',
+        'Handled cash and card transactions',
+        'Maintained clean work areas',
+        'Provided excellent customer service'
       ]
     }
   ];
