@@ -62,7 +62,6 @@ function IntelligenceHub() {
     setTimeout(() => {
       const message = userMessage.toLowerCase();
       let response = '';
-      let confidence = 0;
 
       // Experience and Career Keywords
       const experienceKeywords = [
