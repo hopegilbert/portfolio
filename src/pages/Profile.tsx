@@ -71,13 +71,13 @@ const Profile: React.FC = () => {
   ];
 
   const achievements = [
-    { title: 'John Snow Ball Chair', description: 'Managed three large-scale events for over 700 guests, overseeing themes, entertainment, and catering', icon: '🎭' },
-    { title: 'John Snow Charity Fashion Show', description: 'Compered event that raised over £13,500', icon: '💝' },
-    { title: 'First Class Dissertation', description: 'Achieved First (76%) in Psychology dissertation at Durham University', icon: '🎓' },
-    { title: 'Full Arts Colours', description: 'Awarded for excellence in the arts at Woodhouse Grove School', icon: '🎨' },
-    { title: '2nd VII Netball Colours', description: 'Recognized for netball achievements', icon: '🏐' },
-    { title: 'Sarah Ridy Cup for Singing', description: 'School award for vocal performance', icon: '🎤' },
-    { title: 'Grade 7 Musical Theatre Distinction', description: 'Achieved distinction in Musical Theatre (Dec 2019)', icon: '🎭' }
+    { title: 'John Snow Ball Chair', description: 'Managed large-scale events, overseeing themes, entertainment, and catering', icon: '🎭' },
+    { title: 'John Snow Netball Club', description: 'Social Secretary and Gym Coordinator at Durham University', icon: '🏐' },
+    { title: 'First Class Dissertation', description: 'Achieved First Class (1st) in Psychology dissertation at Durham University', icon: '🎓' },
+    { title: 'Head of Atkinson House', description: 'Leadership role at Woodhouse Grove School', icon: '👑' },
+    { title: 'School Prefect', description: 'Mentoring and supporting younger students', icon: '🎖️' },
+    { title: 'A-Level Art Grade A*', description: 'Achieved highest grade in Art A-Level', icon: '🎨' },
+    { title: '2nd Team Netball', description: 'Athletic achievement at Woodhouse Grove School', icon: '🏐' }
   ];
 
   const personalInterests = [
@@ -187,34 +187,34 @@ const Profile: React.FC = () => {
     {
       institution: 'Durham University',
       degree: 'BSc Psychology',
-      period: '2018 - 2021',
+      period: '2020 - 2024',
       grade: '2:1 (Second Class Honours, Upper Division)',
       highlights: [
-        'Dissertation: "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" - First Class (76%)',
-        'Specialized in cognitive psychology, visual perception, and neuroscience',
-        'John Snow Ball Chair - organized three large-scale events for 700+ guests',
-        'Fresher Representative at John Snow College',
-        'Completed training in Alcohol Awareness, Consent Matters, and Active Bystander Intervention',
-        'Played for college netball team, securing top league position',
+        'Dissertation: "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" - First Class (1st)',
+        'Studied modules in social, cognitive and biological psychology with advanced research methods and statistics',
+        'Took elective English Literature module in year 1',
+        'Final year modules included Business and Economic Psychology, Close Relationships, Psychology and Law',
+        'John Snow Ball Chair - organized large-scale events',
+        'John Snow Netball Club Social Secretary and Gym Coordinator',
         'Strong analytical and research abilities, fostering data-driven decision-making'
       ]
     },
     {
       institution: 'Woodhouse Grove School',
       degree: 'A-Levels',
-      period: '2016 - 2018',
-      grade: 'A*BB',
+      period: '2013 - 2020',
+      grade: 'A*BB (Art A*, Psychology B, English Literature B)',
       highlights: [
-        'A-Level Art - developed strong creative and design skills',
-        'Head of House - leadership and organizational responsibilities',
-        'Prefect - mentoring and supporting younger students',
+        'A-Level Art - Grade A* - developed strong creative and design skills',
+        'A-Level Psychology - Grade B',
+        'A-Level English Literature - Grade B',
+        'Head of Atkinson House - leadership and organizational responsibilities',
+        'School Prefect - mentoring and supporting younger students',
+        '2nd Team Netball - athletic achievement',
         'Full Arts Colours - recognition for excellence in the arts',
-        '2nd VII Netball Colours - athletic achievement',
         'Sarah Ridy Cup for Singing - vocal performance award',
-        'Atkinson House Service Award',
         'Grade 7 Musical Theatre (Distinction) - Dec 2019',
-        'Grade 5 Flute (Pass) - Mar 2018',
-        'Organized Valentine\'s Ball for nearly 200 guests independently'
+        'Grade 5 Flute (Pass) - Mar 2018'
       ]
     }
   ];
