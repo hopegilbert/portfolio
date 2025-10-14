@@ -6,7 +6,6 @@ import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
 import paintingFrame from '../assets/home-frames/painting-frame.png';
 import homeBackground from '../assets/home-background.png';
 import hopeImage from '../assets/home-frames/hope.png';
-import intelligenceFrame from '../assets/home-frames/intelligence-frame.png';
 import videoFrame from '../assets/home-frames/video-frame.gif';
 import documentFrame from '../assets/home-frames/document-frame.png';
 import moviesFrame from '../assets/home-frames/movies-frame.png';
@@ -112,25 +111,17 @@ function Home() {
           </div>
         </div>
 
-        {/* Intelligence Hub */}
+        {/* Welcome */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src={intelligenceFrame} 
-              alt="Intelligence Hub"
+              src={frame1} 
+              alt="Welcome"
             />
-            <Link to="/intelligence-hub" className="hover-button">Intelligence Hub</Link>
-          </div>
-        </div>
-
-        {/* Art Work */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src={paintingFrame} 
-              alt="Art Work"
-            />
-            <Link to="/art-work" className="hover-button">View Art!</Link>
+            <div className="overlay-content">
+              <h2>Welcome</h2>
+              <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
+            </div>
           </div>
         </div>
 
@@ -148,25 +139,14 @@ function Home() {
           </div>
         </div>
 
-        {/* Video Editing */}
+        {/* Art Work */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src={videoFrame} 
-              alt="Video Editing"
+              src={paintingFrame} 
+              alt="Art Work"
             />
-            <Link to="/video-editing" className="hover-button">Video Editing</Link>
-          </div>
-        </div>
-
-        {/* Document Design */}
-        <div className="grid-item">
-          <div className="image-wrapper">
-            <img 
-              src={documentFrame} 
-              alt="Document Design"
-            />
-            <Link to="/document-design" className="hover-button">Document Design</Link>
+            <Link to="/art-work" className="hover-button">View Art!</Link>
           </div>
         </div>
 
@@ -181,21 +161,18 @@ function Home() {
           </div>
         </div>
 
-        {/* Info Card 1 */}
+        {/* Video Editing */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src={frame1} 
-              alt="Welcome"
+              src={videoFrame} 
+              alt="Video Editing"
             />
-            <div className="overlay-content">
-              <h2>Welcome</h2>
-              <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
-            </div>
+            <Link to="/video-editing" className="hover-button">Video Editing</Link>
           </div>
         </div>
 
-        {/* Info Card 2 */}
+        {/* About This Portfolio */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
@@ -209,14 +186,14 @@ function Home() {
           </div>
         </div>
 
-        {/* Platforms */}
+        {/* Document Design */}
         <div className="grid-item">
           <div className="image-wrapper">
             <img 
-              src={platformsFrame} 
-              alt="Platforms"
+              src={documentFrame} 
+              alt="Document Design"
             />
-            <Link to="/platforms" className="hover-button">Explore Platforms</Link>
+            <Link to="/document-design" className="hover-button">Document Design</Link>
           </div>
         </div>
 
@@ -228,6 +205,17 @@ function Home() {
               alt="Social Media"
             />
             <Link to="/social-media" className="hover-button">Explore Social Media</Link>
+          </div>
+        </div>
+
+        {/* Platforms */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src={platformsFrame} 
+              alt="Platforms"
+            />
+            <Link to="/platforms" className="hover-button">Explore Platforms</Link>
           </div>
         </div>
 
