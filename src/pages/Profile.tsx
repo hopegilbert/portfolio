@@ -9,12 +9,21 @@ interface SkillCategory {
   color: string;
 }
 
-interface TimelineEvent {
-  year: string;
-  title: string;
+interface WorkExperience {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
   description: string;
-  type: 'education' | 'work' | 'achievement' | 'personal';
-  icon: string;
+  responsibilities: string[];
+}
+
+interface Education {
+  institution: string;
+  degree: string;
+  period: string;
+  grade: string;
+  highlights: string[];
 }
 
 const Profile: React.FC = () => {
@@ -61,86 +70,6 @@ const Profile: React.FC = () => {
     }
   ];
 
-  const timelineEvents: TimelineEvent[] = [
-    {
-      year: '2025',
-      title: 'Marketing & Business Development Associate',
-      description: 'Started at Mawney Partners in London (May 2025 - Present), supporting document preparation, design work, and operations',
-      type: 'work',
-      icon: '💼'
-    },
-    {
-      year: '2025',
-      title: 'Marketing Executive',
-      description: 'Promoted to Marketing Executive at Flat Fee Recruiter (Jan 2025 - Apr 2025)',
-      type: 'work',
-      icon: '📊'
-    },
-    {
-      year: '2024',
-      title: 'Marketing Assistant/Graduate Trainee',
-      description: 'Began career at Flat Fee Recruiter (Oct 2024 - Dec 2024), blending strategy with creativity',
-      type: 'work',
-      icon: '📈'
-    },
-    {
-      year: '2024',
-      title: 'HubSpot Sales Software Certification',
-      description: 'Earned certification (Nov 2024 - Dec 2025)',
-      type: 'achievement',
-      icon: '🏆'
-    },
-    {
-      year: '2024',
-      title: 'Firewalk for Simon on the Streets',
-      description: 'Walked over hot coals to raise £270 for homelessness support (Nov 2024)',
-      type: 'achievement',
-      icon: '🔥'
-    },
-    {
-      year: '2021',
-      title: 'Graduated Durham University',
-      description: 'BSc Psychology with 2:1 honors. Dissertation "Does Cognitive Estimation Precede Visual Experience?" achieved First (76%)',
-      type: 'education',
-      icon: '🎓'
-    },
-    {
-      year: '2021',
-      title: 'Tough Mudder for Breast Cancer Now',
-      description: 'Completed 10-mile obstacle course (Jan-Jul 2021), raising over £1,100',
-      type: 'achievement',
-      icon: '🏃‍♀️'
-    },
-    {
-      year: '2019-2020',
-      title: 'Assistant Swim Coach',
-      description: 'Coached at Ducklings and Dolphins (Sept 2019 - Jul 2020)',
-      type: 'work',
-      icon: '🏊‍♀️'
-    },
-    {
-      year: '2019',
-      title: 'John Snow Ball Chair',
-      description: 'Organized three large-scale events for over 700 guests at Durham University',
-      type: 'achievement',
-      icon: '🎭'
-    },
-    {
-      year: '2018',
-      title: 'Started Durham University',
-      description: 'Began BSc Psychology degree at Durham University',
-      type: 'education',
-      icon: '🎓'
-    },
-    {
-      year: '2010',
-      title: 'Swimathon for Marie Curie',
-      description: 'Raised over £1,000 for cancer support',
-      type: 'achievement',
-      icon: '🏊‍♀️'
-    }
-  ];
-
   const achievements = [
     { title: 'John Snow Ball Chair', description: 'Managed three large-scale events for over 700 guests, overseeing themes, entertainment, and catering', icon: '🎭' },
     { title: 'John Snow Charity Fashion Show', description: 'Compered event that raised over £13,500', icon: '💝' },
@@ -166,6 +95,128 @@ const Profile: React.FC = () => {
     'Marketing & Digital Strategy',
     'Human-Centered Design',
     'Technology & Creativity Intersection'
+  ];
+
+  const workExperience: WorkExperience[] = [
+    {
+      company: 'Mawney Partners',
+      role: 'Marketing and Business Development Associate',
+      period: 'May 2025 - Present',
+      location: 'London, England',
+      description: 'Supporting business development initiatives with focus on document preparation, design work, and operations.',
+      responsibilities: [
+        'Document preparation and design work',
+        'Supporting operations and business development',
+        'Built Mawney Partners App and Website',
+        'Created Market Maps for business analysis'
+      ]
+    },
+    {
+      company: 'Flat Fee Recruiter',
+      role: 'Marketing Executive',
+      period: 'Jan 2025 - Apr 2025',
+      location: 'Remote',
+      description: 'Promoted to Marketing Executive, driving marketing efforts by blending strategy with creativity to craft compelling campaigns.',
+      responsibilities: [
+        'Executed targeted marketing strategies',
+        'Developed engaging content for multiple platforms',
+        'Managed social media PPC advertising campaigns',
+        'Leveraged data and analytics to optimize performance',
+        'Created marketing materials using Adobe Creative Suite'
+      ]
+    },
+    {
+      company: 'Flat Fee Recruiter',
+      role: 'Marketing Assistant / Graduate Trainee',
+      period: 'Oct 2024 - Dec 2024',
+      location: 'Remote',
+      description: 'Started career in marketing, blending strategy with creativity for compelling campaigns that resonate with clients and candidates.',
+      responsibilities: [
+        'Assisted in developing marketing campaigns',
+        'Managed social media accounts and content',
+        'Supported email marketing initiatives',
+        'Conducted market research and analysis',
+        'Collaborated with design team on promotional materials'
+      ]
+    },
+    {
+      company: 'Ducklings and Dolphins',
+      role: 'Assistant Swim Coach',
+      period: 'Sept 2019 - Jul 2020',
+      location: 'Yorkshire, England',
+      description: 'Coached swimming lessons, combining passion for sports with mentorship and instruction.',
+      responsibilities: [
+        'Coached swimming lessons for various age groups',
+        'Developed lesson plans and training programs',
+        'Ensured safety and proper technique',
+        'Built positive relationships with students and parents',
+        'Supported head coach in administrative tasks'
+      ]
+    },
+    {
+      company: 'Various Hospitality Roles',
+      role: 'Bartender, Waitress, Barista',
+      period: '2018 - 2021',
+      location: 'Durham & Yorkshire, England',
+      description: 'Customer-facing roles during university, developing strong communication and service skills.',
+      responsibilities: [
+        'Provided excellent customer service',
+        'Managed high-volume periods efficiently',
+        'Handled cash and card transactions',
+        'Maintained clean and organized work environment',
+        'Worked effectively in team settings'
+      ]
+    },
+    {
+      company: 'Freelance',
+      role: 'Graphic Designer',
+      period: '2019 - Present',
+      location: 'Remote',
+      description: 'Freelance design work for various clients including KoreaSphereUK and Palatine Power.',
+      responsibilities: [
+        'Created logos and branding materials',
+        'Designed packaging and promotional materials',
+        'Developed social media content',
+        'Collaborated with clients to meet design requirements',
+        'Delivered projects on time and to specification'
+      ]
+    }
+  ];
+
+  const educationHistory: Education[] = [
+    {
+      institution: 'Durham University',
+      degree: 'BSc Psychology',
+      period: '2018 - 2021',
+      grade: '2:1 (Second Class Honours, Upper Division)',
+      highlights: [
+        'Dissertation: "Does Cognitive Estimation Precede Visual Experience in the Perception of Object Shape and Material?" - First Class (76%)',
+        'Specialized in cognitive psychology, visual perception, and neuroscience',
+        'John Snow Ball Chair - organized three large-scale events for 700+ guests',
+        'Fresher Representative at John Snow College',
+        'Completed training in Alcohol Awareness, Consent Matters, and Active Bystander Intervention',
+        'Played for college netball team, securing top league position',
+        'Strong analytical and research abilities, fostering data-driven decision-making'
+      ]
+    },
+    {
+      institution: 'Woodhouse Grove School',
+      degree: 'A-Levels',
+      period: '2016 - 2018',
+      grade: 'A*BB',
+      highlights: [
+        'A-Level Art - developed strong creative and design skills',
+        'Head of House - leadership and organizational responsibilities',
+        'Prefect - mentoring and supporting younger students',
+        'Full Arts Colours - recognition for excellence in the arts',
+        '2nd VII Netball Colours - athletic achievement',
+        'Sarah Ridy Cup for Singing - vocal performance award',
+        'Atkinson House Service Award',
+        'Grade 7 Musical Theatre (Distinction) - Dec 2019',
+        'Grade 5 Flute (Pass) - Mar 2018',
+        'Organized Valentine\'s Ball for nearly 200 guests independently'
+      ]
+    }
   ];
 
   const renderOverview = () => (
@@ -226,20 +277,55 @@ const Profile: React.FC = () => {
     </div>
   );
 
-  const renderTimeline = () => (
+  const renderExperience = () => (
     <div className="profile-section">
-      <h2>Journey & Achievements</h2>
-      <div className="timeline">
-        {timelineEvents.map((event, index) => (
-          <div key={index} className={`timeline-item ${event.type}`}>
-            <div className="timeline-marker">
-              <span className="timeline-icon">{event.icon}</span>
+      <h2>Work Experience</h2>
+      <div className="experience-list">
+        {workExperience.map((job, index) => (
+          <div key={index} className="experience-card">
+            <div className="experience-header">
+              <div className="experience-title">
+                <h3>{job.role}</h3>
+                <h4>{job.company}</h4>
+              </div>
+              <div className="experience-meta">
+                <span className="experience-period">{job.period}</span>
+                <span className="experience-location">📍 {job.location}</span>
+              </div>
             </div>
-            <div className="timeline-content">
-              <div className="timeline-year">{event.year}</div>
-              <h3>{event.title}</h3>
-              <p>{event.description}</p>
+            <p className="experience-description">{job.description}</p>
+            <ul className="experience-responsibilities">
+              {job.responsibilities.map((resp, respIndex) => (
+                <li key={respIndex}>{resp}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  const renderEducation = () => (
+    <div className="profile-section">
+      <h2>Education</h2>
+      <div className="education-list">
+        {educationHistory.map((edu, index) => (
+          <div key={index} className="education-card">
+            <div className="education-header">
+              <div className="education-title">
+                <h3>{edu.degree}</h3>
+                <h4>{edu.institution}</h4>
+              </div>
+              <div className="education-meta">
+                <span className="education-period">{edu.period}</span>
+                <span className="education-grade">🎓 {edu.grade}</span>
+              </div>
             </div>
+            <ul className="education-highlights">
+              {edu.highlights.map((highlight, highlightIndex) => (
+                <li key={highlightIndex}>{highlight}</li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
@@ -343,16 +429,22 @@ const Profile: React.FC = () => {
             Overview
           </button>
           <button 
+            className={activeSection === 'experience' ? 'active' : ''}
+            onClick={() => setActiveSection('experience')}
+          >
+            Experience
+          </button>
+          <button 
+            className={activeSection === 'education' ? 'active' : ''}
+            onClick={() => setActiveSection('education')}
+          >
+            Education
+          </button>
+          <button 
             className={activeSection === 'skills' ? 'active' : ''}
             onClick={() => setActiveSection('skills')}
           >
             Skills
-          </button>
-          <button 
-            className={activeSection === 'timeline' ? 'active' : ''}
-            onClick={() => setActiveSection('timeline')}
-          >
-            Timeline
           </button>
           <button 
             className={activeSection === 'achievements' ? 'active' : ''}
@@ -379,8 +471,9 @@ const Profile: React.FC = () => {
       <main className="profile-main">
         <div className="profile-container">
           {activeSection === 'overview' && renderOverview()}
+          {activeSection === 'experience' && renderExperience()}
+          {activeSection === 'education' && renderEducation()}
           {activeSection === 'skills' && renderSkills()}
-          {activeSection === 'timeline' && renderTimeline()}
           {activeSection === 'achievements' && renderAchievements()}
           {activeSection === 'personal' && renderPersonal()}
           {activeSection === 'contact' && renderContact()}
