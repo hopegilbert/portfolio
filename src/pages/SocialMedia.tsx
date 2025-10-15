@@ -498,27 +498,30 @@ function SocialMedia() {
         }
 
         .back-btn {
-          position: absolute;
+          position: fixed;
           left: 2rem;
-          top: 0;
-          background: linear-gradient(135deg, rgba(168, 107, 122, 0.05), rgba(245, 201, 224, 0.05));
-          border: 1px solid rgba(168, 107, 122, 0.2);
-          color: #a86b7a;
-          padding: 0.6rem 1.25rem;
-          border-radius: 20px;
+          top: 2rem;
+          background: rgba(168, 107, 122, 0.95);
+          border: 2px solid #a86b7a;
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border-radius: 25px;
           text-decoration: none;
-          font-size: 0.9rem;
-          font-weight: 600;
+          font-size: 1rem;
+          font-weight: 700;
           transition: all 0.3s ease;
-          display: inline-block;
-          box-shadow: 0 2px 8px rgba(168, 107, 122, 0.1);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          box-shadow: 0 4px 16px rgba(168, 107, 122, 0.4);
+          z-index: 9999;
         }
 
         .back-btn:hover {
-          background: linear-gradient(135deg, rgba(168, 107, 122, 0.1), rgba(245, 201, 224, 0.1));
-          border-color: #a86b7a;
-          transform: translateX(-3px);
-          box-shadow: 0 4px 12px rgba(168, 107, 122, 0.2);
+          background: #8b4a5a;
+          border-color: #8b4a5a;
+          transform: translateX(-3px) scale(1.05);
+          box-shadow: 0 6px 20px rgba(168, 107, 122, 0.5);
         }
 
         .profile-section {
