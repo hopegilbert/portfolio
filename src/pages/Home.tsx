@@ -344,10 +344,12 @@ function Home() {
 
         /* Navigation Dropdown Styles */
         .nav-dropdown-container {
-          position: fixed;
-          top: 2rem;
-          right: 2rem;
-          z-index: 999999;
+          position: fixed !important;
+          top: 2rem !important;
+          right: 2rem !important;
+          z-index: 2147483647 !important; /* Maximum possible z-index value */
+          isolation: isolate !important; /* Creates new stacking context */
+          pointer-events: auto !important;
         }
 
         .nav-dropdown-toggle {
@@ -379,19 +381,21 @@ function Home() {
         }
 
         .nav-dropdown-menu {
-          position: absolute;
-          top: 100%;
-          right: 0;
+          position: absolute !important;
+          top: 100% !important;
+          right: 0 !important;
           margin-top: 0.5rem;
-          background: rgba(255, 255, 255, 0.98);
-          backdrop-filter: blur(15px);
-          border: 1px solid rgba(168, 107, 122, 0.2);
+          background: rgba(255, 255, 255, 0.98) !important;
+          backdrop-filter: blur(15px) !important;
+          border: 1px solid rgba(168, 107, 122, 0.2) !important;
           border-radius: 12px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25) !important;
           min-width: 200px;
           overflow: hidden;
           animation: dropdownFadeIn 0.2s ease-out;
-          z-index: 999999;
+          z-index: 2147483647 !important; /* Maximum possible z-index value */
+          isolation: isolate !important; /* Creates new stacking context */
+          pointer-events: auto !important;
         }
 
         @keyframes dropdownFadeIn {
