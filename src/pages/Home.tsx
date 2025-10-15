@@ -339,6 +339,49 @@ function Home() {
           </div>
         </div>
 
+        {/* Contact Form */}
+        <div className="grid-item">
+          <div className="contact-form-container">
+            <h3 className="contact-form-title">Get in Touch</h3>
+            <form className="contact-form" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const name = formData.get('name');
+              const email = formData.get('email');
+              const message = formData.get('message');
+              
+              // For now, open default email client
+              window.location.href = `mailto:hopegilbert@live.com?subject=Contact from ${name}&body=${message}%0D%0A%0D%0AFrom: ${email}`;
+              
+              // Reset form
+              e.currentTarget.reset();
+            }}>
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Your Name" 
+                required 
+                className="contact-input"
+              />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Your Email" 
+                required 
+                className="contact-input"
+              />
+              <textarea 
+                name="message"
+                placeholder="Your Message" 
+                required 
+                className="contact-textarea"
+                rows={4}
+              />
+              <button type="submit" className="contact-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+
       </div>
 
       {/* Footer */}
@@ -831,6 +874,93 @@ function Home() {
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         }
 
+        .contact-form-container {
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-radius: 12px;
+          padding: 2rem;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(168, 107, 122, 0.2);
+          transition: all 0.3s ease;
+        }
+
+        .contact-form-container:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-form-title {
+          font-family: 'Lora', serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #a86b7a;
+          margin: 0 0 1.5rem 0;
+          text-align: center;
+        }
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .contact-input,
+        .contact-textarea {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid rgba(168, 107, 122, 0.3);
+          border-radius: 8px;
+          font-family: 'Lora', serif;
+          font-size: 0.9rem;
+          color: #2c2c2c;
+          background: rgba(255, 255, 255, 0.8);
+          transition: all 0.3s ease;
+          box-sizing: border-box;
+        }
+
+        .contact-input:focus,
+        .contact-textarea:focus {
+          outline: none;
+          border-color: #a86b7a;
+          background: rgba(255, 255, 255, 1);
+          box-shadow: 0 0 0 3px rgba(168, 107, 122, 0.1);
+        }
+
+        .contact-input::placeholder,
+        .contact-textarea::placeholder {
+          color: #a86b7a;
+          opacity: 0.6;
+        }
+
+        .contact-textarea {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        .contact-submit {
+          background-color: #a86b7a;
+          color: #fde9f0;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 25px;
+          font-family: 'Lora', serif;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 4px 12px rgba(168, 107, 122, 0.3);
+        }
+
+        .contact-submit:hover {
+          background-color: #8b4a5a;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(168, 107, 122, 0.4);
+        }
+
+        .contact-submit:active {
+          transform: translateY(0);
+        }
+
         .footer-frame {
           backdrop-filter: blur(9px);
           background-color: rgba(253, 233, 240, 0.2);
@@ -927,6 +1057,25 @@ function Home() {
           .overlay-content p {
             font-size: 0.75rem;
           }
+
+          .contact-form-container {
+            padding: 1.5rem;
+          }
+
+          .contact-form-title {
+            font-size: 1.2rem;
+          }
+
+          .contact-input,
+          .contact-textarea {
+            font-size: 0.85rem;
+            padding: 0.65rem;
+          }
+
+          .contact-submit {
+            font-size: 0.9rem;
+            padding: 0.65rem 1.25rem;
+          }
         }
 
         @media (max-width: 480px) {
@@ -940,6 +1089,20 @@ function Home() {
 
           .title-image-frame h1 {
             font-size: 1.5rem;
+          }
+
+          .contact-form-container {
+            padding: 1.25rem;
+          }
+
+          .contact-form-title {
+            font-size: 1.1rem;
+          }
+
+          .contact-input,
+          .contact-textarea {
+            font-size: 0.8rem;
+            padding: 0.6rem;
           }
         }
       `}</style>
