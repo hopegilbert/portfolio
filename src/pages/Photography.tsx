@@ -333,20 +333,8 @@ function Photography() {
   return (
     <div className="photography-page">
       {/* Back Button */}
-      <div style={{
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        right: '0',
-        background: '#dc143c',
-        color: 'white',
-        padding: '20px',
-        zIndex: 9999,
-        textAlign: 'center',
-        fontSize: '18px',
-        fontWeight: 'bold'
-      }}>
-        <a href="/" style={{ color: 'white', textDecoration: 'none' }}>← Back to Home</a>
+      <div className="back-button-container">
+        <a href="/" className="back-button">← Back to Home</a>
       </div>
 
       {/* Hero Section */}
@@ -583,36 +571,25 @@ function Photography() {
 
         /* Top Navigation */
         .back-button-container {
-          background: #ffffff;
+          background: #dc143c;
           padding: 20px;
-          border-bottom: 2px solid #dc143c;
+          text-align: center;
           position: fixed;
           top: 0;
           left: 0;
           right: 0;
           z-index: 1000;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .back-button {
-          color: #dc143c;
+          color: white;
           text-decoration: none;
-          font-weight: 700;
-          font-size: 1.2rem;
-          transition: all 0.3s ease;
-          background: none;
-          border: none;
-          padding: 10px 20px;
-          border-radius: 8px;
-          background: #f8f8f8;
-          border: 2px solid #dc143c;
+          font-weight: bold;
+          font-size: 18px;
         }
 
         .back-button:hover {
-          color: #ffffff;
-          background: #dc143c;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+          color: #f0f0f0;
         }
 
         /* Hero Section */
