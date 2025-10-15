@@ -280,8 +280,8 @@ const socialPosts = [
   allPosts[23],  // hopeSocial2 (moved here, was position 6)
   allPosts[10],  // inclusionWeek (moved from position 14)
   allPosts[11],  // nmdDiscount
-  allPosts[25],  // hopeSocial4 (swapped with remembrance1)
-  allPosts[12],  // remembrance1 (moved from position 15)
+  allPosts[12],  // remembrance1 (swapped back with hopeSocial4)
+  allPosts[25],  // hopeSocial4 (moved from position 16)
   allPosts[13],  // remembrance2
   allPosts[14],  // winePouring
   allPosts[3],   // dryJan2 (moved from position 5)
