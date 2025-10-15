@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
@@ -14,11 +13,9 @@ if (!rootElement) {
 } else {
   console.log('Root element found, rendering app...')
   createRoot(rootElement).render(
-    <StrictMode>
-      <BrowserRouter basename="/portfolio">
-        <App />
-      </BrowserRouter>
-    </StrictMode>,
+    <BrowserRouter basename="/portfolio">
+      <App />
+    </BrowserRouter>
   )
   console.log('App rendered successfully!')
 }

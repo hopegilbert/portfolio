@@ -274,8 +274,8 @@ const socialPosts = [
   allPosts[4],   // dryJan3
   allPosts[6],   // dryJanuary (moved from position 9)
   allPosts[22],  // hopeSocial1 (swapped with dryJanuary)
-  allPosts[24],  // hopeSocial3 (swapped with glassLemon)
-  allPosts[7],   // glassLemon (moved from position 10)
+  allPosts[7],   // glassLemon (swapped with hopeSocial3)
+  allPosts[24],  // hopeSocial3 (moved from position 10)
   allPosts[8],   // martiniGlass
   allPosts[23],  // hopeSocial2 (moved here, was position 6)
   allPosts[25],  // hopeSocial4 (swapped with inclusionWeek)
