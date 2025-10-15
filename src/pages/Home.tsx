@@ -164,12 +164,7 @@ function Home() {
             <p className="acquisition">Personal collection</p>
             
             <p className="description">
-              Hope Gilbert is a multidisciplinary creative professional whose work spans fashion, 
-              technology, art, and digital media. Her approach combines analytical thinking with 
-              artistic vision, creating projects that bridge the gap between traditional craft 
-              and modern innovation. Through her diverse portfolio, Gilbert explores themes of 
-              identity, creativity, and the intersection of human expression with technological 
-              advancement.
+              I'm Hope – a self-taught coder, marketer, and creative who's just as comfortable analyzing data as I am painting portraits. With a Psychology degree from Durham and years in marketing, I've learned to blend analytical thinking with creative expression. I build apps, design brands, create art, and solve problems – basically, if it sits at the intersection of technology, creativity, and human behavior, I'm all in.
             </p>
           </div>
           

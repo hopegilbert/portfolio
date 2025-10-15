@@ -1,86 +1,74 @@
 import { useState } from 'react';
 
-// Import video files
-import adventCalendarVideo from '../assets/video-editing/adventcalendar.mp4';
-import animationVideo from '../assets/video-editing/animationvideo.mov';
-import bbqAndTubeVideo from '../assets/video-editing/bbqandtube.MP4';
-import livePhotosVideo from '../assets/video-editing/livephotos.MP4';
-import meetHopeVideo from '../assets/video-editing/meethope.mov';
-import motelVideo from '../assets/video-editing/motel.MP4';
-import mumAndDadVideo from '../assets/video-editing/mumanddad.MP4';
-import simonOnTheStreetsVideo from '../assets/video-editing/simononthestreets.mov';
-import tiktokVideo from '../assets/video-editing/tiktok.MOV';
-import vintageSkirtVideo from '../assets/video-editing/vintageskirt.MP4';
-
 // Video projects data
 const videoProjects = [
   {
     id: 1,
     title: 'Meet Hope',
-    videoFile: meetHopeVideo,
+    videoFile: '/src/assets/video-editing/meethope.mov',
     description: 'An introduction to Hope Gilbert - showcasing personality, creativity, and style.',
     category: 'Personal'
   },
   {
     id: 2,
     title: 'Advent Calendar',
-    videoFile: adventCalendarVideo,
+    videoFile: '/src/assets/video-editing/adventcalendar.mp4',
     description: 'A festive advent calendar video project featuring creative holiday content.',
     category: 'Seasonal'
   },
   {
     id: 3,
     title: 'Animation Video',
-    videoFile: animationVideo,
+    videoFile: '/src/assets/video-editing/animationvideo.mov',
     description: 'Creative animation and motion graphics showcase.',
     category: 'Animation'
   },
   {
     id: 4,
     title: 'BBQ and Tube',
-    videoFile: bbqAndTubeVideo,
+    videoFile: '/src/assets/video-editing/bbqandtube.MP4',
     description: 'A fun lifestyle video combining BBQ adventures with creative storytelling.',
     category: 'Lifestyle'
   },
   {
     id: 5,
     title: 'Live Photos',
-    videoFile: livePhotosVideo,
+    videoFile: '/src/assets/video-editing/livephotos.MP4',
     description: 'Dynamic live photo compilations brought to life through video.',
     category: 'Photography'
   },
   {
     id: 6,
     title: 'Motel',
-    videoFile: motelVideo,
+    videoFile: '/src/assets/video-editing/motel.MP4',
     description: 'Cinematic motel video with atmospheric visuals and storytelling.',
     category: 'Cinematic'
   },
   {
     id: 7,
     title: 'Mum and Dad',
-    videoFile: mumAndDadVideo,
+    videoFile: '/src/assets/video-editing/mumanddad.MP4',
     description: 'A heartfelt family video celebrating special moments.',
     category: 'Family'
   },
   {
     id: 8,
     title: 'Simon on the Streets',
-    videoFile: simonOnTheStreetsVideo,
+    videoFile: '/src/assets/video-editing/simononthestreets.mov',
     description: 'Urban storytelling featuring Simon exploring city streets.',
     category: 'Documentary'
   },
   {
     id: 9,
     title: 'TikTok',
-    videoFile: tiktokVideo,
+    videoFile: '/src/assets/video-editing/tiktok.MOV',
     description: 'Short-form social media content optimized for TikTok.',
     category: 'Social Media'
   },
   {
     id: 10,
     title: 'Vintage Skirt',
-    videoFile: vintageSkirtVideo,
+    videoFile: '/src/assets/video-editing/vintageskirt.MP4',
     description: 'Fashion-focused video showcasing vintage style and aesthetics.',
     category: 'Fashion'
   }
