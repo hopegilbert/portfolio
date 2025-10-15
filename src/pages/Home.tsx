@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
 import IPhoneModal from '../components/iPhoneModal';
@@ -82,52 +83,56 @@ function Home() {
             <span>Menu</span>
           </button>
           
-          {isDropdownOpen && (
-            <div className="nav-dropdown-menu">
-              <Link to="/profile" className="nav-dropdown-item">
+          {isDropdownOpen && createPortal(
+            <div className="nav-dropdown-menu-portal">
+              <Link to="/profile" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-user"></i>
                 Profile
               </Link>
-              <Link to="/art-work" className="nav-dropdown-item">
+              <Link to="/art-work" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-palette"></i>
                 Art Work
               </Link>
-              <Link to="/play-dress-up" className="nav-dropdown-item">
+              <Link to="/play-dress-up" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-tshirt"></i>
                 Dress Up
               </Link>
-              <Link to="/movies" className="nav-dropdown-item">
+              <Link to="/movies" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-film"></i>
                 Movies
               </Link>
-              <Link to="/document-design" className="nav-dropdown-item">
+              <Link to="/document-design" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-file-alt"></i>
                 Documents
               </Link>
-              <Link to="/video-editing" className="nav-dropdown-item">
+              <Link to="/video-editing" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-video"></i>
                 Video Editing
               </Link>
-              <Link to="/intelligence-hub" className="nav-dropdown-item">
+              <Link to="/intelligence-hub" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-brain"></i>
                 Intelligence Hub
               </Link>
-              <Link to="/platforms" className="nav-dropdown-item">
+              <Link to="/platforms" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-share-alt"></i>
                 Platforms
               </Link>
-              <Link to="/social-media" className="nav-dropdown-item">
+              <Link to="/social-media" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-hashtag"></i>
                 Social Media
               </Link>
               <button 
                 className="nav-dropdown-item nav-dropdown-app"
-                onClick={() => setIsAppModalOpen(true)}
+                onClick={() => {
+                  setIsAppModalOpen(true);
+                  setIsDropdownOpen(false);
+                }}
               >
                 <i className="fas fa-mobile-alt"></i>
                 Apps
               </button>
-            </div>
+            </div>,
+            document.body
           )}
         </div>
       </div>
@@ -380,11 +385,10 @@ function Home() {
           font-size: 1rem;
         }
 
-        .nav-dropdown-menu {
-          position: absolute !important;
-          top: 100% !important;
-          right: 0 !important;
-          margin-top: 0.5rem;
+        .nav-dropdown-menu-portal {
+          position: fixed !important;
+          top: 5.5rem !important;
+          right: 2rem !important;
           background: rgba(255, 255, 255, 0.98) !important;
           backdrop-filter: blur(15px) !important;
           border: 1px solid rgba(168, 107, 122, 0.2) !important;
@@ -844,9 +848,10 @@ function Home() {
             font-size: 0.8rem;
           }
 
-          .nav-dropdown-menu {
+          .nav-dropdown-menu-portal {
             min-width: 180px;
-            right: -1rem;
+            top: 4.5rem !important;
+            right: 1rem !important;
           }
 
           .portrait-frame {
