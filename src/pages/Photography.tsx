@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 function Photography() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory] = useState<string>('all');
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
 
   // Photography categories/shoots
@@ -70,12 +70,9 @@ function Photography() {
     }
   ];
 
-  const filteredPhotos = selectedCategory === 'all' 
-    ? featuredPhotos 
-    : featuredPhotos.filter(photo => photo.category === selectedCategory);
 
   // All photos from each folder
-  const folderPhotos = {
+  const folderPhotos: { [key: string]: string[] } = {
     'aggression sessions': [
       new URL('../assets/photography/aggression sessions/IMG_2238.jpg', import.meta.url).href,
       new URL('../assets/photography/aggression sessions/IMG_2255.jpg', import.meta.url).href,
@@ -357,7 +354,7 @@ function Photography() {
                 </div>
               </div>
               <div className="photo-icons-grid">
-                {featuredPhotos.slice(0, 9).map((photo, index) => (
+                {featuredPhotos.slice(0, 9).map((photo) => (
                   <div 
                     key={photo.id} 
                     className="photo-icon"
@@ -376,11 +373,11 @@ function Photography() {
       <section className="bestsellers-section">
         <h2 className="section-title">Featured Work</h2>
         <div className="bestsellers-scroll">
-          {featuredPhotos.map((photo, index) => (
+          {featuredPhotos.map((photo) => (
             <div 
               key={photo.id} 
               className="bestseller-card" 
-              style={{ backgroundColor: categories[index % categories.length].color }}
+              style={{ backgroundColor: categories[photo.id % categories.length].color }}
               onClick={() => setSelectedFolder(photo.category)}
             >
               <div className="heart-icon">♡</div>
@@ -539,7 +536,7 @@ function Photography() {
             </button>
             <h2 className="folder-title">{selectedFolder.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h2>
             <div className="folder-grid">
-              {folderPhotos[selectedFolder]?.map((photo, index) => (
+              {folderPhotos[selectedFolder]?.map((photo: string, index: number) => (
                 <div 
                   key={index} 
                   className="folder-photo"
