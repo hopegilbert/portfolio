@@ -314,14 +314,14 @@ const socialPosts = [
   allPosts[3],   // dryJan2 (moved from position 5)
   allPosts[15],  // splashGlass
   allPosts[16],  // flatFee
-  allPosts[17],  // cvScreening
+  allPosts[29],  // hopeSocial8 (swapped with cvScreening)
   allPosts[18],  // valentines
   allPosts[0],   // social1 (moved from position 1)
   allPosts[19],  // webinar
   allPosts[20],  // decemberJobs
   allPosts[21],  // kindnessDay
   allPosts[28],  // hopeSocial7 (NEW - at bottom)
-  allPosts[29],  // hopeSocial8 (NEW - at bottom)
+  allPosts[17],  // cvScreening (swapped with hopeSocial8)
   allPosts[14],  // winePouring (swapped with hopeSocial9)
 ];
 
