@@ -137,3 +137,4 @@ The current design is a clean, minimal placeholder. You can customize:
 ## 📄 License
 
 This project is open source and available for personal use.
+# Portfolio - Photography Page Complete
