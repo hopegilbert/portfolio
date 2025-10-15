@@ -1,51 +1,88 @@
 import { useState } from 'react';
 
-// Video projects data - replace with your actual video files
+// Import video files
+import adventCalendarVideo from '../assets/video-editing/adventcalendar.mp4';
+import animationVideo from '../assets/video-editing/animationvideo.mov';
+import bbqAndTubeVideo from '../assets/video-editing/bbqandtube.MP4';
+import livePhotosVideo from '../assets/video-editing/livephotos.MP4';
+import meetHopeVideo from '../assets/video-editing/meethope.mov';
+import motelVideo from '../assets/video-editing/motel.MP4';
+import mumAndDadVideo from '../assets/video-editing/mumanddad.MP4';
+import simonOnTheStreetsVideo from '../assets/video-editing/simononthestreets.mov';
+import tiktokVideo from '../assets/video-editing/tiktok.MOV';
+import vintageSkirtVideo from '../assets/video-editing/vintageskirt.MP4';
+
+// Video projects data
 const videoProjects = [
   {
     id: 1,
-    title: 'Project Alpha',
-    duration: '2:45',
-    thumbnail: 'https://via.placeholder.com/400x600/FDE9F0/A86B7A?text=Video+1',
-    videoFile: '/path/to/video1.mp4', // Replace with your video file path
-    description: 'A creative video project showcasing...',
-    category: 'Commercial'
+    title: 'Meet Hope',
+    videoFile: meetHopeVideo,
+    description: 'An introduction to Hope Gilbert - showcasing personality, creativity, and style.',
+    category: 'Personal'
   },
   {
     id: 2,
-    title: 'Project Beta',
-    duration: '1:30',
-    thumbnail: 'https://via.placeholder.com/400x600/F5C9E0/A86B7A?text=Video+2',
-    videoFile: '/path/to/video2.mp4',
-    description: 'Short-form content for social media...',
-    category: 'Social Media'
+    title: 'Advent Calendar',
+    videoFile: adventCalendarVideo,
+    description: 'A festive advent calendar video project featuring creative holiday content.',
+    category: 'Seasonal'
   },
   {
     id: 3,
-    title: 'Project Gamma',
-    duration: '3:20',
-    thumbnail: 'https://via.placeholder.com/400x600/FFE5E5/A86B7A?text=Video+3',
-    videoFile: '/path/to/video3.mp4',
-    description: 'Documentary-style piece exploring...',
-    category: 'Documentary'
+    title: 'Animation Video',
+    videoFile: animationVideo,
+    description: 'Creative animation and motion graphics showcase.',
+    category: 'Animation'
   },
   {
     id: 4,
-    title: 'Project Delta',
-    duration: '0:45',
-    thumbnail: 'https://via.placeholder.com/400x600/F5E9E0/A86B7A?text=Video+4',
-    videoFile: '/path/to/video4.mp4',
-    description: 'Quick promotional teaser...',
-    category: 'Promo'
+    title: 'BBQ and Tube',
+    videoFile: bbqAndTubeVideo,
+    description: 'A fun lifestyle video combining BBQ adventures with creative storytelling.',
+    category: 'Lifestyle'
   },
   {
     id: 5,
-    title: 'Project Epsilon',
-    duration: '4:15',
-    thumbnail: 'https://via.placeholder.com/400x600/E0DDD8/A86B7A?text=Video+5',
-    videoFile: '/path/to/video5.mp4',
-    description: 'Long-form narrative content...',
-    category: 'Narrative'
+    title: 'Live Photos',
+    videoFile: livePhotosVideo,
+    description: 'Dynamic live photo compilations brought to life through video.',
+    category: 'Photography'
+  },
+  {
+    id: 6,
+    title: 'Motel',
+    videoFile: motelVideo,
+    description: 'Cinematic motel video with atmospheric visuals and storytelling.',
+    category: 'Cinematic'
+  },
+  {
+    id: 7,
+    title: 'Mum and Dad',
+    videoFile: mumAndDadVideo,
+    description: 'A heartfelt family video celebrating special moments.',
+    category: 'Family'
+  },
+  {
+    id: 8,
+    title: 'Simon on the Streets',
+    videoFile: simonOnTheStreetsVideo,
+    description: 'Urban storytelling featuring Simon exploring city streets.',
+    category: 'Documentary'
+  },
+  {
+    id: 9,
+    title: 'TikTok',
+    videoFile: tiktokVideo,
+    description: 'Short-form social media content optimized for TikTok.',
+    category: 'Social Media'
+  },
+  {
+    id: 10,
+    title: 'Vintage Skirt',
+    videoFile: vintageSkirtVideo,
+    description: 'Fashion-focused video showcasing vintage style and aesthetics.',
+    category: 'Fashion'
   }
 ];
 
@@ -96,7 +133,12 @@ function VideoEditing() {
                     </video>
                   ) : (
                     <div className="thumbnail-preview" onClick={() => setIsPlaying(true)}>
-                      <img src={selectedVideo.thumbnail} alt={selectedVideo.title} />
+                      <video 
+                        src={selectedVideo.videoFile} 
+                        className="video-thumbnail"
+                        muted
+                        playsInline
+                      />
                       <div className="play-overlay">
                         <div className="play-button">▶</div>
                       </div>
@@ -115,7 +157,6 @@ function VideoEditing() {
               <div className="monitor-info">
                 <div className="info-row">
                   <span className="video-title">{selectedVideo.title}</span>
-                  <span className="video-duration">{selectedVideo.duration}</span>
                 </div>
                 <div className="info-row">
                   <span className="video-category">{selectedVideo.category}</span>
@@ -141,8 +182,12 @@ function VideoEditing() {
                 onClick={() => handleClipClick(project)}
               >
                 <div className="clip-card-thumbnail">
-                  <img src={project.thumbnail} alt={project.title} />
-                  <div className="clip-card-duration">{project.duration}</div>
+                  <video 
+                    src={project.videoFile} 
+                    className="clip-thumbnail-video"
+                    muted
+                    playsInline
+                  />
                 </div>
                 <div className="clip-card-info">
                   <h4 className="clip-card-title">{project.title}</h4>
@@ -259,11 +304,13 @@ function VideoEditing() {
         .video-container {
           width: 100%;
           height: 100%;
+          background: #000;
         }
 
         .video-player {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
 
         .thumbnail-preview {
@@ -271,12 +318,13 @@ function VideoEditing() {
           height: 100%;
           cursor: pointer;
           position: relative;
+          background: #000;
         }
 
-        .thumbnail-preview img {
+        .thumbnail-preview .video-thumbnail {
           width: 100%;
           height: 100%;
-          object-fit: cover;
+          object-fit: contain;
         }
 
         .play-overlay {
@@ -460,24 +508,14 @@ function VideoEditing() {
           position: relative;
           aspect-ratio: 9/16;
           overflow: hidden;
+          background: #000;
         }
 
-        .clip-card-thumbnail img {
+        .clip-card-thumbnail .clip-thumbnail-video {
           width: 100%;
           height: 100%;
-          object-fit: cover;
-        }
-
-        .clip-card-duration {
-          position: absolute;
-          bottom: 0.5rem;
-          right: 0.5rem;
-          background: rgba(0, 0, 0, 0.8);
-          color: #fde9f0;
-          padding: 0.25rem 0.5rem;
-          border-radius: 4px;
-          font-size: 0.75rem;
-          font-weight: 600;
+          object-fit: contain;
+          background: #000;
         }
 
         .clip-card-info {
