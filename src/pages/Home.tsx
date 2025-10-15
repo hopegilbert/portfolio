@@ -197,7 +197,13 @@ function Home() {
             />
             <div className="overlay-content">
               <h2>Welcome</h2>
-              <p>Explore my creative journey across multiple disciplines. Click any frame to dive deeper.</p>
+              <p>
+                Explore my creative<br />
+                journey across<br />
+                multiple disciplines.<br />
+                Click any frame<br />
+                to dive deeper.
+              </p>
             </div>
           </div>
         </div>
@@ -342,7 +348,7 @@ function Home() {
           top: 50%;
           right: 2rem;
           transform: translateY(-50%);
-          z-index: 10;
+          z-index: 9999;
         }
 
         .nav-dropdown-toggle {
@@ -386,7 +392,7 @@ function Home() {
           min-width: 200px;
           overflow: hidden;
           animation: dropdownFadeIn 0.2s ease-out;
-          z-index: 20;
+          z-index: 10000;
         }
 
         @keyframes dropdownFadeIn {
