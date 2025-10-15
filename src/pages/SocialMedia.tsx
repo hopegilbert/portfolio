@@ -32,6 +32,9 @@ import hopeSocial3 from '../assets/social-media/hope-social-3.png';
 import hopeSocial4 from '../assets/social-media/hope-social-4.png';
 import hopeSocial5 from '../assets/social-media/hope-social-5.png';
 import hopeSocial6 from '../assets/social-media/hope-social-6.png';
+import hopeSocial7 from '../assets/social-media/hope-social-7.png';
+import hopeSocial8 from '../assets/social-media/hope-social-8.png';
+import hopeSocial9 from '../assets/social-media/hope-social-9.png';
 
 // All social media posts data
 const allPosts = [
@@ -260,6 +263,30 @@ const allPosts = [
     platform: 'Instagram',
     likes: 299,
     date: 'April 2024'
+  },
+  {
+    id: 29,
+    image: hopeSocial7,
+    caption: 'Creative portfolio showcase',
+    platform: 'Instagram',
+    likes: 215,
+    date: 'April 2024'
+  },
+  {
+    id: 30,
+    image: hopeSocial8,
+    caption: 'Brand storytelling design',
+    platform: 'Instagram',
+    likes: 267,
+    date: 'April 2024'
+  },
+  {
+    id: 31,
+    image: hopeSocial9,
+    caption: 'Visual marketing content',
+    platform: 'Instagram',
+    likes: 183,
+    date: 'April 2024'
   }
 ];
 
@@ -267,6 +294,7 @@ const allPosts = [
 const socialPosts = [
   allPosts[27],  // hopeSocial6 (swapped with social1)
   allPosts[5],   // dryJanuary2 (moved here, was position 8)
+  allPosts[29],  // hopeSocial8 (NEW - after dryJanuary2)
   allPosts[1],   // calendar
   allPosts[2],   // dryJan1
   allPosts[26],  // hopeSocial5 (swapped with dryJan2)
