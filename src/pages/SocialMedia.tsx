@@ -25,9 +25,17 @@ import valentines from '../assets/social-media/Valentines.png';
 import webinar from '../assets/social-media/Webinar Social Post.png';
 import decemberJobs from '../assets/social-media/Why should you advertise jobs in December.png';
 import kindnessDay from '../assets/social-media/World Kindness Day.png';
+// New Hope social media posts
+import hopeSocial1 from '../assets/social-media/hope-social-1.png';
+import hopeSocial2 from '../assets/social-media/hope-social-2.png';
+import hopeSocial3 from '../assets/social-media/hope-social-3.png';
+import hopeSocial4 from '../assets/social-media/hope-social-4.png';
+import hopeSocial5 from '../assets/social-media/hope-social-5.png';
+import hopeSocial6 from '../assets/social-media/hope-social-6.png';
 
-// Social media posts data - real designs
-const socialPosts = [
+// All social media posts data
+const allPosts = [
+  // Original posts
   {
     id: 1,
     image: social1,
@@ -203,8 +211,70 @@ const socialPosts = [
     platform: 'Instagram',
     likes: 423,
     date: 'August 2023'
+  },
+  // New Hope social media posts
+  {
+    id: 23,
+    image: hopeSocial1,
+    caption: 'Creative design showcase for social media',
+    platform: 'Instagram',
+    likes: 278,
+    date: 'April 2024'
+  },
+  {
+    id: 24,
+    image: hopeSocial2,
+    caption: 'Brand identity social media post',
+    platform: 'Instagram',
+    likes: 192,
+    date: 'April 2024'
+  },
+  {
+    id: 25,
+    image: hopeSocial3,
+    caption: 'Visual storytelling design',
+    platform: 'Instagram',
+    likes: 334,
+    date: 'April 2024'
+  },
+  {
+    id: 26,
+    image: hopeSocial4,
+    caption: 'Marketing campaign social media content',
+    platform: 'Instagram',
+    likes: 245,
+    date: 'April 2024'
+  },
+  {
+    id: 27,
+    image: hopeSocial5,
+    caption: 'Creative portfolio social media post',
+    platform: 'Instagram',
+    likes: 187,
+    date: 'April 2024'
+  },
+  {
+    id: 28,
+    image: hopeSocial6,
+    caption: 'Design inspiration social media content',
+    platform: 'Instagram',
+    likes: 299,
+    date: 'April 2024'
   }
 ];
+
+// Shuffle the posts randomly to distribute new ones throughout
+function shuffleArray(array: any[]) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Create the final shuffled array of posts
+const socialPosts = shuffleArray(allPosts);
 
 function SocialMedia() {
   const [selectedPost, setSelectedPost] = useState<typeof socialPosts[0] | null>(null);
