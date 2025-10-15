@@ -18,6 +18,7 @@ import nameImage from '../assets/name.png';
 import platformsFrame from '../assets/home-frames/platforms-frame.png';
 import socialMediaFrame from '../assets/home-frames/social-media-frame.png';
 import photographyFrame from '../assets/home-frames/photography-frame.png';
+import cvFrame from '../assets/home-frames/cv-frame.png';
 import frame1 from '../assets/home-frames/frame 1.png';
 
 function Home() {
@@ -320,60 +321,21 @@ function Home() {
           </div>
         </div>
 
-        {/* Contact Form */}
+        {/* CV */}
         <div className="grid-item">
-          <div className="contact-form-container">
-            <div className="contact-form-header">
-              <h3>Let's Connect</h3>
-              <p>Ready to collaborate? Drop me a line!</p>
-            </div>
-            <form className="contact-form" onSubmit={(e) => {
-              e.preventDefault();
-              // Handle form submission
-              alert('Thanks for reaching out! I\'ll get back to you soon.');
-            }}>
-              <div className="form-group">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  required 
-                  className="form-input"
-                />
-              </div>
-              <div className="form-group">
-                <input 
-                  type="email" 
-                  placeholder="Your Email" 
-                  required 
-                  className="form-input"
-                />
-              </div>
-              <div className="form-group">
-                <input 
-                  type="text" 
-                  placeholder="Subject" 
-                  required 
-                  className="form-input"
-                />
-              </div>
-              <div className="form-group">
-                <textarea 
-                  placeholder="Your Message" 
-                  required 
-                  rows={4}
-                  className="form-textarea"
-                ></textarea>
-              </div>
-              <button type="submit" className="form-submit-btn">
-                Send Message
-              </button>
-            </form>
-            <div className="contact-info">
-              <p>Or reach me directly:</p>
-              <a href="mailto:hopegilbert@live.com" className="contact-link">
-                hopegilbert@live.com
-              </a>
-            </div>
+          <div className="image-wrapper">
+            <img 
+              src={cvFrame} 
+              alt="CV"
+            />
+            <a 
+              href="/Hope Gilbert CV.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover-button"
+            >
+              View CV
+            </a>
           </div>
         </div>
 
@@ -690,113 +652,6 @@ function Home() {
           height: auto;
           display: block;
           border-radius: 8px;
-        }
-
-        /* Contact Form Styles */
-        .contact-form-container {
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-          border: 1px solid rgba(168, 107, 122, 0.2);
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .contact-form-header {
-          text-align: center;
-          margin-bottom: 1.5rem;
-        }
-
-        .contact-form-header h3 {
-          font-family: 'Playfair Display', serif;
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: #2c2c2c;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .contact-form-header p {
-          color: #666;
-          font-size: 0.9rem;
-          margin: 0;
-        }
-
-        .contact-form {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .form-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .form-input, .form-textarea {
-          padding: 0.75rem;
-          border: 2px solid #e9ecef;
-          border-radius: 8px;
-          font-size: 0.9rem;
-          font-family: 'Lora', serif;
-          transition: all 0.3s ease;
-          background: white;
-        }
-
-        .form-input:focus, .form-textarea:focus {
-          outline: none;
-          border-color: #a86b7a;
-          box-shadow: 0 0 0 3px rgba(168, 107, 122, 0.1);
-        }
-
-        .form-textarea {
-          resize: vertical;
-          min-height: 100px;
-        }
-
-        .form-submit-btn {
-          background: linear-gradient(135deg, #a86b7a 0%, #8a5763 100%);
-          color: white;
-          border: none;
-          padding: 0.75rem 1.5rem;
-          border-radius: 8px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          margin-top: 0.5rem;
-        }
-
-        .form-submit-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(168, 107, 122, 0.3);
-        }
-
-        .contact-info {
-          margin-top: 1.5rem;
-          padding-top: 1.5rem;
-          border-top: 1px solid #e9ecef;
-          text-align: center;
-        }
-
-        .contact-info p {
-          color: #666;
-          font-size: 0.85rem;
-          margin: 0 0 0.5rem 0;
-        }
-
-        .contact-link {
-          color: #a86b7a;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 0.9rem;
-          transition: color 0.3s ease;
-        }
-
-        .contact-link:hover {
-          color: #8a5763;
         }
 
         .image-wrapper {
