@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 function Photography() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [selectedCategory] = useState<string>('all');
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
 
   // Photography categories/shoots
