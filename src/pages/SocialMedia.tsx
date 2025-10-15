@@ -265,31 +265,31 @@ const allPosts = [
 
 // Manually distribute new Hope social posts throughout existing posts
 const socialPosts = [
-  allPosts[0],   // social1
-  allPosts[22],  // hopeSocial1
+  allPosts[27],  // hopeSocial6 (swapped with social1)
+  allPosts[5],   // dryJanuary2 (moved here, was position 8)
   allPosts[1],   // calendar
   allPosts[2],   // dryJan1
-  allPosts[3],   // dryJan2
-  allPosts[23],  // hopeSocial2
+  allPosts[26],  // hopeSocial5 (swapped with dryJan2)
+  allPosts[9],   // coffeeWeek (National Coffee Week - swapped with hopeSocial2)
   allPosts[4],   // dryJan3
-  allPosts[5],   // dryJanuary2
+  allPosts[22],  // hopeSocial1 (swapped with dryJanuary2)
   allPosts[6],   // dryJanuary
-  allPosts[7],   // glassLemon
-  allPosts[24],  // hopeSocial3
+  allPosts[24],  // hopeSocial3 (swapped with glassLemon)
+  allPosts[7],   // glassLemon (moved from position 10)
   allPosts[8],   // martiniGlass
-  allPosts[9],   // coffeeWeek
-  allPosts[10],  // inclusionWeek
-  allPosts[25],  // hopeSocial4
+  allPosts[23],  // hopeSocial2 (moved here, was position 6)
+  allPosts[25],  // hopeSocial4 (swapped with inclusionWeek)
+  allPosts[10],  // inclusionWeek (moved from position 14)
   allPosts[11],  // nmdDiscount
   allPosts[12],  // remembrance1
   allPosts[13],  // remembrance2
   allPosts[14],  // winePouring
-  allPosts[26],  // hopeSocial5
+  allPosts[3],   // dryJan2 (moved from position 5)
   allPosts[15],  // splashGlass
   allPosts[16],  // flatFee
   allPosts[17],  // cvScreening
   allPosts[18],  // valentines
-  allPosts[27],  // hopeSocial6
+  allPosts[0],   // social1 (moved from position 1)
   allPosts[19],  // webinar
   allPosts[20],  // decemberJobs
   allPosts[21],  // kindnessDay
