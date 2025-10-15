@@ -310,7 +310,7 @@ const socialPosts = [
   allPosts[12],  // remembrance1 (swapped back with hopeSocial4)
   allPosts[25],  // hopeSocial4 (moved from position 16)
   allPosts[13],  // remembrance2
-  allPosts[14],  // winePouring
+  allPosts[30],  // hopeSocial9 (swapped with winePouring)
   allPosts[3],   // dryJan2 (moved from position 5)
   allPosts[15],  // splashGlass
   allPosts[16],  // flatFee
@@ -322,7 +322,7 @@ const socialPosts = [
   allPosts[21],  // kindnessDay
   allPosts[28],  // hopeSocial7 (NEW - at bottom)
   allPosts[29],  // hopeSocial8 (NEW - at bottom)
-  allPosts[30],  // hopeSocial9 (NEW - at bottom)
+  allPosts[14],  // winePouring (swapped with hopeSocial9)
 ];
 
 function SocialMedia() {
