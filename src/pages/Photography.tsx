@@ -2,179 +2,533 @@ import { useState } from 'react';
 
 function Photography() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedFolder, setSelectedFolder] = useState<string | null>(null);
 
-  // Exact collage elements matching the inspiration image
-  const collageElements = [
-    // Photos with exact positioning from the image
+  // Photography categories/shoots
+  const categories = [
+    { id: 'all', name: 'All Photos', color: '#ff6b6b' },
+    { id: 'aggression sessions', name: 'Aggression Sessions', color: '#4ecdc4' },
+    { id: 'agression sessions team', name: 'Aggression Sessions Team', color: '#45b7d1' },
+    { id: 'babylon', name: 'Babylon', color: '#96ceb4' },
+    { id: 'burulu', name: 'Burulu', color: '#feca57' },
+    { id: 'loft', name: 'Loft', color: '#ff9ff3' },
+    { id: 'random', name: 'Random', color: '#54a0ff' },
+    { id: 'revival', name: 'Revival', color: '#5f27cd' }
+  ];
+
+  // Featured photos from each category
+  const featuredPhotos = [
     {
       id: 1,
-      type: "photo",
-      title: "Speaker Detail",
-      image: "/placeholder-photo-1.jpg",
-      position: { top: "5%", left: "8%", rotation: -2, zIndex: 3 },
-      size: "medium"
+      title: "Aggression Sessions",
+      category: "aggression sessions",
+      image: new URL('../assets/photography/aggression sessions/IMG_4901.jpg', import.meta.url).href,
+      description: "Raw energy and emotion captured in black and white"
     },
     {
       id: 2,
-      type: "photo", 
-      title: "Selfie Portrait",
-      image: "/placeholder-photo-2.jpg",
-      position: { top: "25%", left: "35%", rotation: 3, zIndex: 8 },
-      size: "portrait"
+      title: "Babylon",
+      category: "babylon", 
+      image: new URL('../assets/photography/babylon/IMG_1266.JPG', import.meta.url).href,
+      description: "Intimate portraits with dramatic lighting"
     },
     {
       id: 3,
-      type: "photo",
-      title: "Water Scene", 
-      image: "/placeholder-photo-3.jpg",
-      position: { top: "15%", right: "12%", rotation: -1, zIndex: 4 },
-      size: "landscape"
+      title: "Burulu",
+      category: "burulu",
+      image: new URL('../assets/photography/burulu/IMG_0755.jpg', import.meta.url).href,
+      description: "Natural moments and candid captures"
     },
     {
       id: 4,
-      type: "photo",
-      title: "Train Car",
-      image: "/placeholder-photo-4.jpg", 
-      position: { bottom: "25%", left: "25%", rotation: 2, zIndex: 6 },
-      size: "medium"
+      title: "Loft",
+      category: "loft",
+      image: new URL('../assets/photography/loft/IMG_1509.jpg', import.meta.url).href,
+      description: "Architectural details and interior spaces"
     },
-    // Text elements exactly like the image
     {
       id: 5,
-      type: "text",
-      content: "SLAP",
-      style: "newspaper-headline",
-      position: { top: "8%", right: "20%", rotation: -1, zIndex: 9 },
-      color: "#d32f2f",
-      background: "#f5f5dc"
+      title: "Random",
+      category: "random",
+      image: new URL('../assets/photography/random/IMG_0192.JPG', import.meta.url).href,
+      description: "Spontaneous captures and everyday beauty"
     },
     {
       id: 6,
-      type: "text",
-      content: "BONITAER ITE SASIR CO LIKES",
-      style: "newspaper-text", 
-      position: { top: "18%", right: "15%", rotation: 0, zIndex: 2 },
-      color: "#000000",
-      background: "#f5f5dc"
+      title: "Revival",
+      category: "revival",
+      image: new URL('../assets/photography/revival/IMG_1758.JPG', import.meta.url).href,
+      description: "Dynamic movement and vibrant energy"
     },
     {
       id: 7,
-      type: "text",
-      content: "GIRL",
-      style: "label-red",
-      position: { top: "45%", right: "25%", rotation: 1, zIndex: 7 },
-      color: "#ffffff",
-      background: "#d32f2f"
-    },
-    {
-      id: 8,
-      type: "text",
-      content: "XOXO",
-      style: "sticker-green",
-      position: { bottom: "15%", left: "8%", rotation: 2, zIndex: 5 },
-      color: "#ffffff",
-      background: "#4caf50"
-    },
-    {
-      id: 9,
-      type: "text",
-      content: "FIORE",
-      style: "magazine-title",
-      position: { bottom: "20%", right: "8%", rotation: -1, zIndex: 3 },
-      color: "#1976d2",
-      background: "#f5f5dc"
-    },
-    {
-      id: 10,
-      type: "text",
-      content: "INGOLOBS",
-      style: "small-bold",
-      position: { bottom: "8%", right: "12%", rotation: 0, zIndex: 1 },
-      color: "#000000",
-      background: "transparent"
-    },
-    // Decorative elements
-    {
-      id: 11,
-      type: "decoration",
-      content: "✓",
-      style: "checkmark-badge",
-      position: { bottom: "35%", left: "45%", rotation: -1, zIndex: 6 },
-      color: "#1976d2",
-      background: "#f5f5dc"
-    },
-    {
-      id: 12,
-      type: "decoration",
-      content: "9",
-      style: "number-badge",
-      position: { top: "40%", right: "35%", rotation: 1, zIndex: 4 },
-      color: "#8b4a5a",
-      background: "#f5f5dc"
-    },
-    {
-      id: 13,
-      type: "decoration",
-      content: "🍔",
-      style: "mcdonalds-icon",
-      position: { bottom: "8%", left: "15%", rotation: 0, zIndex: 2 },
-      color: "#d32f2f",
-      background: "#2e2e2e"
+      title: "Aggression Sessions Team",
+      category: "agression sessions team",
+      image: new URL('../assets/photography/agression sessions team/IMG_1471.jpg', import.meta.url).href,
+      description: "Collaborative moments and group dynamics"
     }
   ];
 
+  const filteredPhotos = selectedCategory === 'all' 
+    ? featuredPhotos 
+    : featuredPhotos.filter(photo => photo.category === selectedCategory);
+
+  // All photos from each folder
+  const folderPhotos = {
+    'aggression sessions': [
+      new URL('../assets/photography/aggression sessions/IMG_2238.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2255.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2318.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2321.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2328.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2353.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2373.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2384.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2402.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2409.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2421.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2425.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2469.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2511.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2540.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2606.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2626.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2637.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2649.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2665.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2705.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2719.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2733.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2736.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2756.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2757.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2759.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2768.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2778.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2784.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2846.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2861.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2873.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_2919.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3011.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3038.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3082.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3083.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3088.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3114.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3171.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3221.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3246.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3311.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3321.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3336.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3408.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3440.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3591.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3638.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3681.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3725.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3728.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3734.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3739.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3790.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3827.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3841.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3861.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3883.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3891.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3955.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3974.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3981.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3986.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3990.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_3991.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4001.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4063.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4072.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4140.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4143.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4145.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4155.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4156.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4181.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4226.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4277.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4292.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4296.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4311.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4317.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4321.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4322.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4377.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4437.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4456.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4469.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4474.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4480.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4507.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4530.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4535.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4538.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4592.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4622.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4648.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4656.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4686.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4693.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4784.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4809.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4816.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4820.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4832.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4839.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4883.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4890.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4901.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4917.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4925.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4929.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4937.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4950.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_4997.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5047.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5056.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5071.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5134.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5143.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5238.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5251.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5323.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5412.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5450.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5455.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5515.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5543.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5558.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5561.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5567.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5588.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5593.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5619.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5634.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5636.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5646.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5710.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5737.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5760.jpg', import.meta.url).href,
+      new URL('../assets/photography/aggression sessions/IMG_5771.jpg', import.meta.url).href
+    ],
+    'agression sessions team': [
+      new URL('../assets/photography/agression sessions team/IMG_1382.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1384.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1390 2.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1398.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1399.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1424.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1429.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1436.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1444.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1459.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1465.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1471.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1479.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1481.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1486.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1496.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1514.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1538.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1544.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1556.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1557.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1563.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1570.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1578.jpg', import.meta.url).href,
+      new URL('../assets/photography/agression sessions team/IMG_1580.jpg', import.meta.url).href
+    ],
+    'babylon': [
+      new URL('../assets/photography/babylon/IMG_1156.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1177.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1183.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1186.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1194.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1208.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1235.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1241.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1266.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1305.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1313.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1328.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1354.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1743.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1756.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_1816.JPG', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_2009.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_2042.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_2050.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_2114.jpg', import.meta.url).href,
+      new URL('../assets/photography/babylon/IMG_2131.jpg', import.meta.url).href
+    ],
+    'burulu': [
+      new URL('../assets/photography/burulu/IMG_0718.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0720.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0723.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0742.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0755.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0758.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0768.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0777.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0784.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0787.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0827.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0850.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0865 2.jpg', import.meta.url).href,
+      new URL('../assets/photography/burulu/IMG_0865.jpg', import.meta.url).href
+    ],
+    'loft': [
+      new URL('../assets/photography/loft/IMG_1238.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1248.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1274.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1297.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1307.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1322.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1329.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1376.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1390.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1440.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1441.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1453.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1482.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1507.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1509.jpg', import.meta.url).href,
+      new URL('../assets/photography/loft/IMG_1552.jpg', import.meta.url).href
+    ],
+    'random': [
+      new URL('../assets/photography/random/IMG_0192.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_0197.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_0205.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_0207.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_1085.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_1172.JPG', import.meta.url).href,
+      new URL('../assets/photography/random/IMG_9014.JPG', import.meta.url).href
+    ],
+    'revival': [
+      new URL('../assets/photography/revival/IMG_1595.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1629.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1651.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1667.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1689.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1703.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1706.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1724.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1758.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1766.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1790.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1817.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1834.JPG', import.meta.url).href,
+      new URL('../assets/photography/revival/IMG_1840.JPG', import.meta.url).href
+    ]
+  };
+
   return (
-    <div className="photography-collage">
-      {/* Main Collage Board */}
-      <div className="collage-board">
-        {/* Background Paper Texture */}
-        <div className="paper-background"></div>
-        
-        {/* All Collage Elements */}
-        <div className="collage-elements">
-          {collageElements.map(element => (
+    <div className="photography-page">
+      {/* Back Button */}
+      <div style={{
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        right: '0',
+        background: '#dc143c',
+        color: 'white',
+        padding: '20px',
+        zIndex: 9999,
+        textAlign: 'center',
+        fontSize: '18px',
+        fontWeight: 'bold'
+      }}>
+        <a href="/" style={{ color: 'white', textDecoration: 'none' }}>← Back to Home</a>
+      </div>
+
+      {/* Hero Section */}
+      <section className="hero-section">
+        <div className="hero-container">
+          <div className="hero-left">
+            <h1 className="brand-title">Hope Gilbert</h1>
+            <p className="hero-description">
+              Capturing moments, emotions, and stories through the lens. 
+              Choose from my collection of photography work or explore different themes and styles.
+            </p>
+          </div>
+          <div className="hero-right">
+            <div className="browser-window">
+              <div className="browser-header">
+                <div className="browser-controls">
+                  <div className="control red"></div>
+                  <div className="control yellow"></div>
+                  <div className="control green"></div>
+                </div>
+              </div>
+              <div className="photo-icons-grid">
+                {featuredPhotos.slice(0, 9).map((photo, index) => (
+                  <div 
+                    key={photo.id} 
+                    className="photo-icon"
+                    onClick={() => setSelectedImage(photo.image)}
+                  >
+                    <img src={photo.image} alt={photo.title} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bestsellers Section */}
+      <section className="bestsellers-section">
+        <h2 className="section-title">Featured Work</h2>
+        <div className="bestsellers-scroll">
+          {featuredPhotos.map((photo, index) => (
             <div 
-              key={element.id} 
-              className={`collage-item ${element.type} ${element.style}`}
-              style={{
-                position: 'absolute',
-                top: element.position.top,
-                left: element.position.left,
-                right: element.position.right,
-                bottom: element.position.bottom,
-                transform: `rotate(${element.position.rotation}deg)`,
-                zIndex: element.position.zIndex,
-                color: element.color,
-                backgroundColor: element.background
-              }}
+              key={photo.id} 
+              className="bestseller-card" 
+              style={{ backgroundColor: categories[index % categories.length].color }}
+              onClick={() => setSelectedFolder(photo.category)}
             >
-              {element.type === 'photo' && (
-                <div className="photo-frame">
-                  <img 
-                    src={element.image} 
-                    alt={element.title}
-                    onError={(e) => {
-                      e.currentTarget.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlPC90ZXh0Pjwvc3ZnPg==';
-                    }}
-                  />
+              <div className="heart-icon">♡</div>
+              <div className="product-image">
+                <img src={photo.image} alt={photo.title} />
                 </div>
-              )}
-              
-              {element.type === 'text' && (
-                <div className="text-content">
-                  {element.content}
+              <div className="product-info">
+                <h3 className="product-name">{photo.title}</h3>
+                <p className="product-price">View Gallery</p>
                 </div>
-              )}
-              
-              {element.type === 'decoration' && (
-                <div className="decoration-content">
-                  {element.content}
-                </div>
-              )}
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* Featured Images Section */}
+      <section className="featured-images-section">
+        <div className="featured-container">
+          <div className="featured-header">
+            <h2 className="featured-title">Featured Images</h2>
+            <p className="featured-subtitle">
+              A curated selection of my finest work, showcasing the diversity and artistry 
+              of Hope Gilbert Photography.
+            </p>
+          </div>
+          <div className="featured-grid">
+            <div className="featured-image-large">
+              <img src={new URL('../assets/photography/featured/IMG_3088.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Curated selection of finest photography</p>
+              </div>
+            </div>
+            <div className="featured-image-large">
+              <img src={new URL('../assets/photography/featured/IMG_5619.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Artistic vision and creative expression</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_0192.JPG', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Professional photography</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_0718.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Creative moments</p>
+              </div>
+            </div>
+            <div className="featured-image-large">
+              <img src={new URL('../assets/photography/featured/IMG_1328.JPG', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Artistic excellence</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_1459.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Visual storytelling</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_0787.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Creative expression</p>
+              </div>
+            </div>
+            <div className="featured-image-small">
+              <img src={new URL('../assets/photography/featured/IMG_1172.JPG', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Artistic moments</p>
+              </div>
+            </div>
+            <div className="featured-image-small">
+              <img src={new URL('../assets/photography/featured/IMG_1509.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Professional quality</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_1758.JPG', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Visual artistry</p>
+              </div>
+            </div>
+            <div className="featured-image-small">
+              <img src={new URL('../assets/photography/featured/IMG_1817.JPG', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Creative vision</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_2425.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Artistic excellence</p>
+              </div>
+            </div>
+            <div className="featured-image-small">
+              <img src={new URL('../assets/photography/featured/IMG_4155.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Visual storytelling</p>
+              </div>
+            </div>
+            <div className="featured-image-medium">
+              <img src={new URL('../assets/photography/featured/IMG_5056.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Creative expression</p>
+              </div>
+            </div>
+            <div className="featured-image-small">
+              <img src={new URL('../assets/photography/featured/IMG_5710.jpg', import.meta.url).href} alt="Featured work" />
+              <div className="image-overlay">
+                <h3>Featured Work</h3>
+                <p>Artistic vision</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* Modal for full-size image */}
       {selectedImage && (
@@ -188,183 +542,357 @@ function Photography() {
         </div>
       )}
 
+      {/* Folder Gallery Modal */}
+      {selectedFolder && (
+        <div className="folder-modal" onClick={() => setSelectedFolder(null)}>
+          <div className="folder-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setSelectedFolder(null)}>
+              <i className="fas fa-times"></i>
+            </button>
+            <h2 className="folder-title">{selectedFolder.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</h2>
+            <div className="folder-grid">
+              {folderPhotos[selectedFolder]?.map((photo, index) => (
+                <div 
+                  key={index} 
+                  className="folder-photo"
+                  onClick={() => setSelectedImage(photo)}
+                >
+                  <img src={photo} alt={`${selectedFolder} ${index + 1}`} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
         /* Hide global navigation */
-        .photography-collage {
-          min-height: 100vh;
-          background: #f5f1eb;
-          padding: 0;
-          margin: 0;
-          position: relative;
-          overflow: hidden;
-        }
-
-        /* Hide the global navigation */
-        .photography-collage .navigation,
-        .photography-collage .name-header,
-        .photography-collage .back-button {
+        .photography-page .navigation,
+        .photography-page .name-header,
+        .photography-page .back-button {
           display: none !important;
         }
 
-        .collage-board {
-          width: 100vw;
-          height: 100vh;
-          position: relative;
-          background: 
-            radial-gradient(circle at 20% 20%, rgba(139, 74, 90, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(212, 165, 116, 0.03) 0%, transparent 50%),
-            linear-gradient(135deg, #f5f1eb 0%, #e8d5d0 100%);
-          overflow: hidden;
+        .photography-page {
+          min-height: 100vh;
+          background: #faf9f7;
+          font-family: 'Inter', sans-serif;
         }
 
-        .paper-background {
-          position: absolute;
+        /* Top Navigation */
+        .back-button-container {
+          background: #ffffff;
+          padding: 20px;
+          border-bottom: 2px solid #dc143c;
+          position: fixed;
           top: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
-          background: 
-            repeating-linear-gradient(
-              45deg,
-              transparent,
-              transparent 2px,
-              rgba(139, 74, 90, 0.02) 2px,
-              rgba(139, 74, 90, 0.02) 4px
-            );
-          z-index: 1;
+          right: 0;
+          z-index: 1000;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .collage-elements {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          z-index: 10;
-        }
-
-        .collage-item {
-          cursor: pointer;
+        .back-button {
+          color: #dc143c;
+          text-decoration: none;
+          font-weight: 700;
+          font-size: 1.2rem;
           transition: all 0.3s ease;
-        }
-
-        .collage-item:hover {
-          transform: scale(1.05) !important;
-          z-index: 20 !important;
-        }
-
-        /* Photo Elements - Exact positioning from image */
-        .collage-item.photo {
-          width: 200px;
-          height: 150px;
-        }
-
-        .collage-item.photo.portrait {
-          width: 150px;
-          height: 200px;
-        }
-
-        .collage-item.photo.landscape {
-          width: 250px;
-          height: 150px;
-        }
-
-        .photo-frame {
-          width: 100%;
-          height: 100%;
-          background: #ffffff;
-          border: 3px solid #f0f0f0;
+          background: none;
+          border: none;
+          padding: 10px 20px;
           border-radius: 8px;
-          box-shadow: 
-            0 8px 16px rgba(0, 0, 0, 0.15),
-            0 0 0 1px rgba(0, 0, 0, 0.05);
-          overflow: hidden;
-          position: relative;
+          background: #f8f8f8;
+          border: 2px solid #dc143c;
         }
 
-        .photo-frame img {
+        .back-button:hover {
+          color: #ffffff;
+          background: #dc143c;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+        }
+
+        /* Hero Section */
+        .hero-section {
+          padding: 120px 0 60px 0;
+          background: #faf9f7;
+        }
+
+        .hero-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 40px;
+          align-items: center;
+        }
+
+        .hero-left {
+          background: #ffb3ba;
+          padding: 40px;
+          border-radius: 20px;
+        }
+
+        .brand-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 3.5rem;
+          font-weight: 700;
+          color: #dc143c;
+          margin-bottom: 20px;
+          line-height: 1.1;
+        }
+
+        .hero-description {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #2c3e50;
+          margin-bottom: 30px;
+        }
+
+
+        .hero-right {
+          display: flex;
+          justify-content: center;
+        }
+
+        .browser-window {
+          background: #dc143c;
+          border-radius: 15px;
+          padding: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .browser-header {
+          margin-bottom: 20px;
+        }
+
+        .browser-controls {
+          display: flex;
+          gap: 8px;
+        }
+
+        .control {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+        }
+
+        .control.red { background: #ff5f56; }
+        .control.yellow { background: #ffbd2e; }
+        .control.green { background: #27ca3f; }
+
+        .photo-icons-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px;
+          max-width: 300px;
+        }
+
+        .photo-icon {
+          aspect-ratio: 1;
+          border-radius: 8px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+        .photo-icon:hover {
+          transform: scale(1.05);
+        }
+
+        .photo-icon img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
 
-        /* Text Elements - Exact styling from image */
-        .text-content {
-          font-family: 'Inter', sans-serif;
-          font-weight: 700;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Bestsellers Section */
+        .bestsellers-section {
+          padding: 60px 0;
+          background: white;
         }
 
-        .newspaper-headline {
-          font-size: 2.5rem;
-          font-weight: 900;
-          letter-spacing: -0.02em;
+        .section-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 2.2rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 30px;
+          text-align: left;
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0 20px;
         }
 
-        .newspaper-text {
-          font-size: 0.9rem;
-          font-weight: 400;
-          line-height: 1.2;
-          max-width: 200px;
+        .bestsellers-scroll {
+          display: flex;
+          gap: 20px;
+          overflow-x: auto;
+          padding: 0 20px;
+          max-width: 1200px;
+          margin: 0 auto;
         }
 
-        .label-red {
-          font-size: 1.5rem;
-          font-weight: 700;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
+        .bestseller-card {
+          min-width: 200px;
+          border-radius: 15px;
+          padding: 20px;
+          position: relative;
+          cursor: pointer;
+          transition: transform 0.3s ease;
         }
 
-        .sticker-green {
-          font-size: 2rem;
-          font-weight: 700;
-          padding: 0.5rem 1rem;
+        .bestseller-card:hover {
+          transform: translateY(-5px);
+        }
+
+        .heart-icon {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          font-size: 1.2rem;
+          color: white;
+        }
+
+        .product-image {
+          margin-bottom: 15px;
+        }
+
+        .product-image img {
+          width: 100%;
+          height: 120px;
+          object-fit: cover;
           border-radius: 8px;
         }
 
-        .magazine-title {
-          font-size: 2rem;
-          font-weight: 700;
-          letter-spacing: -0.01em;
-        }
-
-        .small-bold {
-          font-size: 1rem;
+        .product-name {
+          font-size: 0.9rem;
           font-weight: 600;
+          color: white;
+          margin-bottom: 5px;
         }
 
-        /* Decoration Elements */
-        .decoration-content {
-          font-family: 'Inter', sans-serif;
-          font-weight: 700;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 50%;
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .product-price {
+          font-size: 0.8rem;
+          color: rgba(255, 255, 255, 0.8);
         }
 
-        .checkmark-badge {
-          width: 40px;
-          height: 40px;
-          font-size: 1.5rem;
+        /* Style Section */
+        .featured-images-section {
+          padding: 80px 0;
+          background: white;
         }
 
-        .number-badge {
-          width: 30px;
-          height: 30px;
+        .featured-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+
+        .featured-header {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .featured-title {
+          font-size: 2.5rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 15px;
+        }
+
+        .featured-subtitle {
+          font-size: 1.1rem;
+          color: #666;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .featured-grid {
+          display: grid;
+          grid-template-columns: repeat(12, 1fr);
+          grid-template-rows: repeat(6, 200px);
+          gap: 15px;
+        }
+
+        .featured-image-large {
+          grid-column: span 6;
+          grid-row: span 2;
+          position: relative;
+          border-radius: 15px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .featured-image-medium {
+          grid-column: span 4;
+          grid-row: span 2;
+          position: relative;
+          border-radius: 15px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .featured-image-small {
+          grid-column: span 2;
+          grid-row: span 1;
+          position: relative;
+          border-radius: 15px;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .featured-image-large img,
+        .featured-image-medium img,
+        .featured-image-small img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s ease;
+        }
+
+        .featured-image-large:hover img,
+        .featured-image-medium:hover img,
+        .featured-image-small:hover img {
+          transform: scale(1.05);
+        }
+
+        .image-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+          color: white;
+          padding: 20px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .featured-image-large:hover .image-overlay,
+        .featured-image-medium:hover .image-overlay,
+        .featured-image-small:hover .image-overlay {
+          opacity: 1;
+        }
+
+        .image-overlay h3 {
           font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 5px;
         }
 
-        .mcdonalds-icon {
-          width: 35px;
-          height: 35px;
-          font-size: 1.5rem;
-          border-radius: 4px;
+        .image-overlay p {
+          font-size: 0.9rem;
+          opacity: 0.9;
         }
+
+
 
         /* Modal */
         .photo-modal {
@@ -391,12 +919,12 @@ function Photography() {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          border-radius: 10px;
+          border-radius: 12px;
         }
 
         .close-modal {
           position: absolute;
-          top: -40px;
+          top: -50px;
           right: 0;
           background: rgba(255, 255, 255, 0.2);
           border: none;
@@ -416,31 +944,105 @@ function Photography() {
           background: rgba(255, 255, 255, 0.3);
         }
 
+        /* Folder Modal */
+        .folder-modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.9);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1000;
+          cursor: pointer;
+        }
+
+        .folder-modal-content {
+          background: white;
+          border-radius: 20px;
+          padding: 30px;
+          max-width: 95%;
+          max-height: 90%;
+          width: 1200px;
+          overflow-y: auto;
+          position: relative;
+        }
+
+        .folder-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #2c3e50;
+          margin-bottom: 30px;
+          text-align: center;
+        }
+
+        .folder-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 15px;
+        }
+
+        .folder-photo {
+          aspect-ratio: 1;
+          border-radius: 12px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+        .folder-photo:hover {
+          transform: scale(1.05);
+        }
+
+        .folder-photo img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-          .collage-item.photo {
-            width: 150px;
-            height: 120px;
+          .hero-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
           }
 
-          .collage-item.photo.portrait {
-            width: 120px;
-            height: 160px;
+          .featured-grid {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 150px);
+            gap: 10px;
           }
 
-          .collage-item.photo.landscape {
-            width: 200px;
-            height: 120px;
+          .featured-image-large,
+          .featured-image-medium,
+          .featured-image-small {
+            grid-column: span 1;
+            grid-row: span 1;
           }
 
-          .newspaper-headline {
-            font-size: 2rem;
+          .brand-title {
+            font-size: 2.5rem;
           }
 
-          .magazine-title {
-            font-size: 1.5rem;
+          .bestsellers-scroll {
+            padding: 0 10px;
           }
 
-          .sticker-green {
+
+          .folder-modal-content {
+            width: 95%;
+            max-width: 95%;
+          }
+
+          .folder-grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+          }
+
+          .folder-title {
             font-size: 1.5rem;
           }
         }
