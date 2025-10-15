@@ -11,6 +11,7 @@ import Apps from './pages/Apps';
 import DocumentDesign from './pages/DocumentDesign';
 import SocialMedia from './pages/SocialMedia';
 import Platforms from './pages/Platforms';
+import Photography from './pages/Photography';
 import Profile from './pages/Profile';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/document-design" element={<DocumentDesign />} />
         <Route path="/social-media" element={<SocialMedia />} />
         <Route path="/platforms" element={<Platforms />} />
+        <Route path="/photography" element={<Photography />} />
       </Routes>
     </>
   );

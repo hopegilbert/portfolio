@@ -17,6 +17,7 @@ import appIcon from '../assets/home-frames/app-icon.png';
 import nameImage from '../assets/name.png';
 import platformsFrame from '../assets/home-frames/platforms-frame.png';
 import socialMediaFrame from '../assets/home-frames/social-media-frame.png';
+import photographyFrame from '../assets/home-frames/photography-frame.png';
 import frame1 from '../assets/home-frames/frame 1.png';
 
 function Home() {
@@ -120,6 +121,10 @@ function Home() {
               <Link to="/social-media" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
                 <i className="fas fa-hashtag"></i>
                 Social Media
+              </Link>
+              <Link to="/photography" className="nav-dropdown-item" onClick={() => setIsDropdownOpen(false)}>
+                <i className="fas fa-camera"></i>
+                Photography
               </Link>
               <button 
                 className="nav-dropdown-item nav-dropdown-app"
@@ -306,6 +311,17 @@ function Home() {
               alt="Platforms"
             />
             <Link to="/platforms" className="hover-button">Explore Platforms</Link>
+          </div>
+        </div>
+
+        {/* Photography */}
+        <div className="grid-item">
+          <div className="image-wrapper">
+            <img 
+              src={photographyFrame} 
+              alt="Photography"
+            />
+            <Link to="/photography" className="hover-button">View Photography</Link>
           </div>
         </div>
 
