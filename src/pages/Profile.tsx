@@ -6,7 +6,7 @@ import portrait2 from '../assets/profile/portrait-2.png';
 import portrait3 from '../assets/profile/portrait-3.png';
 import portrait4 from '../assets/profile/portrait-4.png';
 import hopeDurham from '../assets/profile/hope-durham.png';
-import hopeFlatfee from '../assets/profile/hope-flatfee.png';
+const hopeFlatfee = new URL('../assets/profile/hope-flatfee.png', import.meta.url).href;
 import hopeGraduation from '../assets/profile/hope-graduation.png';
 import hope from '../assets/hope.jpg';
 import colorPalette from '../assets/profile/colour-pallet.png';
