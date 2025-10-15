@@ -263,18 +263,37 @@ const allPosts = [
   }
 ];
 
-// Shuffle the posts randomly to distribute new ones throughout
-function shuffleArray(array: any[]) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-// Create the final shuffled array of posts
-const socialPosts = shuffleArray(allPosts);
+// Manually distribute new Hope social posts throughout existing posts
+const socialPosts = [
+  allPosts[0],   // social1
+  allPosts[22],  // hopeSocial1
+  allPosts[1],   // calendar
+  allPosts[2],   // dryJan1
+  allPosts[3],   // dryJan2
+  allPosts[23],  // hopeSocial2
+  allPosts[4],   // dryJan3
+  allPosts[5],   // dryJanuary2
+  allPosts[6],   // dryJanuary
+  allPosts[7],   // glassLemon
+  allPosts[24],  // hopeSocial3
+  allPosts[8],   // martiniGlass
+  allPosts[9],   // coffeeWeek
+  allPosts[10],  // inclusionWeek
+  allPosts[25],  // hopeSocial4
+  allPosts[11],  // nmdDiscount
+  allPosts[12],  // remembrance1
+  allPosts[13],  // remembrance2
+  allPosts[14],  // winePouring
+  allPosts[26],  // hopeSocial5
+  allPosts[15],  // splashGlass
+  allPosts[16],  // flatFee
+  allPosts[17],  // cvScreening
+  allPosts[18],  // valentines
+  allPosts[27],  // hopeSocial6
+  allPosts[19],  // webinar
+  allPosts[20],  // decemberJobs
+  allPosts[21],  // kindnessDay
+];
 
 function SocialMedia() {
   const [selectedPost, setSelectedPost] = useState<typeof socialPosts[0] | null>(null);
