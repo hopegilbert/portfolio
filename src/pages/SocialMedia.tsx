@@ -318,9 +318,9 @@ const socialPosts = [
   allPosts[18],  // valentines
   allPosts[0],   // social1 (moved from position 1)
   allPosts[19],  // webinar
-  allPosts[20],  // decemberJobs
+  allPosts[28],  // hopeSocial7 (swapped with decemberJobs)
   allPosts[21],  // kindnessDay
-  allPosts[28],  // hopeSocial7 (NEW - at bottom)
+  allPosts[20],  // decemberJobs (swapped with hopeSocial7)
   allPosts[17],  // cvScreening (swapped with hopeSocial8)
   allPosts[14],  // winePouring (swapped with hopeSocial9)
 ];
