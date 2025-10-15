@@ -331,7 +331,7 @@ function Home() {
               alt="CV"
             />
             <a 
-              href="/Hope Gilbert CV.pdf" 
+              href="/hope-gilbert-cv.pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover-button"
