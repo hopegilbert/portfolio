@@ -99,14 +99,13 @@ const documents = [
 
 function DocumentDesign() {
   const [selectedDocument, setSelectedDocument] = useState<typeof documents[0] | null>(null);
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   const handleClose = () => {
     window.history.back();
   };
 
   // File icon SVG component - soft rounded folder style (no text)
-  const FileIcon = ({ type, color = '#FFE5EC' }: { type: string; color?: string }) => {
+  const FileIcon = ({ color = '#FFE5EC' }: { color?: string }) => {
     // Create a darker shade for the tab
     const tabColor = color === '#FFE5EC' ? '#FFC2D1' : 
                      color === '#FFC2D1' ? '#FFB3C6' :
@@ -177,7 +176,7 @@ function DocumentDesign() {
             } as React.CSSProperties}
           >
             <div className="document-icon">
-              <FileIcon type={doc.type} color={doc.color} />
+              <FileIcon color={doc.color} />
             </div>
             <span className="document-name">{doc.name}</span>
           </div>
