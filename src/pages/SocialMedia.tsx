@@ -2,55 +2,207 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import hopeProfilePic from '../assets/hope.jpg';
 
-// Social media posts data - replace with your actual designs
+// Import all social media images
+import social1 from '../assets/social-media/social media 1.png';
+import calendar from '../assets/social-media/calendar social.png';
+import dryJan1 from '../assets/social-media/Dry Jan_Dry Jan 1.jpg';
+import dryJan2 from '../assets/social-media/Dry Jan_Dry Jan 2.jpg';
+import dryJan3 from '../assets/social-media/Dry Jan_Dry Jan 3.jpg';
+import dryJanuary2 from '../assets/social-media/Dry January 2.png';
+import dryJanuary from '../assets/social-media/dry january.png';
+import glassLemon from '../assets/social-media/glass with lemon.png';
+import martiniGlass from '../assets/social-media/martini glass 4.png';
+import coffeeWeek from '../assets/social-media/National Coffee Week.png';
+import inclusionWeek from '../assets/social-media/National Inclusion Week.png';
+import nmdDiscount from '../assets/social-media/NMD discount post.png';
+import remembrance1 from '../assets/social-media/Rememberance day.png';
+import remembrance2 from '../assets/social-media/Remembrance day 2.png';
+import winePouring from '../assets/social-media/social wine pouring.png';
+import splashGlass from '../assets/social-media/Splash glass social.png';
+import flatFee from '../assets/social-media/the flat fee service.png';
+import cvScreening from '../assets/social-media/Tools to help you screen CVs faster.png';
+import valentines from '../assets/social-media/Valentines.png';
+import webinar from '../assets/social-media/Webinar Social Post.png';
+import decemberJobs from '../assets/social-media/Why should you advertise jobs in December.png';
+import kindnessDay from '../assets/social-media/World Kindness Day.png';
+
+// Social media posts data - real designs
 const socialPosts = [
   {
     id: 1,
-    image: 'https://via.placeholder.com/600x600/FDE9F0/A86B7A?text=Post+1',
-    caption: 'Sample social media post design',
+    image: social1,
+    caption: 'Creative social media content design',
     platform: 'Instagram',
     likes: 234,
     date: 'March 2024'
   },
   {
     id: 2,
-    image: 'https://via.placeholder.com/600x600/F5C9E0/A86B7A?text=Post+2',
-    caption: 'Creative content for engagement',
+    image: calendar,
+    caption: 'Calendar social media post design',
     platform: 'Instagram',
     likes: 189,
     date: 'March 2024'
   },
   {
     id: 3,
-    image: 'https://via.placeholder.com/600x600/FFE5E5/A86B7A?text=Post+3',
-    caption: 'Brand collaboration post',
+    image: dryJan1,
+    caption: 'Dry January campaign - Day 1',
     platform: 'Instagram',
     likes: 312,
     date: 'February 2024'
   },
   {
     id: 4,
-    image: 'https://via.placeholder.com/600x600/F5E9E0/A86B7A?text=Post+4',
-    caption: 'Product showcase design',
+    image: dryJan2,
+    caption: 'Dry January campaign - Day 2',
     platform: 'Instagram',
     likes: 267,
     date: 'February 2024'
   },
   {
     id: 5,
-    image: 'https://via.placeholder.com/600x600/E0DDD8/A86B7A?text=Post+5',
-    caption: 'Story highlight cover',
+    image: dryJan3,
+    caption: 'Dry January campaign - Day 3',
     platform: 'Instagram',
     likes: 145,
-    date: 'January 2024'
+    date: 'February 2024'
   },
   {
     id: 6,
-    image: 'https://via.placeholder.com/600x600/FDE9F0/A86B7A?text=Post+6',
-    caption: 'Promotional campaign',
+    image: dryJanuary2,
+    caption: 'Dry January promotional design',
     platform: 'Instagram',
     likes: 298,
+    date: 'February 2024'
+  },
+  {
+    id: 7,
+    image: dryJanuary,
+    caption: 'Dry January awareness campaign',
+    platform: 'Instagram',
+    likes: 187,
     date: 'January 2024'
+  },
+  {
+    id: 8,
+    image: glassLemon,
+    caption: 'Refreshing drink design for social media',
+    platform: 'Instagram',
+    likes: 156,
+    date: 'January 2024'
+  },
+  {
+    id: 9,
+    image: martiniGlass,
+    caption: 'Elegant cocktail social media post',
+    platform: 'Instagram',
+    likes: 223,
+    date: 'December 2023'
+  },
+  {
+    id: 10,
+    image: coffeeWeek,
+    caption: 'National Coffee Week celebration post',
+    platform: 'Instagram',
+    likes: 445,
+    date: 'December 2023'
+  },
+  {
+    id: 11,
+    image: inclusionWeek,
+    caption: 'National Inclusion Week awareness design',
+    platform: 'Instagram',
+    likes: 378,
+    date: 'November 2023'
+  },
+  {
+    id: 12,
+    image: nmdDiscount,
+    caption: 'NMD discount promotional post',
+    platform: 'Instagram',
+    likes: 289,
+    date: 'November 2023'
+  },
+  {
+    id: 13,
+    image: remembrance1,
+    caption: 'Remembrance Day tribute design',
+    platform: 'Instagram',
+    likes: 512,
+    date: 'November 2023'
+  },
+  {
+    id: 14,
+    image: remembrance2,
+    caption: 'Remembrance Day memorial post',
+    platform: 'Instagram',
+    likes: 467,
+    date: 'November 2023'
+  },
+  {
+    id: 15,
+    image: winePouring,
+    caption: 'Wine tasting social media content',
+    platform: 'Instagram',
+    likes: 198,
+    date: 'October 2023'
+  },
+  {
+    id: 16,
+    image: splashGlass,
+    caption: 'Splash glass social media design',
+    platform: 'Instagram',
+    likes: 234,
+    date: 'October 2023'
+  },
+  {
+    id: 17,
+    image: flatFee,
+    caption: 'The Flat Fee service promotion',
+    platform: 'Instagram',
+    likes: 156,
+    date: 'October 2023'
+  },
+  {
+    id: 18,
+    image: cvScreening,
+    caption: 'Tools to help screen CVs faster',
+    platform: 'Instagram',
+    likes: 298,
+    date: 'September 2023'
+  },
+  {
+    id: 19,
+    image: valentines,
+    caption: 'Valentine\'s Day themed social post',
+    platform: 'Instagram',
+    likes: 345,
+    date: 'September 2023'
+  },
+  {
+    id: 20,
+    image: webinar,
+    caption: 'Webinar social media promotion',
+    platform: 'Instagram',
+    likes: 189,
+    date: 'September 2023'
+  },
+  {
+    id: 21,
+    image: decemberJobs,
+    caption: 'Why advertise jobs in December',
+    platform: 'Instagram',
+    likes: 267,
+    date: 'August 2023'
+  },
+  {
+    id: 22,
+    image: kindnessDay,
+    caption: 'World Kindness Day awareness post',
+    platform: 'Instagram',
+    likes: 423,
+    date: 'August 2023'
   }
 ];
 
