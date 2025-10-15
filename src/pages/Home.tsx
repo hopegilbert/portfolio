@@ -20,6 +20,7 @@ import frame1 from '../assets/home-frames/frame 1.png';
 
 function Home() {
   const [isAppModalOpen, setIsAppModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     const grid = document.querySelector('.masonry-grid');
@@ -69,6 +70,66 @@ function Home() {
       {/* Name Header */}
       <div className="name-header">
         <img src={nameImage} alt="Hope Gilbert" className="name-image" />
+        
+        {/* Navigation Dropdown */}
+        <div className="nav-dropdown-container">
+          <button 
+            className="nav-dropdown-toggle"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            onBlur={() => setTimeout(() => setIsDropdownOpen(false), 150)}
+          >
+            <i className="fas fa-bars"></i>
+            <span>Menu</span>
+          </button>
+          
+          {isDropdownOpen && (
+            <div className="nav-dropdown-menu">
+              <Link to="/profile" className="nav-dropdown-item">
+                <i className="fas fa-user"></i>
+                Profile
+              </Link>
+              <Link to="/art-work" className="nav-dropdown-item">
+                <i className="fas fa-palette"></i>
+                Art Work
+              </Link>
+              <Link to="/play-dress-up" className="nav-dropdown-item">
+                <i className="fas fa-tshirt"></i>
+                Dress Up
+              </Link>
+              <Link to="/movies" className="nav-dropdown-item">
+                <i className="fas fa-film"></i>
+                Movies
+              </Link>
+              <Link to="/document-design" className="nav-dropdown-item">
+                <i className="fas fa-file-alt"></i>
+                Documents
+              </Link>
+              <Link to="/video-editing" className="nav-dropdown-item">
+                <i className="fas fa-video"></i>
+                Video Editing
+              </Link>
+              <Link to="/intelligence-hub" className="nav-dropdown-item">
+                <i className="fas fa-brain"></i>
+                Intelligence Hub
+              </Link>
+              <Link to="/platforms" className="nav-dropdown-item">
+                <i className="fas fa-share-alt"></i>
+                Platforms
+              </Link>
+              <Link to="/social-media" className="nav-dropdown-item">
+                <i className="fas fa-hashtag"></i>
+                Social Media
+              </Link>
+              <button 
+                className="nav-dropdown-item nav-dropdown-app"
+                onClick={() => setIsAppModalOpen(true)}
+              >
+                <i className="fas fa-mobile-alt"></i>
+                Apps
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Profile Section */}
@@ -273,6 +334,103 @@ function Home() {
           height: auto;
           max-height: 120px;
           object-fit: contain;
+        }
+
+        /* Navigation Dropdown Styles */
+        .nav-dropdown-container {
+          position: absolute;
+          top: 50%;
+          right: 2rem;
+          transform: translateY(-50%);
+          z-index: 10;
+        }
+
+        .nav-dropdown-toggle {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          background: rgba(255, 255, 255, 0.9);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(168, 107, 122, 0.2);
+          border-radius: 8px;
+          padding: 0.75rem 1rem;
+          color: #a86b7a;
+          font-family: 'Lora', serif;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-dropdown-toggle:hover {
+          background: rgba(168, 107, 122, 0.1);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-dropdown-toggle i {
+          font-size: 1rem;
+        }
+
+        .nav-dropdown-menu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          margin-top: 0.5rem;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(15px);
+          border: 1px solid rgba(168, 107, 122, 0.2);
+          border-radius: 12px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+          min-width: 200px;
+          overflow: hidden;
+          animation: dropdownFadeIn 0.2s ease-out;
+          z-index: 20;
+        }
+
+        @keyframes dropdownFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .nav-dropdown-item {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1rem;
+          color: #a86b7a;
+          text-decoration: none;
+          font-family: 'Lora', serif;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.2s ease;
+          border: none;
+          background: none;
+          width: 100%;
+          text-align: left;
+          cursor: pointer;
+        }
+
+        .nav-dropdown-item:hover {
+          background: rgba(168, 107, 122, 0.1);
+          color: #8b4a5a;
+        }
+
+        .nav-dropdown-item i {
+          width: 16px;
+          text-align: center;
+          font-size: 0.9rem;
+        }
+
+        .nav-dropdown-app {
+          border-top: 1px solid rgba(168, 107, 122, 0.1);
         }
 
         .profile-section {
@@ -665,6 +823,20 @@ function Home() {
             flex-direction: column;
             gap: 2rem;
             align-items: center;
+          }
+
+          .nav-dropdown-container {
+            right: 1rem;
+          }
+
+          .nav-dropdown-toggle {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.8rem;
+          }
+
+          .nav-dropdown-menu {
+            min-width: 180px;
+            right: -1rem;
           }
 
           .portrait-frame {
