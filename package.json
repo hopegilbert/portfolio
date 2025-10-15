@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "imagesloaded": "^5.0.0",
     "masonry-layout": "^4.2.2",
     "react": "^19.1.1",

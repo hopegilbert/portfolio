@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Masonry from 'masonry-layout';
 import imagesLoaded from 'imagesloaded';
+import { useForm, ValidationError } from '@formspree/react';
 import IPhoneModal from '../components/iPhoneModal';
 import BusinessApp from './BusinessApp';
 import dressUpFrame from '../assets/home-frames/dress-up-frame.png';
@@ -24,7 +25,7 @@ import frame1 from '../assets/home-frames/frame 1.png';
 function Home() {
   const [isAppModalOpen, setIsAppModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [state, handleSubmit] = useForm("mvgwdbnk");
 
   useEffect(() => {
     const grid = document.querySelector('.masonry-grid');
@@ -344,75 +345,67 @@ function Home() {
         <div className="grid-item">
           <div className="contact-form-container">
             <h3 className="contact-form-title">Get in Touch</h3>
-            <form 
-              className="contact-form" 
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST"
-              onSubmit={async (e) => {
-                e.preventDefault();
-                setFormStatus('submitting');
-                
-                const form = e.currentTarget;
-                const formData = new FormData(form);
-                
-                try {
-                  const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                      'Accept': 'application/json'
-                    }
-                  });
-                  
-                  if (response.ok) {
-                    setFormStatus('success');
-                    form.reset();
-                    setTimeout(() => setFormStatus('idle'), 5000);
-                  } else {
-                    setFormStatus('error');
-                    setTimeout(() => setFormStatus('idle'), 5000);
-                  }
-                } catch (error) {
-                  setFormStatus('error');
-                  setTimeout(() => setFormStatus('idle'), 5000);
-                }
-              }}
-            >
-              <input 
-                type="text" 
-                name="name"
-                placeholder="Your Name" 
-                required 
-                className="contact-input"
-                disabled={formStatus === 'submitting'}
-              />
-              <input 
-                type="email" 
-                name="email"
-                placeholder="Your Email" 
-                required 
-                className="contact-input"
-                disabled={formStatus === 'submitting'}
-              />
-              <textarea 
-                name="message"
-                placeholder="Your Message" 
-                required 
-                className="contact-textarea"
-                rows={4}
-                disabled={formStatus === 'submitting'}
-              />
-              <button 
-                type="submit" 
-                className="contact-submit"
-                disabled={formStatus === 'submitting'}
-              >
-                {formStatus === 'submitting' ? 'Sending...' : 
-                 formStatus === 'success' ? '✓ Sent!' : 
-                 formStatus === 'error' ? 'Error - Try Again' : 
-                 'Send Message'}
-              </button>
-            </form>
+            {state.succeeded ? (
+              <div className="contact-success-message">
+                <div className="success-icon">✓</div>
+                <p>Thanks for reaching out! I'll get back to you soon.</p>
+              </div>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <input 
+                  type="text" 
+                  id="name"
+                  name="name"
+                  placeholder="Your Name" 
+                  required 
+                  className="contact-input"
+                  disabled={state.submitting}
+                />
+                <ValidationError 
+                  prefix="Name" 
+                  field="name"
+                  errors={state.errors}
+                  className="validation-error"
+                />
+                <input 
+                  type="email" 
+                  id="email"
+                  name="email"
+                  placeholder="Your Email" 
+                  required 
+                  className="contact-input"
+                  disabled={state.submitting}
+                />
+                <ValidationError 
+                  prefix="Email" 
+                  field="email"
+                  errors={state.errors}
+                  className="validation-error"
+                />
+                <textarea 
+                  id="message"
+                  name="message"
+                  placeholder="Your Message" 
+                  required 
+                  className="contact-textarea"
+                  rows={4}
+                  disabled={state.submitting}
+                />
+                <ValidationError 
+                  prefix="Message" 
+                  field="message"
+                  errors={state.errors}
+                  className="validation-error"
+                />
+                <button 
+                  type="submit" 
+                  className="contact-submit"
+                  disabled={state.submitting}
+                >
+                  {state.submitting ? 'Sending...' : 'Send Message'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
 
@@ -1006,6 +999,62 @@ function Home() {
           opacity: 0.6;
           cursor: not-allowed;
           background: rgba(255, 255, 255, 0.5);
+        }
+
+        .contact-success-message {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 2rem;
+          text-align: center;
+          min-height: 250px;
+        }
+
+        .success-icon {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #a86b7a;
+          color: #fde9f0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          animation: successPop 0.5s ease-out;
+        }
+
+        @keyframes successPop {
+          0% {
+            transform: scale(0);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1.1);
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+
+        .contact-success-message p {
+          font-family: 'Lora', serif;
+          font-size: 1.1rem;
+          color: #a86b7a;
+          margin: 0;
+          line-height: 1.6;
+        }
+
+        .validation-error {
+          color: #d32f2f;
+          font-family: 'Lora', serif;
+          font-size: 0.85rem;
+          margin-top: -0.75rem;
+          margin-bottom: 0.25rem;
+          display: block;
         }
 
         .footer-frame {
