@@ -294,7 +294,6 @@ const allPosts = [
 const socialPosts = [
   allPosts[27],  // hopeSocial6 (swapped with social1)
   allPosts[5],   // dryJanuary2 (moved here, was position 8)
-  allPosts[29],  // hopeSocial8 (NEW - after dryJanuary2)
   allPosts[1],   // calendar
   allPosts[2],   // dryJan1
   allPosts[26],  // hopeSocial5 (swapped with dryJan2)
@@ -321,6 +320,9 @@ const socialPosts = [
   allPosts[19],  // webinar
   allPosts[20],  // decemberJobs
   allPosts[21],  // kindnessDay
+  allPosts[28],  // hopeSocial7 (NEW - at bottom)
+  allPosts[29],  // hopeSocial8 (NEW - at bottom)
+  allPosts[30],  // hopeSocial9 (NEW - at bottom)
 ];
 
 function SocialMedia() {
