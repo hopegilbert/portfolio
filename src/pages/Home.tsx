@@ -24,6 +24,7 @@ import frame1 from '../assets/home-frames/frame 1.png';
 function Home() {
   const [isAppModalOpen, setIsAppModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const grid = document.querySelector('.masonry-grid');
@@ -343,25 +344,47 @@ function Home() {
         <div className="grid-item">
           <div className="contact-form-container">
             <h3 className="contact-form-title">Get in Touch</h3>
-            <form className="contact-form" onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.currentTarget);
-              const name = formData.get('name');
-              const email = formData.get('email');
-              const message = formData.get('message');
-              
-              // For now, open default email client
-              window.location.href = `mailto:hopegilbert@live.com?subject=Contact from ${name}&body=${message}%0D%0A%0D%0AFrom: ${email}`;
-              
-              // Reset form
-              e.currentTarget.reset();
-            }}>
+            <form 
+              className="contact-form" 
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                setFormStatus('submitting');
+                
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                
+                try {
+                  const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                      'Accept': 'application/json'
+                    }
+                  });
+                  
+                  if (response.ok) {
+                    setFormStatus('success');
+                    form.reset();
+                    setTimeout(() => setFormStatus('idle'), 5000);
+                  } else {
+                    setFormStatus('error');
+                    setTimeout(() => setFormStatus('idle'), 5000);
+                  }
+                } catch (error) {
+                  setFormStatus('error');
+                  setTimeout(() => setFormStatus('idle'), 5000);
+                }
+              }}
+            >
               <input 
                 type="text" 
                 name="name"
                 placeholder="Your Name" 
                 required 
                 className="contact-input"
+                disabled={formStatus === 'submitting'}
               />
               <input 
                 type="email" 
@@ -369,6 +392,7 @@ function Home() {
                 placeholder="Your Email" 
                 required 
                 className="contact-input"
+                disabled={formStatus === 'submitting'}
               />
               <textarea 
                 name="message"
@@ -376,8 +400,18 @@ function Home() {
                 required 
                 className="contact-textarea"
                 rows={4}
+                disabled={formStatus === 'submitting'}
               />
-              <button type="submit" className="contact-submit">Send Message</button>
+              <button 
+                type="submit" 
+                className="contact-submit"
+                disabled={formStatus === 'submitting'}
+              >
+                {formStatus === 'submitting' ? 'Sending...' : 
+                 formStatus === 'success' ? '✓ Sent!' : 
+                 formStatus === 'error' ? 'Error - Try Again' : 
+                 'Send Message'}
+              </button>
             </form>
           </div>
         </div>
@@ -959,6 +993,19 @@ function Home() {
 
         .contact-submit:active {
           transform: translateY(0);
+        }
+
+        .contact-submit:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          transform: none;
+        }
+
+        .contact-input:disabled,
+        .contact-textarea:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          background: rgba(255, 255, 255, 0.5);
         }
 
         .footer-frame {
