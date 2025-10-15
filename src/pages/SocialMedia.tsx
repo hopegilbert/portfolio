@@ -272,8 +272,8 @@ const socialPosts = [
   allPosts[26],  // hopeSocial5 (swapped with dryJan2)
   allPosts[9],   // coffeeWeek (National Coffee Week - swapped with hopeSocial2)
   allPosts[4],   // dryJan3
-  allPosts[22],  // hopeSocial1 (swapped with dryJanuary2)
-  allPosts[6],   // dryJanuary
+  allPosts[6],   // dryJanuary (moved from position 9)
+  allPosts[22],  // hopeSocial1 (swapped with dryJanuary)
   allPosts[24],  // hopeSocial3 (swapped with glassLemon)
   allPosts[7],   // glassLemon (moved from position 10)
   allPosts[8],   // martiniGlass
