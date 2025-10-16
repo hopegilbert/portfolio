@@ -701,16 +701,15 @@ function Home() {
 
         .masonry-grid {
           width: 100%;
-          column-count: 4;
-          column-gap: 1rem;
         }
 
         .grid-item {
-          break-inside: avoid;
+          width: calc(25% - 12px);
           margin-bottom: 1rem;
           position: relative;
           opacity: 0;
           transition: opacity 0.6s ease-out;
+          break-inside: avoid;
         }
 
         .grid-item.visible {
@@ -1124,10 +1123,19 @@ function Home() {
             font-size: 2rem;
           }
 
+          .masonry-container {
+            padding: 0 0.5rem;
+          }
+
           .masonry-grid {
             column-count: 2;
             column-gap: 0.5rem;
-            padding: 0 0.5rem;
+            width: 100%;
+          }
+
+          .grid-item {
+            width: 100% !important;
+            margin-bottom: 0.5rem;
           }
 
           .subtitle {
@@ -1176,6 +1184,12 @@ function Home() {
           .masonry-grid {
             column-count: 2;
             column-gap: 0.5rem;
+            width: 100%;
+          }
+
+          .grid-item {
+            width: 100% !important;
+            margin-bottom: 0.5rem;
           }
 
           .title-image-frame {
