@@ -47,16 +47,18 @@ function Home() {
 
     gridItems.forEach(item => observer.observe(item));
 
-    // Wait until images are loaded, then initialize Masonry
-    imagesLoaded(grid, () => {
-      new Masonry(grid, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-item',
-        gutter: 16,
-        percentPosition: true,
-        transitionDuration: '0.3s'
+    // Only use Masonry JS on desktop (>768px) - mobile uses pure CSS columns
+    if (window.innerWidth > 768) {
+      imagesLoaded(grid, () => {
+        new Masonry(grid, {
+          itemSelector: '.grid-item',
+          columnWidth: '.grid-item',
+          gutter: 16,
+          percentPosition: true,
+          transitionDuration: '0.3s'
+        });
       });
-    });
+    }
 
     return () => {
       gridItems.forEach(item => observer.unobserve(item));
@@ -701,15 +703,22 @@ function Home() {
 
         .masonry-grid {
           width: 100%;
+          column-count: 4;
+          column-gap: 1rem;
         }
 
         .grid-item {
-          width: calc(25% - 12px);
+          break-inside: avoid;
           margin-bottom: 1rem;
           position: relative;
           opacity: 0;
           transition: opacity 0.6s ease-out;
-          break-inside: avoid;
+        }
+
+        .grid-item img {
+          width: 100%;
+          height: auto;
+          display: block;
         }
 
         .grid-item.visible {
@@ -1081,8 +1090,8 @@ function Home() {
         }
 
         @media (max-width: 1024px) {
-          .grid-item {
-            width: calc(33.333% - 11px);
+          .masonry-grid {
+            column-count: 3;
           }
         }
 
@@ -1124,18 +1133,12 @@ function Home() {
           }
 
           .masonry-container {
-            padding: 0 0.5rem;
+            padding: 0 1rem;
           }
 
           .masonry-grid {
             column-count: 2;
             column-gap: 0.5rem;
-            width: 100%;
-          }
-
-          .grid-item {
-            width: 100% !important;
-            margin-bottom: 0.5rem;
           }
 
           .subtitle {
@@ -1181,17 +1184,6 @@ function Home() {
         }
 
         @media (max-width: 480px) {
-          .masonry-grid {
-            column-count: 2;
-            column-gap: 0.5rem;
-            width: 100%;
-          }
-
-          .grid-item {
-            width: 100% !important;
-            margin-bottom: 0.5rem;
-          }
-
           .title-image-frame {
             padding: 2rem 1rem;
           }
