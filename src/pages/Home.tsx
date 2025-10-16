@@ -1176,7 +1176,11 @@ function Home() {
 
         @media (max-width: 480px) {
           .grid-item {
-            width: 100%;
+            width: calc(50% - 8px);
+          }
+
+          .masonry-grid {
+            gap: 8px;
           }
 
           .title-image-frame {
