@@ -1138,6 +1138,12 @@ function Home() {
           .masonry-grid {
             column-count: 2;
             column-gap: 0.5rem;
+            width: 100%;
+          }
+
+          .grid-item {
+            width: 100% !important;
+            margin-bottom: 0.5rem;
           }
 
           .subtitle {
