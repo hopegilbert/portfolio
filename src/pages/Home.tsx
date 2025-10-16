@@ -706,7 +706,7 @@ function Home() {
         }
 
         .grid-item {
-          width: calc(25% - 12px);
+          break-inside: avoid;
           margin-bottom: 1rem;
           position: relative;
           opacity: 0;
@@ -1125,11 +1125,9 @@ function Home() {
           }
 
           .masonry-grid {
+            column-count: 2;
+            column-gap: 0.5rem;
             padding: 0 0.5rem;
-          }
-
-          .grid-item {
-            width: calc(50% - 8px) !important;
           }
 
           .subtitle {
@@ -1175,8 +1173,9 @@ function Home() {
         }
 
         @media (max-width: 480px) {
-          .grid-item {
-            width: calc(50% - 8px) !important;
+          .masonry-grid {
+            column-count: 2;
+            column-gap: 0.5rem;
           }
 
           .title-image-frame {
