@@ -25,7 +25,7 @@ import frame1 from '../assets/home-frames/frame 1.png';
 function Home() {
   const [isAppModalOpen, setIsAppModalOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [state, handleSubmit] = useForm("mvgwdbnk");
+  const [state, handleSubmit] = useForm("mvgwdbnk"); // Formspree contact form
 
   useEffect(() => {
     const grid = document.querySelector('.masonry-grid');
