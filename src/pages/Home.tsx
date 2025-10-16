@@ -703,11 +703,10 @@ function Home() {
 
         .masonry-grid {
           width: 100%;
-          column-count: 4;
-          column-gap: 1rem;
         }
 
         .grid-item {
+          width: calc(25% - 12px);
           break-inside: avoid;
           margin-bottom: 1rem;
           position: relative;
@@ -1090,8 +1089,8 @@ function Home() {
         }
 
         @media (max-width: 1024px) {
-          .masonry-grid {
-            column-count: 3;
+          .grid-item {
+            width: calc(33.333% - 11px);
           }
         }
 
