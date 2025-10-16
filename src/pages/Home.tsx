@@ -331,7 +331,7 @@ function Home() {
               alt="CV"
             />
             <a 
-              href="/hope-gilbert-cv.pdf" 
+              href={`${import.meta.env.BASE_URL}hope-gilbert-cv.pdf`}
               target="_blank" 
               rel="noopener noreferrer" 
               className="hover-button"
