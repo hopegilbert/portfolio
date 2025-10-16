@@ -1126,10 +1126,12 @@ function Home() {
 
           .masonry-grid {
             padding: 0 0.5rem;
+            column-count: 2;
+            column-gap: 0.5rem;
           }
 
           .grid-item {
-            width: calc(50% - 8px);
+            width: 100%;
           }
 
           .subtitle {
@@ -1175,12 +1177,13 @@ function Home() {
         }
 
         @media (max-width: 480px) {
-          .grid-item {
-            width: calc(50% - 8px);
+          .masonry-grid {
+            column-count: 2;
+            column-gap: 0.5rem;
           }
 
-          .masonry-grid {
-            gap: 8px;
+          .grid-item {
+            width: 100%;
           }
 
           .title-image-frame {
